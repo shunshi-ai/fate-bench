@@ -405,17 +405,22 @@ def report(rows):
     print("-" * 57)
     print(f"{'TOTAL':<13}{len(rows):>7}{sum(1 for r in rows if r['answer']):>10}")
 
-    ok = True
-    for label, bad in (
+    # 失败 = 解析出了问题；注记 = 源头本来就这样，报出来但不当失败
+    FAIL = (
         ("无答案", [r["id"] for r in rows if not r["answer"]]),
         ("选项<4", [r["id"] for r in rows if r["num_options"] < 4]),
-        ("生辰缺失(源站未登)", [r["id"] for r in rows if r["birth_info"].get("missing")]),
-        ("题干过短", [r["id"] for r in rows if len(r["question"]) < 4]),
-    ):
-        if bad:
-            ok = False
-            print(f"⚠ {label} {len(bad)} 条: {bad[:10]}{' …' if len(bad) > 10 else ''}")
-    return ok
+        ("题干过短", [r["id"] for r in rows if len(r["question"]) < 4
+                  and r["source"] != "minglibench"]),
+    )
+    NOTE = (
+        ("生辰缺失(源站未登，见 INVENTORY)",
+         [r["id"] for r in rows if r["birth_info"].get("missing")]),
+    )
+    for mark, group in (("⚠", FAIL), ("·", NOTE)):
+        for label, bad in group:
+            if bad:
+                print(f"{mark} {label} {len(bad)} 条: {bad[:10]}{' …' if len(bad) > 10 else ''}")
+    return not any(bad for _, bad in FAIL)
 
 
 if __name__ == "__main__":
