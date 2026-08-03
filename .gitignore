@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+.DS_Store
+
+# 抓取缓存（可由 scripts/scrape_hkjfma.py 重建）
+pages/
+hk/
+*.html

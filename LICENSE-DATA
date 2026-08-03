@@ -1,0 +1,23 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+This license covers the compilation, normalization, transcription, schema, and
+derived chart computations produced in this repository.
+
+IT DOES NOT AND CANNOT GRANT RIGHTS IN THE UNDERLYING SOURCE MATERIAL.
+
+The competition questions and answer keys collected here were authored and
+published by third parties — principally the Hong Kong Junior Fengshui Master
+Association (香港青年術數家協會) and the individual masters who contributed each
+case. They are reproduced here with attribution, for research and evaluation
+purposes. Rights in that original material remain with their respective
+authors. See data/raw/hkjfma/SOURCES.md.
+
+If you are a rights holder and object to the inclusion of any material in this
+repository, please open an issue and it will be removed.
+
+Attribution for the compilation:
+
+  fate-bench — Shunshi.AI — https://github.com/shunshi-ai/fate-bench
