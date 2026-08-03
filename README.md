@@ -44,21 +44,30 @@ this repository works backwards through the earlier ones.
 
 ## Current state
 
-Verified as having **both questions and a published answer key**:
+An edition is usable only if **both** its questions and its official answer key are public. Several
+are not — the full audit, including why each excluded edition was excluded, is in
+[data/raw/hkjfma/INVENTORY.md](./data/raw/hkjfma/INVENTORY.md).
 
-| Edition | Year | Items | Options | Answer format |
-|---|---|---|---|---|
-| 1st | 2010 | 9 | A–E | inline list |
-| 2nd | 2011 | 15 | a–e | inline list |
-| 3rd | 2012 | 15 | A–D | inline list |
-| 4th | 2013 | 16 | A–D | `答案公報` block |
+| Edition | Year | Items | Options | Answer key |
+|---:|---|---:|:---:|---|
+| 1st | 2010 | 9 | A–E | text |
+| 2nd | 2011 | 15 | a–e | text |
+| 3rd | 2012 | 15 | A–D | text |
+| 4th | 2013 | 16 | A–D | text |
+| 9th | 2018 | 40 | A–D | transcribed from the published photograph |
 | 13th–16th | 2022–2025 | 160 | A–D | via MingLi-Bench |
 
-Editions whose answer keys are published as **images** (2018, 2019, 2020, 2021, 2023) are pending
-transcription. Editions **2014, 2016, and 2017** publish questions and winners but no answer key,
-and are excluded.
+**255 items across 2010–2025.** Editions 5–8, 10–12 publish questions or winners but no key, and
+are excluded. Edition 17 (2026) was held in June; its key is not out yet.
 
-Nothing here is normalized into a final schema yet — `data/raw/` holds cleaned source text only.
+The **9th edition (2018)** is the most valuable single addition. It is complete, the organizer
+published it **bilingually in Chinese and English** — so no translation step is needed and none of
+our wording enters the data — and each of its 8 cases records **which system the contributing
+master used** (子平八字 ×5, 紫微斗數 ×2, 奇門遁甲 ×1). That last field exists nowhere else in this
+corpus and makes it possible to stratify by school.
+
+Nothing is normalized into a final schema yet — `data/raw/` holds cleaned source text, the
+transcribed 2018 key, and archived source images.
 
 ## Notes on the data
 
