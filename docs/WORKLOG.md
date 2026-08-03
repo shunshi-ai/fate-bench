@@ -1,6 +1,6 @@
 # 工作日志 · fate-bench
 
-内部笔记，公开前删掉或移到 docs/。
+开发过程记录。逐届的可用性审计在 `data/raw/hkjfma/INVENTORY.md`，数据说明在 README。
 
 ## 已完成
 
