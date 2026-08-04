@@ -32,6 +32,7 @@ system — and neither are the questions, which ask what happened to a person, n
 
 | File | What it holds |
 |---|---|
+| [`data/fate_bench.jsonl`](./data/fate_bench.jsonl) | **everything, one question per line** — question, answer, birth data and both charts inlined. Start here. |
 | [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 255 questions — stem, options, answer, birth data, source URL |
 | [`data/cases.json`](./data/cases.json) | 54 people — birth data plus computed BaZi and Zi Wei charts |
 | [`data/human_baseline.json`](./data/human_baseline.json) | what human masters scored on these same questions |
@@ -159,10 +160,11 @@ pip install lunar-python py-iztro
 
 python scripts/normalize.py       # source text  → data/hkjfma_qa.json
 python scripts/charts.py          # birth data   → data/cases.json
+python scripts/export_jsonl.py    # join the two    → data/fate_bench.jsonl
 python scripts/crosscheck_2023.py # audit MingLi-Bench against the primary key
 ```
 
-Add `--check` to `normalize.py` or `charts.py` to validate without writing.
+Every script takes `--check` to validate without writing.
 
 ## Ethics and scope
 

@@ -27,6 +27,7 @@
 
 | 文件 | 内容 |
 |---|---|
+| [`data/fate_bench.jsonl`](./data/fate_bench.jsonl) | **合并好的全量，一行一题** —— 题目、答案、生辰、两种命盘都内联。从这个文件开始。 |
 | [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 255 道题 —— 题干、选项、答案、生辰、源 URL |
 | [`data/cases.json`](./data/cases.json) | 54 个命例 —— 生辰 + 排好的八字与紫微盘 |
 | [`data/human_baseline.json`](./data/human_baseline.json) | 真人命理师在同一批题上的成绩 |
@@ -119,10 +120,11 @@ pip install lunar-python py-iztro
 
 python scripts/normalize.py       # 源文本 → data/hkjfma_qa.json
 python scripts/charts.py          # 生辰   → data/cases.json
+python scripts/export_jsonl.py    # 两者合并 → data/fate_bench.jsonl
 python scripts/crosscheck_2023.py # 用一手答案表审计 MingLi-Bench
 ```
 
-`normalize.py` 和 `charts.py` 加 `--check` 可以只校验不写文件。
+每个脚本都支持 `--check`，只校验不写文件。
 
 ## 伦理与边界
 
