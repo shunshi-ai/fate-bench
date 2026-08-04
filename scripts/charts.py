@@ -50,16 +50,45 @@ def time_index(hour: int) -> int:
     return (hour + 1) // 2
 
 
-def bazi(y, m, d, hh, mi):
+def bazi(y, m, d, hh, mi, gender=None):
+    """Four pillars, plus the things a practitioner would actually reason with.
+
+    The pillars alone are not a usable chart. Nearly every question here is "in which year did X
+    happen", and that is answered off the **decade luck cycles** (大運) — without them the chart is
+    a snapshot with no time axis. The ten gods (十神) are the relational labels practitioners think
+    in; hidden stems (藏干) carry the rest.
+    """
     s = Solar.fromYmdHms(y, m, d, hh, mi, 0)
     lunar = s.getLunar()
     e = lunar.getEightChar()
-    return {
+    out = {
         "pillars": {"year": e.getYear(), "month": e.getMonth(),
                     "day": e.getDay(), "hour": e.getTime()},
         "day_master": e.getDayGan(),
         "lunar": str(lunar).replace("　", " "),
+        "ten_gods": {
+            "year": e.getYearShiShenGan(), "month": e.getMonthShiShenGan(),
+            "day": "日主", "hour": e.getTimeShiShenGan(),
+        },
+        "hidden_stem_gods": {
+            "year": e.getYearShiShenZhi(), "month": e.getMonthShiShenZhi(),
+            "day": e.getDayShiShenZhi(), "hour": e.getTimeShiShenZhi(),
+        },
+        "nayin": {"year": e.getYearNaYin(), "month": e.getMonthNaYin(),
+                  "day": e.getDayNaYin(), "hour": e.getTimeNaYin()},
     }
+    if gender in ("男", "女"):
+        yun = e.getYun(1 if gender == "男" else 0)
+        out["luck_cycles"] = {
+            "starts": yun.getStartSolar().toYmd(),
+            "direction": "順行" if yun.isForward() else "逆行",
+            # 第一段是童限（起运前），没有干支，留着但标出来
+            "cycles": [{"ganzhi": c.getGanZhi() or None,
+                        "years": [c.getStartYear(), c.getEndYear()],
+                        "ages": [c.getStartAge(), c.getEndAge()]}
+                       for c in yun.getDaYun()],
+        }
+    return out
 
 
 def ziwei(y, m, d, hh, gender):
@@ -73,11 +102,18 @@ def ziwei(y, m, d, hh, gender):
                 "branch": p.earthly_branch,
                 "stem": p.heavenly_stem,
                 "is_body_palace": p.is_body_palace,
+                # 大限：这一宫管哪个年龄段。跟八字的大運同一个作用 —— 给命盘一条时间轴
+                "decadal_ages": list(p.decadal.range) if p.decadal else None,
                 "major_stars": [
                     {"name": s.name, "brightness": s.brightness or None,
                      "mutagen": s.mutagen or None} for s in p.major_stars
                 ],
-                "minor_stars": [s.name for s in p.minor_stars],
+                "minor_stars": [
+                    {"name": s.name, "brightness": s.brightness or None,
+                     "mutagen": s.mutagen or None} for s in p.minor_stars
+                ],
+                "adjective_stars": [s.name for s in p.adjective_stars],
+                "changsheng12": p.changsheng12,
             }
             for p in chart.palaces
         ],
@@ -122,7 +158,7 @@ def build():
             out.append(c)
             continue
 
-        charts["bazi"] = bazi(b["year"], b["month"], b["day"], hh, mi)
+        charts["bazi"] = bazi(b["year"], b["month"], b["day"], hh, mi, b.get("gender"))
         if g := b.get("gender"):
             charts["ziwei"] = ziwei(b["year"], b["month"], b["day"], hh, g)
         c["charts"] = charts

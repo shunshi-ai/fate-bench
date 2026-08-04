@@ -2,14 +2,13 @@
 
 # fate-bench
 
-**Can a model out-predict a professional fortune teller? There is a public record of what the
-professionals scored — so now you can check.**
+**Open dataset of Chinese metaphysics — real birth charts paired with documented life events.**
 
 [![Data License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](./LICENSE-DATA)
 [![Code License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](./LICENSE-CODE)
 [![Questions](https://img.shields.io/badge/Questions-255-green.svg)](./data/fate_bench.jsonl)
+[![People](https://img.shields.io/badge/People-54-blue.svg)](./data/cases.json)
 [![Editions](https://img.shields.io/badge/Editions-2010--2025-orange.svg)](./data/raw/hkjfma/INVENTORY.md)
-[![Human baseline](https://img.shields.io/badge/Best%20human-65%25-blue.svg)](./data/human_baseline.json)
 
 English | [中文](./README_zh.md)
 
@@ -17,53 +16,27 @@ English | [中文](./README_zh.md)
 
 ---
 
-For sixteen years, practising fortune tellers have entered an annual competition: a real person's
-birth data, that person's verified life history, and multiple-choice questions whose answers are
-sealed until the contest closes. Entrants compete in public, under their own names, for a trophy.
-The organizer publishes the answer key — **and the winners' scores**.
+## What this is
 
-That makes this one of the few datasets in the domain where "how well do humans actually do at
-this?" has a documented answer. The best human score on record is **26 / 40 (65%)**, against a
-25% floor.
+Most public data about BaZi (八字) and Zi Wei Dou Shu (紫微斗数) is one of two things: birth charts
+with nothing attached, or interpretations with nothing to check them against. Neither is much use
+as data.
 
-**255 questions · 54 people · every one with an official answer key · seven editions with a
+This is **birth data paired with documented life outcomes** — the year someone divorced, started a
+business, lost a parent, was diagnosed with cancer — recorded as multiple-choice items with a
+single correct answer, published by the party that knew the answer in advance.
+
+The source is an annual competition that has run since 2010. Practising fortune tellers enter in
+public, under their own names, for a trophy; each edition is set by a panel of masters who supply
+a real person's birth data and that person's verified history, and the organizer publishes the
+answer key after the contest closes — **along with what the entrants scored**.
+
+**255 questions · 54 people · every item with an official answer key · seven editions with a
 published human score.**
 
-Because each record carries a full birth date, hour, and place, the same person can be rendered as
-a BaZi chart, a Zi Wei Dou Shu chart, or a Western natal chart. The data is not tied to one
-system — and neither are the questions, which ask what happened to a person, not what a chart says.
-
-## Quick start
-
-```bash
-git clone https://github.com/shunshi-ai/fate-bench.git && cd fate-bench
-
-export FB_API_KEY=sk-...
-python eval.py --base-url https://api.deepseek.com --model deepseek-chat
-```
-
-Any OpenAI-compatible endpoint works — there is no model registry to keep up to date. One
-reference run, so you can tell whether your setup is working:
-
-```
-  deepseek-chat           30.8%   (77/250)
-  人类最好成绩             56.6%   (90/159)  2010、2011、2012、2022、2023、2024 届
-  随机猜                  24.5%
-```
-
-DeepSeek-chat clears chance by six points and sits **26 points below the best human**. Treat that
-as one data point, not a verdict on a model or on the practice: it is a single run of a single
-model at temperature 0, and the human figure is a ceiling drawn from published winners rather
-than an average entrant.
-
-`--year 2024` scores a single edition, so the human number is exactly comparable.
-`--limit N` for a smoke test. `--no-charts` withholds the precomputed charts, which turns the task
-back into "convert this date to a chart, then read it" — arithmetic a library already does, which
-is why the charts are included by default.
-
-**There is no leaderboard here, by choice.** Leaderboards go stale in weeks and turn into a
-maintenance job; the interesting comparison is against the people who did this for a trophy, and
-that number does not change.
+Each record carries a full birth date, hour, and place, so the same person can be rendered as a
+BaZi chart, a Zi Wei Dou Shu chart, or a Western natal chart. The data is not tied to one system,
+and neither are the questions — they ask what happened to a person, not what a chart says.
 
 ## Data
 
@@ -90,6 +63,27 @@ that number does not change.
   "options": [{"letter": "A", "text": "父親在地震中死亡"}, "…"],
   "answer": "A",
   "num_options": 5
+}
+```
+
+### What a chart contains
+
+`cases.json` does not stop at the four pillars. Four pillars alone are a snapshot with no time
+axis, and most questions here are *"in which year did X happen"* — which is read off the decade
+luck cycles. So each case carries what a practitioner would actually work from:
+
+| BaZi | Zi Wei Dou Shu |
+|---|---|
+| four pillars, day master | twelve palaces with stem and branch |
+| ten gods (十神) per pillar | major stars with brightness and the four transformations (四化) |
+| hidden-stem gods (藏干十神) | minor and adjective stars, 長生十二神 |
+| na yin (納音) | body palace, soul and body stars, five-elements class |
+| **decade luck cycles (大運)** — ganzhi, year range, age range, direction, start date | **decadal age range (大限) per palace** |
+
+```json
+"luck_cycles": {
+  "starts": "1974-08-02", "direction": "順行",
+  "cycles": [{"ganzhi": "辛亥", "years": [1974, 1983], "ages": [3, 12]}, "…"]
 }
 ```
 
@@ -207,10 +201,10 @@ birth hour is *what the question asks you to infer*.
   human-computed reference for the same birth moment.
 - **One item type inverts the task.** The 4th edition asks solvers to infer the *birth hour* from
   the life history, rather than predict events from the chart.
-- **Five items cannot be answered from this data, and `eval.py` drops them by default.** The
-  organizer printed that case's birth data on the paper but never on the web page, so entrants in
-  2018 had it and we do not. Scoring a model on them means giving it less than the humans had.
-  `--include-unanswerable` keeps them.
+- **Five items cannot be answered from this data at all.** The organizer printed that case's
+  birth data on the paper but never on the web page, so the 2018 entrants had it and we do not.
+  They keep their answer key and are flagged `birth_info.missing`; anything scoring this dataset
+  should drop them, since using them means working from less than the humans had.
 - **Zi Wei star names come out in Simplified Chinese**, from `py-iztro`, while the questions are
   in Traditional. Nothing is transliterated in either direction.
 - **Topic labels come from two different hands.** All 255 items carry a `category` drawn from
@@ -232,9 +226,6 @@ python scripts/charts.py          # birth data   → data/cases.json
 python scripts/categorize.py      # topic labels    → data/hkjfma_categories.json
 python scripts/export_jsonl.py    # join everything → data/fate_bench.jsonl
 python scripts/crosscheck_vendor.py  # audit MingLi-Bench against the primary answer sheets
-
-# and to score a model against the human baseline:
-python eval.py --base-url ... --model ...
 ```
 
 Every script takes `--check` to validate without writing.
@@ -261,24 +252,3 @@ Code under [MIT](./LICENSE-CODE). Compiled data under [CC BY 4.0](./LICENSE-DATA
 extend to the underlying source material — see [SOURCES.md](./data/raw/hkjfma/SOURCES.md).
 
 Curated by [Shunshi.AI](https://shunshi.ai/en).
-
-## Reference run
-
-[`results/deepseek-chat.jsonl`](./results/deepseek-chat.jsonl) holds every answer from the run
-quoted above — the model's full reasoning, its parsed choice, and whether it was right. It is
-kept so the score is checkable rather than asserted, not as the start of a leaderboard.
-
-By edition, against the best published human score for that edition:
-
-| Year | deepseek-chat | Best human |
-|---|---|---|
-| 2010 | 4 / 9 | 6 / 9 |
-| 2011 | 3 / 15 | 8 / 15 |
-| 2012 | 2 / 15 | 8 / 15 |
-| 2018 | 13 / 35 * | 19 / 40 |
-| 2022 | 19 / 40 | 21 / 40 |
-| 2023 | 14 / 40 | 21 / 40 |
-| 2024 | 9 / 40 | **26 / 40** |
-
-\* five items dropped as unanswerable, so this row is not directly comparable.
-2013 and 2025 published no results.
