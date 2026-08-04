@@ -2,26 +2,58 @@
 
 # fate-bench
 
-**命理开放数据集 —— 真实命盘配已核实的人生事件。**
+**模型能不能比职业命理师算得准？职业命理师考了多少分，是有公开记录的——现在可以直接比。**
 
 [![Data License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](./LICENSE-DATA)
 [![Code License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](./LICENSE-CODE)
+[![Questions](https://img.shields.io/badge/Questions-255-green.svg)](./data/fate_bench.jsonl)
+[![Editions](https://img.shields.io/badge/Editions-2010--2025-orange.svg)](./data/raw/hkjfma/INVENTORY.md)
+[![Human baseline](https://img.shields.io/badge/Best%20human-65%25-blue.svg)](./data/human_baseline.json)
 
 [English](./README.md) | 中文
 
 </div>
 
-## 这是什么
+---
 
-网上关于八字和紫微斗数的公开数据，基本只有两类：有命盘没结果，或者有解读没真值。两类都没法拿来做评测。
+十六年来，执业命理师每年参加一场比赛：给一个真人的生辰、这个人已核实的人生经历，出成单选题，
+答案封存到赛后才公布。参赛者实名下场，冲着奖杯来。主办方赛后公布答案——**连得奖者的分数一起公布**。
 
-这个仓库收集的是**生辰配已核实的人生结局** —— 某人哪一年离婚、哪一年创业、哪一年父母过世、
-哪一年确诊癌症 —— 做成单选题，答案由事先就知道答案的一方公布。
+所以这是这个领域里极少数「真人到底能做到几分」有据可查的数据。**有记录的人类最高分是
+26 / 40（65%）**，地板是 25%。
 
-**255 道题，54 个命例，每一题都有官方答案——而且有职业命理师在同一批题上考了多少分的公开记录。**
+**255 道题 · 54 个命例 · 每题都有官方答案 · 七届有公开的人类成绩。**
 
 每条记录都带完整的出生年月日、时辰、地点，所以同一个人既能排八字，也能排紫微，也能排西洋星盘。
-数据本身不绑定任何一个体系 —— 题目也不绑定：问的是这个人身上发生了什么，不是命盘上写了什么。
+数据本身不绑定任何一个体系——题目也不绑定：问的是这个人身上发生了什么，不是命盘上写了什么。
+
+## 快速开始
+
+```bash
+git clone https://github.com/shunshi-ai/fate-bench.git && cd fate-bench
+
+export FB_API_KEY=sk-...
+python eval.py --base-url https://api.deepseek.com --model deepseek-chat
+```
+
+任何 OpenAI 兼容端点都能跑，不需要维护一份模型清单。这是一次参照跑分，方便你判断自己有没有装对：
+
+```
+  deepseek-chat           30.8%   (77/250)
+  人类最好成绩             56.6%   (90/159)  2010、2011、2012、2022、2023、2024 届
+  随机猜                  24.5%
+```
+
+deepseek-chat 比随机高 6 个点，**比人类最好成绩低 26 个点**。这只是一个数据点，不是对某个模型
+或对这门术数的判决：单模型、单次、temperature 0，而人类那个数字是「公布出来的得奖者」的天花板，
+不是普通参赛者的平均水平。
+
+`--year 2024` 只跑一届，这样人类那个数字是严格可比的。`--limit N` 小跑验证。
+`--no-charts` 不给预排好的命盘——那样考的就变成「先把生日换算成命盘、再来读」，
+而换算是库早就做好的算术，所以默认给盘。
+
+**这里没有排行榜，是故意的。** 排行榜几周就过期，还得永远维护；真正有意思的比较对象是那些
+为了奖杯真刀真枪下过场的人，而那个数字不会变。
 
 ## 数据
 
@@ -128,6 +160,9 @@
 - **有几届印了师傅自己排的盘。** 第二届把四柱印在生辰旁边（`壬子年 庚戌月 丁酉日 乙巳時`），
   相当于同一个出生时刻的一份独立人工排盘参照。
 - **有一类题把任务反过来了。** 第四届要求从人生经历反推**出生时辰**，而不是从盘推事件。
+- **有五题用这份数据答不了，`eval.py` 默认剔除。** 主办方把那个命例的生辰印在卷子上、
+  没登到网页，所以 2018 年的选手有、我们没有。拿这几题给模型算分，等于让它用比选手更少的
+  资料去比选手的成绩。`--include-unanswerable` 可以保留。
 - **紫微星名是简体**（`py-iztro` 的输出），题目是繁体。两边都没做转换。
 - **分类标签出自两拨人的手。** 255 题都带 `category`，用的是 MingLi-Bench 那套十二类，但
   `category_source` 会告诉你每条的来源：他们标了自己那 160 条，我们补的 95 条走关键词规则
@@ -145,6 +180,9 @@ python scripts/charts.py          # 生辰   → data/cases.json
 python scripts/categorize.py      # 题目分类 → data/hkjfma_categories.json
 python scripts/export_jsonl.py    # 全部合并 → data/fate_bench.jsonl
 python scripts/crosscheck_vendor.py  # 用一手答案表审计 MingLi-Bench
+
+# 跑模型、跟人类基线比：
+python eval.py --base-url ... --model ...
 ```
 
 每个脚本都支持 `--check`，只校验不写文件。
@@ -170,3 +208,23 @@ python scripts/crosscheck_vendor.py  # 用一手答案表审计 MingLi-Bench
 这不延及底层素材本身，见 [SOURCES.md](./data/raw/hkjfma/SOURCES.md)。
 
 由 [顺时 Shunshi.AI](https://shunshi.ai) 整理维护。
+
+## 参照跑分
+
+[`results/deepseek-chat.jsonl`](./results/deepseek-chat.jsonl) 存了上面那次跑分的每一题 ——
+模型的完整推理、解析出的选项、对错。留着是为了让这个分数可核查而不是空口说，
+不是要开排行榜。
+
+按届跟该届公布的人类最好成绩对比：
+
+| 年份 | deepseek-chat | 人类最好 |
+|---|---|---|
+| 2010 | 4 / 9 | 6 / 9 |
+| 2011 | 3 / 15 | 8 / 15 |
+| 2012 | 2 / 15 | 8 / 15 |
+| 2018 | 13 / 35 * | 19 / 40 |
+| 2022 | 19 / 40 | 21 / 40 |
+| 2023 | 14 / 40 | 21 / 40 |
+| 2024 | 9 / 40 | **26 / 40** |
+
+\* 剔除了 5 题不可答，所以这一行不能直接比。2013 与 2025 未公布成绩。

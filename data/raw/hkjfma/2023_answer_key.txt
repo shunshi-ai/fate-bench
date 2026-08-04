@@ -4,7 +4,7 @@
 # 40 题，8 个命例 × 5 题，选项 A–D
 #
 # 用途：这一届 MingLi-Bench 已经转录过。留着这份一手答案，是为了「审计」而不是「继承」
-# 他们的转录 —— 见 scripts/crosscheck_2023.py。
+# 他们的转录 —— 见 scripts/crosscheck_vendor.py。
 命例一  七仙羽 老師     1 B   2 C   3 B   4 A   5 D
 命例二  弦玥 老師       6 A   7 B   8 B   9 D  10 D
 命例三  李子辰 老師    11 D  12 D  13 C  14 C  15 D
