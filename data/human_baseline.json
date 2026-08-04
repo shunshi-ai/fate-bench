@@ -4,7 +4,10 @@
   "Only the top finishers' scores are published. The mean over all entrants is not known for any edition, so these numbers are a ceiling, not an average.",
   "Entrant counts are not published for most editions, so the ceiling is not comparable across editions: a top score drawn from 200 entrants is a higher-order statistic than the same score drawn from 20.",
   "From the 9th edition on, the official ranking is not the raw score. The rule is diving-style: each entrant's best-scoring case and worst-scoring case are dropped, leaving the middle six cases (30 of 40 questions). Both figures are given below where published; `raw` is the one comparable to running a model over all items in this dataset.",
-  "Editions differ in option count, so the random-guess baseline differs (see `random_baseline`)."
+  "A consequence the organizer states outright on the 2022 sheet: the highest raw total is not necessarily the champion. In 2022 the best raw score, 21/40, belonged to a runner-up. `best_raw_overall` records the highest raw score published for an edition regardless of who placed where — that is the figure to compare a model against.",
+  "Editions differ in option count, so the random-guess baseline differs (see `random_baseline`).",
+  "For 2022–2025 the questions in this dataset come via MingLi-Bench while these scores are transcribed from the organizer's own tables — two independent sources. Three of those four editions have a primary answer sheet and were audited item by item (scripts/crosscheck_vendor.py); 2025 has none.",
+  "The per-case breakdowns published for 2023 and 2024 are parenthesised as (2:n)…(9:n) — eight cases numbered 2 through 9, not 1 through 8. Verified: those eight sum to the printed total. A leading (1:0) appears on the 2023 sheet and is excluded from the total."
  ],
  "editions": [
   {
@@ -68,6 +71,7 @@
    "options_per_item": 4,
    "random_baseline": 0.25,
    "scoring": "official ranking drops each entrant's best and worst case, leaving 30 of 40 questions; the raw 40-question total is published alongside it",
+   "best_raw_overall": {"score": 19, "of": 40, "accuracy": 0.475, "placed": "冠軍"},
    "results": [
     {"rank": "冠軍", "winners": 3, "score": 15, "of": 30, "accuracy": 0.5,
      "raw": {"score_range": [19, 19], "of": 40, "accuracy": 0.475}},
@@ -81,6 +85,105 @@
    "source_text": "得獎名單表格：名次 / 名字 / 地區 / 總分 / 刪除最高分 / 刪除最低分 / 最終成績",
    "source_image": "data/raw/hkjfma/images/2018_ans_058_02.jpg",
    "source_url": "https://hkjfma.org/過往活動/2018第九屆算命比賽題目/2018第九屆全球算命師比賽答案及得獎名單"
+  },
+  {
+   "edition": 13,
+   "year": 2022,
+   "items": 40,
+   "options_per_item": 4,
+   "random_baseline": 0.25,
+   "scoring": "diving-style: each entrant's best and worst case are dropped, leaving 30 of 40 questions",
+   "best_raw_overall": {"score": 21, "of": 40, "accuracy": 0.525,
+                        "placed": "亞軍 — not the champion"},
+   "results": [
+    {"rank": "冠軍", "winners": 2, "score": 16, "of": 30, "accuracy": 0.533,
+     "raw": {"score_range": [19, 19], "of": 40, "accuracy": 0.475}},
+    {"rank": "亞軍", "winners": 9, "score": 15, "of": 30, "accuracy": 0.5,
+     "raw": {"score_range": [19, 21], "of": 40, "accuracy_range": [0.475, 0.525]}},
+    {"rank": "季軍", "winners": 11, "score": 14, "of": 30, "accuracy": 0.467,
+     "raw": {"score_range": [17, 19], "of": 40, "accuracy_range": [0.425, 0.475]}}
+   ],
+   "organizer_note": "由於比賽之賽制,是把最高分與最低分的兩個命例之分數刪除,這個制度是保障出題之老師名譽,因為有出題老師之學生參賽.所以最後結果之成績,是有所變化.計分制度早定,所以總分最高的,未必是冠軍,現把三位成績公開,以示証明.",
+   "source_image": "data/raw/hkjfma/images/2022_ans_022_02.jpg",
+   "source_url": "https://hkjfma.org/2022/06/2022壬寅年第十三屆全球算命師大賽"
+  },
+  {
+   "edition": 14,
+   "year": 2023,
+   "items": 40,
+   "options_per_item": 4,
+   "random_baseline": 0.25,
+   "scoring": "diving-style: each entrant's best and worst case are dropped, leaving 30 of 40 questions",
+   "best_raw_overall": {"score": 21, "of": 40, "accuracy": 0.525, "placed": "冠軍"},
+   "results": [
+    {"rank": "冠軍", "winners": 7, "score": 15, "of": 30, "accuracy": 0.5,
+     "raw": {"score_range": [18, 21], "of": 40, "accuracy_range": [0.45, 0.525]}},
+    {"rank": "亞軍", "winners": 12, "score": 14, "of": 30, "accuracy": 0.467,
+     "raw": {"score_range": [18, 19], "of": 40, "accuracy_range": [0.45, 0.475]}},
+    {"rank": "季軍", "winners": 24, "score": 13, "of": 30, "accuracy": 0.433,
+     "raw": {"score_range": [16, 19], "of": 40, "accuracy_range": [0.4, 0.475]}}
+   ],
+   "per_case_scores": {
+    "note": "Per-case totals for the seven champions, out of 5 each. Keys are the sheet's own case numbering, 2–9.",
+    "champions": [
+     {"name": "林沐昀", "region": "高雄", "total": 21,
+      "by_case": {"2": 2, "3": 3, "4": 4, "5": 2, "6": 3, "7": 2, "8": 2, "9": 3}},
+     {"name": "林澤昊", "region": "廣東", "total": 20,
+      "by_case": {"2": 1, "3": 2, "4": 3, "5": 3, "6": 1, "7": 4, "8": 4, "9": 2}},
+     {"name": "Renee", "region": "香港", "total": 19,
+      "by_case": {"2": 2, "3": 2, "4": 2, "5": 1, "6": 3, "7": 3, "8": 3, "9": 3}},
+     {"name": "May Phee", "region": "大馬", "total": 19,
+      "by_case": {"2": 1, "3": 3, "4": 0, "5": 1, "6": 4, "7": 3, "8": 3, "9": 4}},
+     {"name": "林书宇", "region": "新加坡", "total": 19,
+      "by_case": {"2": 1, "3": 2, "4": 0, "5": 1, "6": 3, "7": 4, "8": 4, "9": 4}},
+     {"name": "Juliaaa", "region": "江蘇", "total": 18,
+      "by_case": {"2": 3, "3": 3, "4": 0, "5": 2, "6": 2, "7": 2, "8": 3, "9": 3}},
+     {"name": "吳建森", "region": "大陸", "total": 18,
+      "by_case": {"2": 2, "3": 3, "4": 0, "5": 2, "6": 2, "7": 3, "8": 3, "9": 3}}
+    ]
+   },
+   "source_image": "data/raw/hkjfma/images/2023_ans_021_02.jpg",
+   "source_url": "https://hkjfma.org/過往活動/2023年第十四屆全球算命師大賽答案及得獎名單"
+  },
+  {
+   "edition": 15,
+   "year": 2024,
+   "items": 40,
+   "options_per_item": 4,
+   "random_baseline": 0.25,
+   "scoring": "diving-style: each entrant's best and worst case are dropped, leaving 30 of 40 questions",
+   "best_raw_overall": {"score": 26, "of": 40, "accuracy": 0.65, "placed": "冠軍"},
+   "results": [
+    {"rank": "冠軍", "winners": 1, "score": 20, "of": 30, "accuracy": 0.667,
+     "raw": {"score_range": [26, 26], "of": 40, "accuracy": 0.65}},
+    {"rank": "亞軍", "winners": 4, "score": 19, "of": 30, "accuracy": 0.633,
+     "raw": {"score_range": [23, 26], "of": 40, "accuracy_range": [0.575, 0.65]}},
+    {"rank": "季軍", "winners": 8, "score": 18, "of": 30, "accuracy": 0.6,
+     "raw": {"score_range": [22, 24], "of": 40, "accuracy_range": [0.55, 0.6]}}
+   ],
+   "per_case_scores": {
+    "note": "Per-case totals out of 5 each, for every published finisher. Keys are the sheet's own case numbering, 2–9.",
+    "champions": [
+     {"name": "汪子琪", "region": "大陸", "total": 26, "rank": "冠軍",
+      "by_case": {"2": 4, "3": 5, "4": 3, "5": 2, "6": 1, "7": 3, "8": 3, "9": 5}},
+     {"name": "李沁雪", "region": "大陸", "total": 26, "rank": "亞軍",
+      "by_case": {"2": 4, "3": 5, "4": 2, "5": 4, "6": 2, "7": 3, "8": 3, "9": 3}},
+     {"name": "苏思危", "region": "廣東", "total": 23, "rank": "亞軍",
+      "by_case": {"2": 4, "3": 4, "4": 4, "5": 2, "6": 1, "7": 0, "8": 4, "9": 4}}
+    ]
+   },
+   "source_image": "data/raw/hkjfma/images/2024_ans_015_02.jpeg",
+   "source_url": "https://hkjfma.org/2024/06/2024年第十五屆-全球算命師比賽"
+  },
+  {
+   "edition": 16,
+   "year": 2025,
+   "items": 40,
+   "options_per_item": 4,
+   "random_baseline": 0.25,
+   "scoring": null,
+   "results": null,
+   "note": "As of August 2026 hkjfma.org publishes this edition's question paper and award-ceremony photographs but no results table and no answer sheet. The 40 items are in this dataset via MingLi-Bench; they are the only ones with neither a human baseline nor an independent audit."
   }
  ],
  "editions_scored_but_not_in_this_dataset": [

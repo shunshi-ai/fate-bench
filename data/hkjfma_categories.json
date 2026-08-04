@@ -1,0 +1,381 @@
+{
+ "about": "Topic labels for the 94 HKJFMA items, produced by scripts/categorize.py. MingLi-Bench's own labels are not repeated here; normalize.py takes those straight from the vendored data. Measured agreement between these rules and MingLi-Bench's human annotator: 76%.",
+ "labels": {
+  "hkjfma_2010_01": {
+   "category": "灾劫",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2010_02": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2010_03": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2010_04": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2010_05": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2010_06": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2010_07": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2010_08": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2010_09": {
+   "category": "子女",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_01": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_02": {
+   "category": "运势",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2011_03": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_04": {
+   "category": "子女",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_05": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_06": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_07": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_08": {
+   "category": "性格",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_09": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_10": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_11": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_12": {
+   "category": "家庭",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2011_13": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2011_14": {
+   "category": "家庭",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2011_15": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_01": {
+   "category": "官非",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_02": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_03": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_04": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_05": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_06": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_07": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_08": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_09": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_10": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_11": {
+   "category": "运势",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_12": {
+   "category": "子女",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_13": {
+   "category": "灾劫",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2012_14": {
+   "category": "健康",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2012_15": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_01": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_02": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_03": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_04": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_05": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_06": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_07": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_08": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_09": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_10": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_11": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_12": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_13": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_14": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2013_15": {
+   "category": "性格",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_01": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_02": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_03": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_04": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_05": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_06": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_07": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_08": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_09": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_10": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_11": {
+   "category": "事业",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2018_12": {
+   "category": "外貌",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2018_13": {
+   "category": "家庭",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2018_14": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_15": {
+   "category": "子女",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_16": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_17": {
+   "category": "子女",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_18": {
+   "category": "子女",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_19": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_20": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_21": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_22": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_23": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_24": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_25": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_26": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_27": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_28": {
+   "category": "性格",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_29": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_30": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_31": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_32": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_33": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_34": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_35": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_36": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_37": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_38": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_39": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2018_40": {
+   "category": "婚姻",
+   "source": "hand-labelled (this repo)"
+  }
+ }
+}

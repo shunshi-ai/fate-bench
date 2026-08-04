@@ -36,7 +36,8 @@ system — and neither are the questions, which ask what happened to a person, n
 | [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 255 questions — stem, options, answer, birth data, source URL |
 | [`data/cases.json`](./data/cases.json) | 54 people — birth data plus computed BaZi and Zi Wei charts |
 | [`data/human_baseline.json`](./data/human_baseline.json) | what human masters scored on these same questions |
-| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | cleaned source text, transcribed answer keys, 63 archived source images |
+| [`data/hkjfma_categories.json`](./data/hkjfma_categories.json) | topic label per HKJFMA item, with how each was assigned |
+| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | cleaned source text, transcribed answer keys, 76 archived source images |
 | [`data/vendor/minglibench/`](./data/vendor/minglibench/) | MingLi-Bench, vendored unmodified under MIT |
 
 ```json
@@ -74,7 +75,10 @@ repository works backwards through the earlier ones.
 | 3rd | 2012 | 15 | 3 | A–D | text |
 | 4th | 2013 | 16 | 4 | A–D | text |
 | 9th | 2018 | 40 | 9 | A–D | transcribed from the published photograph |
-| 13th–16th | 2022–2025 | 160 | 32 | A–D | via MingLi-Bench |
+| 13th | 2022 | 40 | 8 | A–D | via MingLi-Bench, audited against the organizer's sheet |
+| 14th | 2023 | 40 | 8 | A–D | via MingLi-Bench, audited against the organizer's sheet |
+| 15th | 2024 | 40 | 8 | A–D | via MingLi-Bench, audited against the organizer's sheet |
+| 16th | 2025 | 40 | 8 | A–D | via MingLi-Bench — no sheet published, unaudited |
 
 An edition is usable only if **both** its questions and its official answer key are public.
 Several are not — the full audit, including why each excluded edition was excluded, is in
@@ -100,6 +104,14 @@ is a documented answer to "how well do humans actually do at this?"
 | 3rd | 2012 | 15 | A–D | **8 / 15** (53.3%) | 25% |
 | 4th | 2013 | 16 | A–D | not published | 25% |
 | 9th | 2018 | 40 | A–D | **19 / 40** (47.5%) | 25% |
+| 13th | 2022 | 40 | A–D | **21 / 40** (52.5%) | 25% |
+| 14th | 2023 | 40 | A–D | **21 / 40** (52.5%) | 25% |
+| 15th | 2024 | 40 | A–D | **26 / 40** (65.0%) | 25% |
+| 16th | 2025 | 40 | A–D | not published | 25% |
+
+Seven of the nine editions in this dataset have one. Best human scores land between 47% and 67%
+against a 20–25% floor — above chance in every edition that published results, and well short of
+solved in all of them.
 
 Read these as a **ceiling, not an average**. Only the top finishers' scores were published; the
 mean over all entrants is unknown for every edition, and entrant counts are mostly unpublished, so
@@ -108,8 +120,14 @@ a top score from a large field is not comparable to the same score from a small 
 Two details matter if you plan to compare a model against these. From the 9th edition on, the
 official ranking is diving-style — each entrant's best and worst case are dropped, leaving 30 of
 40 questions — so the 2018 champions' *official* result is 15/30 while their raw 40-question total
-is 19. The raw figure is the one comparable to running a model over this dataset. And option counts
+is 19. The column above is the raw figure, the one comparable to running a model over this dataset.
+A consequence the organizer spells out on the 2022 sheet: **the highest raw total is not
+necessarily the champion** — in 2022 the best raw score belonged to a runner-up. And option counts
 differ by edition, so the random-guess floor moves.
+
+For 2022–2025 the questions come via MingLi-Bench while these scores are transcribed from the
+organizer's own tables — two independent sources. The 2023 and 2024 sheets also publish each
+finisher's **per-case** score, which is in `human_baseline.json` too.
 
 Full detail, caveats, and provenance in
 [`data/human_baseline.json`](./data/human_baseline.json).
@@ -121,9 +139,11 @@ compared against the organizer's published key — `第一條: 1a, 2e, 3e` for 2
 block for 2013, the handwritten answer sheet for 2018. All five match exactly.
 
 **MingLi-Bench's transcription was audited, not inherited.** We hold the organizer's own
-handwritten answer sheet for 2023, an edition MingLi-Bench already covers. Both their scraped
-source text and their published `data.json` agree with it on **40 of 40** items
-([`scripts/crosscheck_2023.py`](./scripts/crosscheck_2023.py)).
+handwritten answer sheets for three of the four editions MingLi-Bench covers — 2022, 2023 and
+2024. Both their scraped source text and their published `data.json` agree with those sheets on
+**120 of 120** items ([`scripts/crosscheck_vendor.py`](./scripts/crosscheck_vendor.py)). The
+2025 edition has no published answer sheet, so its 40 items remain unaudited; that is stated
+rather than glossed over.
 
 **Charts are computed by third parties.** `lunar-python` for BaZi and `py-iztro` for Zi Wei —
 the latter being the same iztro implementation MingLi-Bench uses. Ground truth should not come
@@ -152,6 +172,14 @@ birth hour is *what the question asks you to infer*.
   the life history, rather than predict events from the chart.
 - **Zi Wei star names come out in Simplified Chinese**, from `py-iztro`, while the questions are
   in Traditional. Nothing is transliterated in either direction.
+- **Topic labels come from two different hands.** All 255 items carry a `category` drawn from
+  MingLi-Bench's twelve-label taxonomy, but `category_source` says where each came from:
+  MingLi-Bench annotated their 160, and the 95 added here were labelled by keyword rules
+  (`scripts/categorize.py`) with nine hand-corrections. Run against MingLi-Bench's 160 human
+  labels, those rules reproduce the human choice **76%** of the time — treat per-topic slices as
+  approximate, not as one annotator's consistent judgement. One item is deliberately left
+  unlabelled: the 2013 question that asks you to infer the birth hour is about the chart itself,
+  not about any facet of a life.
 
 ## Reproducing
 
@@ -160,8 +188,9 @@ pip install lunar-python py-iztro
 
 python scripts/normalize.py       # source text  → data/hkjfma_qa.json
 python scripts/charts.py          # birth data   → data/cases.json
-python scripts/export_jsonl.py    # join the two    → data/fate_bench.jsonl
-python scripts/crosscheck_2023.py # audit MingLi-Bench against the primary key
+python scripts/categorize.py      # topic labels    → data/hkjfma_categories.json
+python scripts/export_jsonl.py    # join everything → data/fate_bench.jsonl
+python scripts/crosscheck_vendor.py  # audit MingLi-Bench against the primary answer sheets
 ```
 
 Every script takes `--check` to validate without writing.

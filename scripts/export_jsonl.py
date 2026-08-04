@@ -37,6 +37,7 @@ def build():
             "num_options": q["num_options"],
             "answer": q["answer"],
             "category": q.get("category"),
+            "category_source": q.get("category_source"),
             "birth_info": q["birth_info"],
             "resolved_time": c.get("resolved_time"),
             "charts": c.get("charts"),

@@ -31,7 +31,8 @@
 | [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 255 道题 —— 题干、选项、答案、生辰、源 URL |
 | [`data/cases.json`](./data/cases.json) | 54 个命例 —— 生辰 + 排好的八字与紫微盘 |
 | [`data/human_baseline.json`](./data/human_baseline.json) | 真人命理师在同一批题上的成绩 |
-| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | 清洗后的源文本、转录的答案表、63 张存档原图 |
+| [`data/hkjfma_categories.json`](./data/hkjfma_categories.json) | 每道 HKJFMA 题的分类，及其判定方式 |
+| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | 清洗后的源文本、转录的答案表、76 张存档原图 |
 | [`data/vendor/minglibench/`](./data/vendor/minglibench/) | MingLi-Bench 原样 vendor，MIT 协议 |
 
 ## 来源
@@ -51,7 +52,10 @@
 | 第三届 | 2012 | 15 | 3 | A–D | 文字 |
 | 第四届 | 2013 | 16 | 4 | A–D | 文字 |
 | 第九届 | 2018 | 40 | 9 | A–D | 从公布的照片转录 |
-| 第 13–16 届 | 2022–2025 | 160 | 32 | A–D | 经 MingLi-Bench |
+| 第13届 | 2022 | 40 | 8 | A–D | 经 MingLi-Bench，已用主办方答案表核过 |
+| 第14届 | 2023 | 40 | 8 | A–D | 经 MingLi-Bench，已用主办方答案表核过 |
+| 第15届 | 2024 | 40 | 8 | A–D | 经 MingLi-Bench，已用主办方答案表核过 |
+| 第16届 | 2025 | 40 | 8 | A–D | 经 MingLi-Bench —— 无答案表，未核 |
 
 **题目和官方答案两样都公开**，这一届才收。有几届不满足 ——
 逐届审计（含每一届被排除的具体原因）见 [data/raw/hkjfma/INVENTORY.md](./data/raw/hkjfma/INVENTORY.md)。
@@ -73,13 +77,25 @@
 | 第三届 | 2012 | 15 | A–D | **8 / 15**（53.3%） | 25% |
 | 第四届 | 2013 | 16 | A–D | 未公布 | 25% |
 | 第九届 | 2018 | 40 | A–D | **19 / 40**（47.5%） | 25% |
+| 第13届 | 2022 | 40 | A–D | **21 / 40**（52.5%） | 25% |
+| 第14届 | 2023 | 40 | A–D | **21 / 40**（52.5%） | 25% |
+| 第15届 | 2024 | 40 | A–D | **26 / 40**（65.0%） | 25% |
+| 第16届 | 2025 | 40 | A–D | 未公布 | 25% |
+
+九届里有七届有基线。人类最好成绩落在 47%–67% 之间，地板是 20–25%
+—— 凡公布成绩的届次都明显高于随机，但也都远远谈不上做穿。
 
 **这是天花板，不是平均值。** 只有前几名的分数被公布，各届所有参赛者的均分都不可知；参赛人数
 大多也没公布，所以「大盘子里的最高分」和「小盘子里的同样分数」不能直接比。
 
 要拿模型跟这些数字比，还有两处得注意。第九届起官方名次是跳水式计分 —— 每人删掉最高分和最低分
 的那两个命例，只算中间六例共 30 题 —— 所以 2018 冠军的**官方成绩是 15/30**，而其 40 题原始
-总分是 19。跟「模型跑完整个题库」可比的是后者。另外各届选项数不同，随机基线也跟着变。
+总分是 19。上表给的是原始分，也就是跟「模型跑完整个题库」可比的那个。主办方在 2022 那张表上
+直接写明了一个后果：**总分最高的未必是冠军** —— 2022 的最高原始分就落在亚军身上。另外各届
+选项数不同，随机基线也跟着变。
+
+2022–2025 这四届，题目经 MingLi-Bench 转录，而成绩转录自主办方自己的表格，是两个独立来源。
+2023 和 2024 的表还公布了每人在**每个命例**上的得分，也一并收在 `human_baseline.json` 里。
 
 完整数据、注意事项和出处见 [`data/human_baseline.json`](./data/human_baseline.json)。
 
@@ -88,9 +104,10 @@
 **答案逐字符核对过。** 每一届解析出来的答案串都跟主办方公布的答案比对过 ——
 2010 的 `第一條: 1a, 2e, 3e`、2013 的「答案公報」段、2018 的手写答案表。五届全部完全一致。
 
-**MingLi-Bench 的转录是审计过的，不是继承的。** 我们手上有 2023 那一届组委会自己的手写答案表，
-而这一届 MingLi-Bench 已经转录过。他们的原始抓取文本和他们发布的 `data.json`，
-跟这张表 **40 题全对**（[`scripts/crosscheck_2023.py`](./scripts/crosscheck_2023.py)）。
+**MingLi-Bench 的转录是审计过的，不是继承的。** MingLi-Bench 覆盖四届，我们手上有其中三届
+（2022、2023、2024）主办方自己的手写答案表。他们的原始抓取文本和他们发布的 `data.json`，
+跟这三张表 **120 题全对**（[`scripts/crosscheck_vendor.py`](./scripts/crosscheck_vendor.py)）。
+2025 那届站上没有公布答案表，所以那 40 题未经审计 —— 如实标出，不含糊过去。
 
 **命盘由第三方库排。** 八字用 `lunar-python`，紫微用 `py-iztro`（就是 MingLi-Bench 用的
 那个 iztro 实现）。发 benchmark 的人不该同时提供真值。有三个命例，出题师傅把自己手排的四柱
@@ -112,6 +129,11 @@
   相当于同一个出生时刻的一份独立人工排盘参照。
 - **有一类题把任务反过来了。** 第四届要求从人生经历反推**出生时辰**，而不是从盘推事件。
 - **紫微星名是简体**（`py-iztro` 的输出），题目是繁体。两边都没做转换。
+- **分类标签出自两拨人的手。** 255 题都带 `category`，用的是 MingLi-Bench 那套十二类，但
+  `category_source` 会告诉你每条的来源：他们标了自己那 160 条，我们补的 95 条走关键词规则
+  （`scripts/categorize.py`）外加 9 条人工改判。拿这套规则去跑他们那 160 条人工标注，
+  只能复现 **76%** —— 所以按题型切分的结果当近似看，别当成同一个标注者的一致判断。
+  有一条有意留空：2013 那道反过来推出生时辰的题，问的是命盘本身，不是人生的哪个侧面。
 
 ## 复现
 
@@ -120,8 +142,9 @@ pip install lunar-python py-iztro
 
 python scripts/normalize.py       # 源文本 → data/hkjfma_qa.json
 python scripts/charts.py          # 生辰   → data/cases.json
-python scripts/export_jsonl.py    # 两者合并 → data/fate_bench.jsonl
-python scripts/crosscheck_2023.py # 用一手答案表审计 MingLi-Bench
+python scripts/categorize.py      # 题目分类 → data/hkjfma_categories.json
+python scripts/export_jsonl.py    # 全部合并 → data/fate_bench.jsonl
+python scripts/crosscheck_vendor.py  # 用一手答案表审计 MingLi-Bench
 ```
 
 每个脚本都支持 `--check`，只校验不写文件。

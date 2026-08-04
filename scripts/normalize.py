@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw" / "hkjfma"
 VENDOR = ROOT / "data" / "vendor" / "minglibench"
 OUT = ROOT / "data" / "hkjfma_qa.json"
+LABELS = ROOT / "data" / "hkjfma_categories.json"
 
 SHICHEN = {"子": (23, 1), "丑": (1, 3), "寅": (3, 5), "卯": (5, 7),
            "辰": (7, 9), "巳": (9, 11), "午": (11, 13), "未": (13, 15),
@@ -267,6 +268,10 @@ def scan(text, url, year, *, master_pat=None, method_pat=None, case_pat=None,
             # 误命中（如 2013 的「一生描述」编号列表）由「必须收到 ≥2 个选项」在 flush 里滤掉。
             if 1 <= n <= 60 and len(stem) >= 4:
                 flush()
+                # 2013 第 16 题写成 `問題16: Question 16:` —— 号码那行只有英文标签，
+                # 真正的题干在下一行。不接住就会把 "Question 16:" 当成题干存下来。
+                if re.fullmatch(r"(?:Question|Q)\s*\d+\s*[:：]?", stem, re.I):
+                    stem = next((l.strip() for l in lines[i + 1:i + 3] if l.strip()), stem)
                 cur = {"n": n, "q": stem, "options": []}
                 seen_first_q = True
                 i += 1
@@ -316,6 +321,13 @@ def answers_2018(path):
             re.findall(r"\b(\d{1,2})\s+([A-D])\b", norm(path.read_text(encoding="utf-8")))}
 
 
+# MingLi-Bench 把 2022–2025 四届的题号连编成 1–160，每届 40 题。分界经两条独立证据确认：
+# 一是他们 raw/ 下按年份分开的原文，二是 2022/2023/2024 三届的一手答案表逐题对上
+# （scripts/crosscheck_vendor.py）。
+MLB_YEARS = [(range(1, 41), 2022, 13), (range(41, 81), 2023, 14),
+             (range(81, 121), 2024, 15), (range(121, 161), 2025, 16)]
+
+
 def read_minglibench():
     p = VENDOR / "data.json"
     if not p.exists():
@@ -323,17 +335,20 @@ def read_minglibench():
     items = list(json.loads(p.read_text(encoding="utf-8")).values())[0]
     out = []
     for q in items:
+        year, edition = next(((y, e) for span, y, e in MLB_YEARS
+                              if q["question_number"] in span), (None, None))
         b = dict(q.get("birth_info") or {})
         b.setdefault("calendar_type", "solar")
         opts = [{"letter": o["letter"], "text": o["text"]} for o in q["options"]]
         out.append({
             "id": f"mlb_{q['id']}", "source": "minglibench",
-            "edition": None, "year": None,
+            "edition": edition, "year": year,
             "case_id": f"mlb_{q['case_id']}", "case_index": None,
             "question_number": q.get("question_number"),
             "birth_info": b, "question": q["question"], "question_en": None,
             "options": opts, "num_options": len(opts), "answer": q.get("answer"),
             "master": None, "method": None, "category": q.get("category"),
+            "category_source": "minglibench" if q.get("category") else None,
             "source_url": "https://github.com/DestinyLinker/MingLi-Bench",
         })
     return out
@@ -375,6 +390,21 @@ def collect():
                    per_case_numbering=cfg.get("per_case_numbering", False))
         rows += dedupe(got, year)
     rows += read_minglibench()
+    return apply_categories(rows)
+
+
+def apply_categories(rows):
+    """Merge the topic labels produced by scripts/categorize.py.
+
+    They live in their own file rather than being written straight into the question bank —
+    otherwise re-running this script would silently wipe them.
+    """
+    if not LABELS.exists():
+        return rows
+    labels = json.loads(LABELS.read_text(encoding="utf-8"))["labels"]
+    for r in rows:
+        if lab := labels.get(r["id"]):
+            r["category"], r["category_source"] = lab["category"], lab["source"]
     return rows
 
 
@@ -393,17 +423,22 @@ def dedupe(got, year):
 
 
 def report(rows):
-    by = Counter(r["year"] or "minglibench" for r in rows)
-    print(f"{'edition':<13}{'items':>7}{'answered':>10}{'opts':>9}{'cases':>7}{'bilingual':>11}")
-    print("-" * 57)
-    for k in sorted(by, key=lambda x: (x == "minglibench", str(x))):
-        s = [r for r in rows if (r["year"] or "minglibench") == k]
-        print(f"{str(k):<13}{len(s):>7}{sum(1 for r in s if r['answer']):>10}"
+    by = Counter((r["year"], r["source"]) for r in rows)
+    print(f"{'year':<7}{'source':<13}{'items':>7}{'answered':>10}{'opts':>9}"
+          f"{'cases':>7}{'bilingual':>11}{'category':>10}")
+    print("-" * 74)
+    for year, src in sorted(by, key=lambda k: (k[0] or 0, k[1])):
+        s = [r for r in rows if (r["year"], r["source"]) == (year, src)]
+        print(f"{str(year):<7}{src:<13}{len(s):>7}{sum(1 for r in s if r['answer']):>10}"
               f"{str(sorted({r['num_options'] for r in s})):>9}"
               f"{len({r['case_id'] for r in s}):>7}"
-              f"{sum(1 for r in s if r.get('question_en')):>11}")
-    print("-" * 57)
-    print(f"{'TOTAL':<13}{len(rows):>7}{sum(1 for r in rows if r['answer']):>10}")
+              f"{sum(1 for r in s if r.get('question_en')):>11}"
+              f"{sum(1 for r in s if r.get('category')):>10}")
+    print("-" * 74)
+    print(f"{'TOTAL':<20}{len(rows):>7}{sum(1 for r in rows if r['answer']):>10}"
+          f"{'':>9}{len({r['case_id'] for r in rows}):>7}"
+          f"{sum(1 for r in rows if r.get('question_en')):>11}"
+          f"{sum(1 for r in rows if r.get('category')):>10}")
 
     # 人类基线是手工转录的，题量必须跟解析结果对得上 —— 对不上说明有一边错了
     baseline = json.loads((ROOT / "data" / "human_baseline.json").read_text(encoding="utf-8"))

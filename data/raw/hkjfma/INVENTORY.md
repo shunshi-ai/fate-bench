@@ -76,11 +76,33 @@ It is the only edition that is simultaneously:
 
 That last field does not exist anywhere else in this corpus and allows stratifying by school.
 
-## Cross-check: MingLi-Bench's 2023 transcription holds up
+## Cross-check: MingLi-Bench's transcription holds up
 
-The 2023 key ([`images/2023_ans_021_01.jpg`](./images/2023_ans_021_01.jpg)) is a primary source for
-an edition MingLi-Bench already transcribed, so that transcription could be audited rather than
-inherited. It was, along both paths that can fail independently — their scraped source text and
-their published `data.json` — and both agree with the organizer's sheet on **40 of 40** items.
-Transcribed to [`2023_answer_key.txt`](./2023_answer_key.txt); the check is
-[`scripts/crosscheck_2023.py`](../../../scripts/crosscheck_2023.py).
+MingLi-Bench covers 2022–2025. The organizer published a handwritten answer sheet for three of
+those four editions, so those transcriptions could be audited rather than inherited:
+
+| Edition | Year | Answer sheet | Their raw text | Their `data.json` |
+|---:|---|---|---|---|
+| 13th | 2022 | [`images/2022_ans_022_01.jpg`](./images/2022_ans_022_01.jpg) | 40/40 | 40/40 |
+| 14th | 2023 | [`images/2023_ans_021_01.jpg`](./images/2023_ans_021_01.jpg) | 40/40 | 40/40 |
+| 15th | 2024 | [`images/2024_ans_015_01.jpeg`](./images/2024_ans_015_01.jpeg) | 40/40 | 40/40 |
+| 16th | 2025 | none published | — | — |
+
+Transcribed to `2022_answer_key.txt`, `2023_answer_key.txt`, `2024_answer_key.txt`; the check is
+[`scripts/crosscheck_vendor.py`](../../../scripts/crosscheck_vendor.py). **120 of 120 agree.**
+The 2025 edition's 40 items are the only ones in this dataset with neither an independent audit
+nor a human baseline.
+
+## Results tables (the human baseline)
+
+Separate from the answer keys, the organizer publishes what the winners scored. Those are
+transcribed into [`../../human_baseline.json`](../../human_baseline.json). Sources:
+
+| Year | Image | What it gives |
+|---|---|---|
+| 2018 | `images/2018_ans_058_02.jpg` | totals, dropped-high/low, final scores, regions |
+| 2022 | `images/2022_ans_022_02.jpg` | same, plus a note that the top raw total was *not* the champion |
+| 2023 | `images/2023_ans_021_02/03/04.jpg` | same, plus **per-case** scores for the champions |
+| 2024 | `images/2024_ans_015_02.jpeg` | same, plus per-case scores; highest human score in the corpus (26/40) |
+
+2010–2012 publish theirs as prose on the question page. 2013 and 2025 publish none.
