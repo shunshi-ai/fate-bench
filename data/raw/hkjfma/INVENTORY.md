@@ -44,8 +44,25 @@ the provider line as decoration will silently let them inherit the preceding cas
 | 8th | 2017 | 35 questions published, no key. (Red text on that page marks *question stems*, not answers — an easy misread.) |
 | 10th | 2019 | key never posted. The page titled "答案,得獎名單及統計資料" holds a winners table and AllCounted survey screenshots showing per-option response counts. Response distribution is **not** ground truth — on this material the majority is frequently wrong. |
 | 11th | 2020 | question paper is legible, but both images on the "答案及得獎名單" page are winners tables. No key. |
-| 12th | 2021 | images hosted on a Facebook CDN, not retrievable |
-| 17th | 2026 | held June 2026; key not yet published. Question paper is available and cleanly paginated (`第1-5題` … `第36-40題`) — **revisit once the key is posted** |
+| 12th | 2021 | question paper archived here (9 images), **no answer key ever posted** — the whole site has only two 2021 pages, both the call for entries |
+| 17th | 2026 | held June 2026; question paper archived here (8 images, `第1-5題` … `第36-40題`), key not yet published — **revisit** |
+
+## A correction: 2021 was not unreachable
+
+An earlier pass here recorded the 2021 question paper as hosted on a Facebook CDN and therefore
+not retrievable. That was wrong, and wrong in an avoidable way — the filenames merely *look*
+like Facebook exports (`192170775_10222464528615607_..._n.jpg`); the files themselves sit on
+`hkjfma.org/wp-content/uploads/2021/06/` like every other year's. They are archived here now.
+
+The edition still cannot be used, but for the other reason: no answer key was ever published.
+
+## Editions whose questions are archived but which stay out of the dataset
+
+2014, 2017, 2020, 2021 and 2026 all have a readable question paper and no published answer key.
+The papers are kept under `images/` so that, if the organizer ever posts a key, transcription is
+the only remaining step. They are deliberately **not** in `hkjfma_qa.json`: an item without a
+recorded correct answer is not a benchmark item, and the response distributions that exist for
+some editions are not a substitute (see 2019 above).
 
 ## The 2018 edition is the most valuable single addition
 

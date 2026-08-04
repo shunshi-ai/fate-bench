@@ -30,7 +30,7 @@
 | [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 255 道题 —— 题干、选项、答案、生辰、源 URL |
 | [`data/cases.json`](./data/cases.json) | 54 个命例 —— 生辰 + 排好的八字与紫微盘 |
 | [`data/human_baseline.json`](./data/human_baseline.json) | 真人命理师在同一批题上的成绩 |
-| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | 清洗后的源文本、转录的答案表、46 张存档原图 |
+| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | 清洗后的源文本、转录的答案表、63 张存档原图 |
 | [`data/vendor/minglibench/`](./data/vendor/minglibench/) | MingLi-Bench 原样 vendor，MIT 协议 |
 
 ## 来源

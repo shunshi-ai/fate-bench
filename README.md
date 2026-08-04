@@ -35,7 +35,7 @@ system — and neither are the questions, which ask what happened to a person, n
 | [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 255 questions — stem, options, answer, birth data, source URL |
 | [`data/cases.json`](./data/cases.json) | 54 people — birth data plus computed BaZi and Zi Wei charts |
 | [`data/human_baseline.json`](./data/human_baseline.json) | what human masters scored on these same questions |
-| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | cleaned source text, transcribed answer keys, 46 archived source images |
+| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | cleaned source text, transcribed answer keys, 63 archived source images |
 | [`data/vendor/minglibench/`](./data/vendor/minglibench/) | MingLi-Bench, vendored unmodified under MIT |
 
 ```json

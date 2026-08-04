@@ -19,7 +19,9 @@ Verified by reading them. Titles on the source pages are not reliable — a page
 | `2019_ans_055_*` | 8 | winners table + AllCounted survey-analytics screenshots showing full option text and the distribution of entrants' choices per question | ⚠️ under review |
 | `2020_q_024_*`, `2020_q_049_*` | 8 + 9 | question paper, clean and legible (two URLs, same content) | — (questions) |
 | `2020_ans_048_*` | 2 | **winners list only — no answer key** | ❌ |
+| `2021_q_023_*` | 9 | question paper (phone screenshots, 640×1136); image 01 is the call for entries, 02–09 are the 8 cases | — (questions) |
 | `2023_ans_021_*` | 4 | **complete answer key**, 40 items handwritten in a grid, grouped by case with each contributing master named | ✅ |
+| `2026_q_*` | 8 | question paper, one image per 5 questions, high resolution and cleanly typeset | — (questions) |
 
 The 2023 key is worth noting even though edition 14 is already covered by MingLi-Bench: it is the
 primary source, so it can be used to audit that transcription rather than trusting it.
