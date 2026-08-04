@@ -1,0 +1,102 @@
+{
+ "about": "How well human professional fortune tellers actually scored on these exact questions. Transcribed from the organizer's published results. This is a real human baseline: entrants were practising masters competing publicly under their own names for a trophy, on questions whose answers were sealed until after the contest closed.",
+ "caveats": [
+  "Only the top finishers' scores are published. The mean over all entrants is not known for any edition, so these numbers are a ceiling, not an average.",
+  "Entrant counts are not published for most editions, so the ceiling is not comparable across editions: a top score drawn from 200 entrants is a higher-order statistic than the same score drawn from 20.",
+  "From the 9th edition on, the official ranking is not the raw score. The rule is diving-style: each entrant's best-scoring case and worst-scoring case are dropped, leaving the middle six cases (30 of 40 questions). Both figures are given below where published; `raw` is the one comparable to running a model over all items in this dataset.",
+  "Editions differ in option count, so the random-guess baseline differs (see `random_baseline`)."
+ ],
+ "editions": [
+  {
+   "edition": 1,
+   "year": 2010,
+   "items": 9,
+   "options_per_item": 5,
+   "random_baseline": 0.2,
+   "scoring": "raw — every question counts",
+   "results": [
+    {"rank": "冠軍", "winners": 1, "score": 6, "of": 9, "accuracy": 0.667},
+    {"rank": "亞軍", "winners": 3, "score": 5, "of": 9, "accuracy": 0.556}
+   ],
+   "source_text": "第一名一注獨得, 中六條 / 第二名三注中, 中五條",
+   "source_url": "https://hkjfma.org/2012/09/2010年度全球算命師比賽（第一屆）題目、答案及得獎"
+  },
+  {
+   "edition": 2,
+   "year": 2011,
+   "items": 15,
+   "options_per_item": 5,
+   "random_baseline": 0.2,
+   "scoring": "raw — every question counts",
+   "results": [
+    {"rank": "冠軍", "winners": 1, "score": 8, "of": 15, "accuracy": 0.533},
+    {"rank": "亞軍", "winners": 1, "score": 7, "of": 15, "accuracy": 0.467},
+    {"rank": "季軍", "winners": 3, "score": 6, "of": 15, "accuracy": 0.4}
+   ],
+   "source_text": "第一名中8題:維園阿伯 / 第二名中7題:蔡衡 / 第三名中6題:crypt, Louis Ng, 力王(kan0318)",
+   "source_url": "https://hkjfma.org/2012/09/2011年度全球算命師比賽（第二屆）題目、答案及得獎"
+  },
+  {
+   "edition": 3,
+   "year": 2012,
+   "items": 15,
+   "options_per_item": 4,
+   "random_baseline": 0.25,
+   "scoring": "raw — every question counts",
+   "results": [
+    {"rank": "冠軍", "winners": 2, "score": 8, "of": 15, "accuracy": 0.533},
+    {"rank": "亞軍", "winners": 5, "score": 7, "of": 15, "accuracy": 0.467},
+    {"rank": "季軍", "winners": 7, "score": 6, "of": 15, "accuracy": 0.4}
+   ],
+   "source_text": "雙冠軍 答中 8題 / 五位亞軍 答中 7題 / 七位季軍 答中 6 題",
+   "source_url": "https://hkjfma.org/2012/09/2012年度全球算命師比賽（第三屆）題目、答案及得獎"
+  },
+  {
+   "edition": 4,
+   "year": 2013,
+   "items": 16,
+   "options_per_item": 4,
+   "random_baseline": 0.25,
+   "scoring": null,
+   "results": null,
+   "note": "The organizer published this edition's questions and answer key but no results table. Searched every archived page of the site; there is none."
+  },
+  {
+   "edition": 9,
+   "year": 2018,
+   "items": 40,
+   "options_per_item": 4,
+   "random_baseline": 0.25,
+   "scoring": "official ranking drops each entrant's best and worst case, leaving 30 of 40 questions; the raw 40-question total is published alongside it",
+   "results": [
+    {"rank": "冠軍", "winners": 3, "score": 15, "of": 30, "accuracy": 0.5,
+     "raw": {"score_range": [19, 19], "of": 40, "accuracy": 0.475}},
+    {"rank": "亞軍", "winners": 4, "score": 14, "of": 30, "accuracy": 0.467,
+     "raw": {"score_range": [17, 18], "of": 40, "accuracy_range": [0.425, 0.45]}},
+    {"rank": "季軍", "winners": 15, "score": 13, "of": 30, "accuracy": 0.433,
+     "raw": {"score_range": [16, 18], "of": 40, "accuracy_range": [0.4, 0.45]}}
+   ],
+   "entrant_origins": {"冠軍": "香港 2, 中國大陸 1", "亞軍": "香港 2, 馬來西亞 1, 台灣 1",
+                       "季軍": "香港 8, 中國大陸 5, 馬來西亞 1, 加拿大 1"},
+   "source_text": "得獎名單表格：名次 / 名字 / 地區 / 總分 / 刪除最高分 / 刪除最低分 / 最終成績",
+   "source_image": "data/raw/hkjfma/images/2018_ans_058_02.jpg",
+   "source_url": "https://hkjfma.org/過往活動/2018第九屆算命比賽題目/2018第九屆全球算命師比賽答案及得獎名單"
+  }
+ ],
+ "editions_scored_but_not_in_this_dataset": [
+  {
+   "edition": 7, "year": 2016,
+   "note": "Results published, answer key never was, so the questions are not in this dataset. 冠軍 香港方柏廸 17/23 across the 5-case and 7-case measures.",
+   "source_url": "https://hkjfma.org/2016第七屆比賽答案及得獎成績"
+  },
+  {
+   "edition": 8, "year": 2017,
+   "note": "Results published, answer key never was. 冠軍 12 分 ×2, 亞軍 11 分 ×5, 季軍 10 分 ×12, scored after dropping the best and worst case.",
+   "source_url": "https://hkjfma.org/2017第八屆全球算命師比賽得獎者公布"
+  },
+  {
+   "edition": 10, "year": 2019,
+   "note": "No answer key, but the organizer published AllCounted survey analytics showing how many entrants picked each option per question — a full human response distribution. Unusable as ground truth (on this material the majority is frequently wrong) and unusable as a baseline without the key, but archived at data/raw/hkjfma/images/2019_ans_055_*.jpg."
+  }
+ ]
+}

@@ -21,7 +21,8 @@ This repository collects **birth data paired with documented life outcomes** —
 divorced, started a business, lost a parent, was diagnosed with cancer — as multiple-choice items
 with a single recorded correct answer, published by the party that knew the answer in advance.
 
-**255 questions across 54 people, every one with an official answer key.**
+**255 questions across 54 people, every one with an official answer key — and a published record
+of how well professional fortune tellers scored on those same questions.**
 
 Because each record carries a full birth date, hour, and place, the same person can be rendered
 as a BaZi chart, a Zi Wei Dou Shu chart, or a Western natal chart. The data is not tied to one
@@ -33,6 +34,7 @@ system — and neither are the questions, which ask what happened to a person, n
 |---|---|
 | [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 255 questions — stem, options, answer, birth data, source URL |
 | [`data/cases.json`](./data/cases.json) | 54 people — birth data plus computed BaZi and Zi Wei charts |
+| [`data/human_baseline.json`](./data/human_baseline.json) | what human masters scored on these same questions |
 | [`data/raw/hkjfma/`](./data/raw/hkjfma/) | cleaned source text, transcribed answer keys, 46 archived source images |
 | [`data/vendor/minglibench/`](./data/vendor/minglibench/) | MingLi-Bench, vendored unmodified under MIT |
 
@@ -82,6 +84,34 @@ published it **bilingually in Chinese and English** — so no translation of our
 and each case records **which system the contributing master used** (子平八字 ×6, 紫微斗數 ×2,
 奇門遁甲 ×1). That field exists nowhere else in this corpus and makes it possible to stratify
 by school.
+
+## The human baseline
+
+These questions were not written for a benchmark. They were written for a contest that practising
+masters entered under their own names, for a trophy, with the answers sealed until it closed. The
+organizer published the winners' scores — so unlike almost any other dataset in this domain, there
+is a documented answer to "how well do humans actually do at this?"
+
+| Edition | Year | Items | Options | Best human score | Random |
+|---:|---|---:|:---:|---|---:|
+| 1st | 2010 | 9 | A–E | **6 / 9** (66.7%) | 20% |
+| 2nd | 2011 | 15 | a–e | **8 / 15** (53.3%) | 20% |
+| 3rd | 2012 | 15 | A–D | **8 / 15** (53.3%) | 25% |
+| 4th | 2013 | 16 | A–D | not published | 25% |
+| 9th | 2018 | 40 | A–D | **19 / 40** (47.5%) | 25% |
+
+Read these as a **ceiling, not an average**. Only the top finishers' scores were published; the
+mean over all entrants is unknown for every edition, and entrant counts are mostly unpublished, so
+a top score from a large field is not comparable to the same score from a small one.
+
+Two details matter if you plan to compare a model against these. From the 9th edition on, the
+official ranking is diving-style — each entrant's best and worst case are dropped, leaving 30 of
+40 questions — so the 2018 champions' *official* result is 15/30 while their raw 40-question total
+is 19. The raw figure is the one comparable to running a model over this dataset. And option counts
+differ by edition, so the random-guess floor moves.
+
+Full detail, caveats, and provenance in
+[`data/human_baseline.json`](./data/human_baseline.json).
 
 ## How the ground truth was checked
 

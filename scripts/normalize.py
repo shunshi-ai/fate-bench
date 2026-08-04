@@ -405,8 +405,14 @@ def report(rows):
     print("-" * 57)
     print(f"{'TOTAL':<13}{len(rows):>7}{sum(1 for r in rows if r['answer']):>10}")
 
+    # 人类基线是手工转录的，题量必须跟解析结果对得上 —— 对不上说明有一边错了
+    baseline = json.loads((ROOT / "data" / "human_baseline.json").read_text(encoding="utf-8"))
+    drift = [(e["year"], e["items"], n) for e in baseline["editions"]
+             if (n := sum(1 for r in rows if r["year"] == e["year"])) != e["items"]]
+
     # 失败 = 解析出了问题；注记 = 源头本来就这样，报出来但不当失败
     FAIL = (
+        ("人类基线题量与题库不符", [f"{y}: 基线 {a} ≠ 题库 {b}" for y, a, b in drift]),
         ("无答案", [r["id"] for r in rows if not r["answer"]]),
         ("选项<4", [r["id"] for r in rows if r["num_options"] < 4]),
         ("题干过短", [r["id"] for r in rows if len(r["question"]) < 4
