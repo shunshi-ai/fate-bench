@@ -6360,12 +6360,12 @@
    "day": 15,
    "clock_hour": 0,
    "clock_minute": 30,
+   "gender": "男",
+   "location": "香港",
    "shichen": "子",
    "hour_start": 23,
    "hour_end": 1,
-   "shichen_derived_from_clock": true,
-   "gender": "男",
-   "location": "香港"
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "hkjfma_2013_11",
@@ -12200,12 +12200,12 @@
    "day": 19,
    "clock_hour": 9,
    "clock_minute": 58,
+   "gender": "男",
+   "location": "新加坡",
    "shichen": "巳",
    "hour_start": 9,
    "hour_end": 11,
-   "shichen_derived_from_clock": true,
-   "gender": "男",
-   "location": "新加坡"
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "hkjfma_2021_06",
@@ -15670,12 +15670,12 @@
    "day": 10,
    "clock_hour": 10,
    "clock_minute": 30,
+   "gender": "男",
+   "location": "廣東潮汕",
    "shichen": "巳",
    "hour_start": 9,
    "hour_end": 11,
-   "shichen_derived_from_clock": true,
-   "gender": "男",
-   "location": "廣東潮汕"
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "hkjfma_2021_36",
@@ -16249,12 +16249,12 @@
    "day": 27,
    "clock_hour": 16,
    "clock_minute": 51,
+   "gender": "女",
+   "location": "香港",
    "shichen": "申",
    "hour_start": 15,
    "hour_end": 17,
-   "shichen_derived_from_clock": true,
-   "gender": "女",
-   "location": "香港"
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "hkjfma_2021_39",
@@ -16823,11 +16823,15 @@
    "year": 1974,
    "month": 4,
    "day": 28,
-   "hour": 16,
-   "minute": 40,
+   "clock_hour": 16,
+   "clock_minute": 40,
    "country": "usa",
    "location": "usa",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "申",
+   "hour_start": 15,
+   "hour_end": 17,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0001",
@@ -17403,11 +17407,15 @@
    "year": 1981,
    "month": 5,
    "day": 26,
-   "hour": 2,
-   "minute": 17,
+   "clock_hour": 2,
+   "clock_minute": 17,
    "country": "中国",
    "location": "香港",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "丑",
+   "hour_start": 1,
+   "hour_end": 3,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0006",
@@ -17982,11 +17990,15 @@
    "year": 1990,
    "month": 5,
    "day": 23,
-   "hour": 17,
-   "minute": 30,
+   "clock_hour": 17,
+   "clock_minute": 30,
    "country": "中国",
    "location": "大陆",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "酉",
+   "hour_start": 17,
+   "hour_end": 19,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0011",
@@ -18555,11 +18567,15 @@
    "year": 1977,
    "month": 10,
    "day": 26,
-   "hour": 11,
-   "minute": 10,
+   "clock_hour": 11,
+   "clock_minute": 10,
    "country": "malaysia",
    "location": "malaysia",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "午",
+   "hour_start": 11,
+   "hour_end": 13,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0016",
@@ -19136,11 +19152,15 @@
    "year": 1985,
    "month": 6,
    "day": 29,
-   "hour": 18,
-   "minute": 32,
+   "clock_hour": 18,
+   "clock_minute": 32,
    "country": "malaysia",
    "location": "malaysia",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "酉",
+   "hour_start": 17,
+   "hour_end": 19,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0021",
@@ -19712,11 +19732,15 @@
    "year": 1983,
    "month": 11,
    "day": 1,
-   "hour": 21,
-   "minute": 0,
+   "clock_hour": 21,
+   "clock_minute": 0,
    "country": "中国",
    "location": "台湾",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "亥",
+   "hour_start": 21,
+   "hour_end": 23,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0026",
@@ -20292,11 +20316,15 @@
    "year": 1984,
    "month": 12,
    "day": 9,
-   "hour": 17,
-   "minute": 0,
+   "clock_hour": 17,
+   "clock_minute": 0,
    "country": "中国",
    "location": "香港",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "酉",
+   "hour_start": 17,
+   "hour_end": 19,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0031",
@@ -20863,11 +20891,15 @@
    "year": 1981,
    "month": 6,
    "day": 17,
-   "hour": 19,
-   "minute": 0,
+   "clock_hour": 19,
+   "clock_minute": 0,
    "country": "中国",
    "location": "香港",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "戌",
+   "hour_start": 19,
+   "hour_end": 21,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0036",
@@ -21438,11 +21470,15 @@
    "year": 1966,
    "month": 10,
    "day": 18,
-   "hour": 23,
-   "minute": 15,
+   "clock_hour": 23,
+   "clock_minute": 15,
    "country": "中国",
    "location": "香港",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "子",
+   "hour_start": 23,
+   "hour_end": 1,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0041",
@@ -22016,11 +22052,15 @@
    "year": 1962,
    "month": 8,
    "day": 6,
-   "hour": 9,
-   "minute": 0,
+   "clock_hour": 9,
+   "clock_minute": 0,
    "country": "中国",
    "location": "香港",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0046",
@@ -22595,11 +22635,15 @@
    "year": 1986,
    "month": 4,
    "day": 24,
-   "hour": 21,
-   "minute": 30,
+   "clock_hour": 21,
+   "clock_minute": 30,
    "country": "malaysia",
    "location": "malaysia",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "亥",
+   "hour_start": 21,
+   "hour_end": 23,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0051",
@@ -23175,11 +23219,15 @@
    "year": 1956,
    "month": 3,
    "day": 11,
-   "hour": 9,
-   "minute": 0,
+   "clock_hour": 9,
+   "clock_minute": 0,
    "country": "malaysia",
    "location": "malaysia",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0056",
@@ -23751,11 +23799,15 @@
    "year": 1978,
    "month": 4,
    "day": 5,
-   "hour": 18,
-   "minute": 0,
+   "clock_hour": 18,
+   "clock_minute": 0,
    "country": "中国",
    "location": "台湾",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "酉",
+   "hour_start": 17,
+   "hour_end": 19,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0061",
@@ -24329,11 +24381,15 @@
    "year": 1958,
    "month": 10,
    "day": 27,
-   "hour": 7,
-   "minute": 0,
+   "clock_hour": 7,
+   "clock_minute": 0,
    "country": "中国",
    "location": "台湾",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "辰",
+   "hour_start": 7,
+   "hour_end": 9,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0066",
@@ -24909,11 +24965,15 @@
    "year": 2002,
    "month": 6,
    "day": 1,
-   "hour": 8,
-   "minute": 30,
+   "clock_hour": 8,
+   "clock_minute": 30,
    "country": "中国",
    "location": "香港",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "辰",
+   "hour_start": 7,
+   "hour_end": 9,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0071",
@@ -25487,11 +25547,15 @@
    "year": 1980,
    "month": 7,
    "day": 11,
-   "hour": 9,
-   "minute": 0,
+   "clock_hour": 9,
+   "clock_minute": 0,
    "country": "中国",
    "location": "香港",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0076",
@@ -26062,11 +26126,15 @@
    "year": 1980,
    "month": 8,
    "day": 24,
-   "hour": 16,
-   "minute": 30,
+   "clock_hour": 16,
+   "clock_minute": 30,
    "country": "中国",
    "location": "广东",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "申",
+   "hour_start": 15,
+   "hour_end": 17,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0081",
@@ -26645,11 +26713,15 @@
    "year": 1972,
    "month": 1,
    "day": 8,
-   "hour": 12,
-   "minute": 0,
+   "clock_hour": 12,
+   "clock_minute": 0,
    "country": "中国",
    "location": "潮汕",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "午",
+   "hour_start": 11,
+   "hour_end": 13,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0086",
@@ -27223,11 +27295,15 @@
    "year": 1961,
    "month": 12,
    "day": 30,
-   "hour": 2,
-   "minute": 0,
+   "clock_hour": 2,
+   "clock_minute": 0,
    "country": "中国",
    "location": "",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "丑",
+   "hour_start": 1,
+   "hour_end": 3,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0091",
@@ -27802,11 +27878,15 @@
    "year": 1983,
    "month": 10,
    "day": 28,
-   "hour": 1,
-   "minute": 0,
+   "clock_hour": 1,
+   "clock_minute": 0,
    "country": "中国",
    "location": "",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "丑",
+   "hour_start": 1,
+   "hour_end": 3,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0097",
@@ -28381,11 +28461,15 @@
    "year": 1971,
    "month": 4,
    "day": 12,
-   "hour": 15,
-   "minute": 0,
+   "clock_hour": 15,
+   "clock_minute": 0,
    "country": "中国",
    "location": "中国",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "申",
+   "hour_start": 15,
+   "hour_end": 17,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0101",
@@ -28958,11 +29042,15 @@
    "year": 1983,
    "month": 3,
    "day": 26,
-   "hour": 13,
-   "minute": 0,
+   "clock_hour": 13,
+   "clock_minute": 0,
    "country": "中国",
    "location": "北京",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "未",
+   "hour_start": 13,
+   "hour_end": 15,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0106",
@@ -29532,11 +29620,15 @@
    "year": 1980,
    "month": 9,
    "day": 21,
-   "hour": 11,
-   "minute": 25,
+   "clock_hour": 11,
+   "clock_minute": 25,
    "country": "malaysia",
    "location": "malaysia",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "午",
+   "hour_start": 11,
+   "hour_end": 13,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0111",
@@ -30108,11 +30200,15 @@
    "year": 2007,
    "month": 1,
    "day": 31,
-   "hour": 9,
-   "minute": 0,
+   "clock_hour": 9,
+   "clock_minute": 0,
    "country": "malaysia",
    "location": "malaysia",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0116",
@@ -30683,11 +30779,15 @@
    "year": 1951,
    "month": 11,
    "day": 14,
-   "hour": 9,
-   "minute": 0,
+   "clock_hour": 9,
+   "clock_minute": 0,
    "country": "china",
    "location": "广东",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0121",
@@ -31256,11 +31356,15 @@
    "year": 1987,
    "month": 7,
    "day": 5,
-   "hour": 12,
-   "minute": 0,
+   "clock_hour": 12,
+   "clock_minute": 0,
    "country": "中国",
    "location": "香港",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "午",
+   "hour_start": 11,
+   "hour_end": 13,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0126",
@@ -31828,11 +31932,15 @@
    "year": 1983,
    "month": 4,
    "day": 21,
-   "hour": 6,
-   "minute": 0,
+   "clock_hour": 6,
+   "clock_minute": 0,
    "country": "japan",
    "location": "宫崎县",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0131",
@@ -32403,11 +32511,15 @@
    "year": 1993,
    "month": 4,
    "day": 8,
-   "hour": 23,
-   "minute": 34,
+   "clock_hour": 23,
+   "clock_minute": 34,
    "country": "singapore",
    "location": "新加坡",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "子",
+   "hour_start": 23,
+   "hour_end": 1,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0136",
@@ -32979,11 +33091,15 @@
    "year": 1988,
    "month": 1,
    "day": 10,
-   "hour": 8,
-   "minute": 12,
+   "clock_hour": 8,
+   "clock_minute": 12,
    "country": "malaysia",
    "location": "malaysia",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "辰",
+   "hour_start": 7,
+   "hour_end": 9,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0141",
@@ -33556,11 +33672,15 @@
    "year": 1973,
    "month": 8,
    "day": 24,
-   "hour": 0,
-   "minute": 35,
+   "clock_hour": 0,
+   "clock_minute": 35,
    "country": "malaysia",
    "location": "malaysia",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "子",
+   "hour_start": 23,
+   "hour_end": 1,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0146",
@@ -34132,11 +34252,15 @@
    "year": 1988,
    "month": 2,
    "day": 15,
-   "hour": 16,
-   "minute": 50,
+   "clock_hour": 16,
+   "clock_minute": 50,
    "country": "中国",
    "location": "台湾",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "申",
+   "hour_start": 15,
+   "hour_end": 17,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0151",
@@ -34710,11 +34834,15 @@
    "year": 1970,
    "month": 7,
    "day": 22,
-   "hour": 15,
-   "minute": 0,
+   "clock_hour": 15,
+   "clock_minute": 0,
    "country": "中国",
    "location": "北京",
-   "calendar_type": "solar"
+   "calendar_type": "solar",
+   "shichen": "申",
+   "hour_start": 15,
+   "hour_end": 17,
+   "shichen_derived_from_clock": true
   },
   "question_ids": [
    "mlb_ftb_0156",

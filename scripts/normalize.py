@@ -101,12 +101,7 @@ def parse_birth(raw: str) -> dict:
     # 2021 第二例写作「9時 58分 早上」—— 数字接「時」，与地支时辰（卯時/申時）不会撞
     elif hm := re.search(r"(?<!\d)(\d{1,2})\s*時\s*(\d{1,2})\s*分", t):
         out["clock_hour"], out["clock_minute"] = int(hm.group(1)), int(hm.group(2))
-    if "shichen" not in out and "clock_hour" in out:   # 2013 第三例只登了 00:30AM
-        h = out["clock_hour"]
-        out["shichen"] = next(z for z, (a, b_) in SHICHEN.items()
-                              if (a <= h < b_) or (a > b_ and (h >= a or h < b_)))
-        out["hour_start"], out["hour_end"] = SHICHEN[out["shichen"]]
-        out["shichen_derived_from_clock"] = True
+    # 时辰的补算与字段规范化统一交给 unify_birth，两个来源走同一条路（2013 第三例只登了 00:30AM）
 
     # 2021 第一、五例把性别写成「1，男性」「男性：台灣出生」，不带「命/造」
     if re.search(r"女命|坤造|坤命|女性|Female|\(女\)|性別\s*[:：]\s*女", t, re.I):
@@ -133,6 +128,36 @@ def parse_birth(raw: str) -> dict:
     if lu := re.search(r"農曆|农历|(?:陰曆)([^\n,，。]{0,24})", t):
         if lu.lastindex:
             out["lunar_note"] = lu.group(1).strip()
+    return unify_birth(out)
+
+
+# 生辰字段的规范集合。两个来源本来各写各的 —— MingLi 把钟点叫 hour/minute，我们这边解析出来
+# 叫 clock_hour/clock_minute；MingLi 有 shichen 的概念但不存。同一件事两套名字，使用者得先知道
+# 这一行来自哪家才会读，等于把内部实现泄露给了使用者。所以在这里统一，只留一套。
+BIRTH_FIELDS = {"raw", "calendar_type", "year", "month", "day",
+                "clock_hour", "clock_minute", "shichen", "hour_start", "hour_end",
+                "shichen_derived_from_clock", "gender", "location", "country",
+                "pillars_stated_by_master", "lunar_note", "missing", "reason"}
+ALIASES = {"hour": "clock_hour", "minute": "clock_minute"}
+
+
+def derive_shichen(h: int) -> str:
+    return next(z for z, (a, b) in SHICHEN.items()
+                if (a <= h < b) or (a > b and (h >= a or h < b)))
+
+
+def unify_birth(b: dict) -> dict:
+    """把任何来源的生辰段收敛到 BIRTH_FIELDS 这一套键上。"""
+    out = {ALIASES.get(k, k): v for k, v in b.items()}
+    out.setdefault("calendar_type", "solar")
+    # 钟点能唯一定出时辰。不补的话，按 shichen 过滤会静默丢掉整个 MingLi 那 160 题。
+    if "shichen" not in out and (h := out.get("clock_hour")) is not None:
+        out["shichen"] = derive_shichen(h)
+        out["hour_start"], out["hour_end"] = SHICHEN[out["shichen"]]
+        out["shichen_derived_from_clock"] = True
+    if unknown := set(out) - BIRTH_FIELDS:
+        raise ValueError(f"生辰段出现未登记的字段 {unknown} —— 要么加进 BIRTH_FIELDS，"
+                         f"要么在 ALIASES 里映射过去，不要放任两套命名并存")
     return out
 
 
@@ -362,8 +387,7 @@ def read_minglibench():
     for q in items:
         year, edition = next(((y, e) for span, y, e in MLB_YEARS
                               if q["question_number"] in span), (None, None))
-        b = dict(q.get("birth_info") or {})
-        b.setdefault("calendar_type", "solar")
+        b = unify_birth(q.get("birth_info") or {})
         opts = [{"letter": o["letter"], "text": o["text"]} for o in q["options"]]
         out.append({
             "id": f"mlb_{q['id']}", "source": "minglibench",

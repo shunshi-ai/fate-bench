@@ -34,7 +34,7 @@ def resolve_hour(b: dict):
     """Return (hour, minute, how). Any instant inside a double-hour yields the same hour pillar,
     so a midpoint is exact — except 子時, which straddles midnight and therefore changes the *day*
     pillar depending on which side of it the birth fell."""
-    if (h := b.get("clock_hour") if "clock_hour" in b else b.get("hour")) is not None:
+    if (h := b.get("clock_hour")) is not None:
         return h, b.get("clock_minute", b.get("minute", 0)) or 0, "stated"
     if z := b.get("shichen"):
         start, _ = SHICHEN_SPAN[z]
