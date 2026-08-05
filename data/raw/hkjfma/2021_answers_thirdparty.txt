@@ -1,0 +1,22 @@
+# 2021 第十二屆全球算命師大賽 — 答案（第三方来源，非官方）
+#
+# ⚠️ 主办方从未公布过这一届的答案表。题目图片(images/2021_q_023_*.jpg)上没有任何答案标记，
+# 封面页说明比赛走 AllCounted 网络问卷「自動計分制」，正确答案留在主办方手里。
+#
+# 下列答案取自 BaziQA (https://github.com/ChenJiangxi/BaziQA, MIT License)，
+# 其 contest8_2021.json。该来源未说明这一届答案的出处。
+#
+# 为什么仍然采用：BaziQA 另有 2022/2023/2024 三届，本仓库拿主办方一手答案表逐题核过，
+# 120/120 全中(scripts/crosscheck_vendor.py)。转录可靠不等于这一届的答案可靠，
+# 所以这批题在数据里带 answer_provenance="third-party"，跟有官方答案表的届分开，
+# 使用者可以按需剔除。
+#
+# 题号 1-40 按题目图片顺序（8 位老师 / 9 个命主）。
+ 1 C   2 A   3 C   4 C   5 B
+ 6 C   7 D   8 D   9 B  10 A
+11 C  12 A  13 C  14 D  15 A
+16 B  17 A  18 D  19 D  20 C
+21 D  22 D  23 A  24 B  25 C
+26 D  27 D  28 D  29 A  30 A
+31 C  32 B  33 A  34 A  35 D
+36 A  37 B  38 D  39 D  40 C

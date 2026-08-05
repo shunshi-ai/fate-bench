@@ -1,25 +1,50 @@
 # Inventory — what survives the answer-key check
 
-An edition is usable only if **both** the questions and the official answer key are public.
-Many editions publish questions and a winners table but never the key; those are excluded
-outright. Every row below was verified by opening the source, not by trusting the page title —
-several pages titled "答案及得獎名單" contain no answer key at all.
+An edition is usable only if the questions **and** a correct answer for every item are public.
+Many editions publish questions and a winners table but never a key; those are excluded outright.
+Every row below was verified by opening the source, not by trusting the page title — several
+pages titled "答案及得獎名單" contain no answer key at all.
+
+Answers are not all of one grade, and the dataset does not pretend otherwise. Every item carries
+`answer_provenance`:
+
+- **`official`** — the organizer published the correct answer, either on the question page itself
+  or on a separate answer sheet transcribed here from the photograph. 215 items.
+- **`third-party`** — the organizer never published a key for that edition; the answer comes from
+  another project's transcription, of unstated origin. 80 items (2021, 2025). Kept because they
+  are otherwise complete and well-corroborated, flagged so they can be filtered out.
 
 ## Usable
 
 | Edition | Year | Items | Cases | Options | Questions | Answer key | Notes |
 |---:|---|---:|---:|:---:|---|---|---|
-| 1st | 2010 | 9 | 3 | A–E | text | text, `第一條: 1a, 2e, 3e` | whole paper printed twice on the page |
-| 2nd | 2011 | 15 | 3 | a–e | text | text, full-width letters mixed in | **prints the master's own four pillars** |
-| 3rd | 2012 | 15 | 3 | A–D | text | text, `1 C 2 B …` | |
-| 4th | 2013 | 16 | 4 | A–D | text | text, `答案公報` | one item inverts the task (infer birth hour); HK DST noted |
-| 9th | 2018 | 40 | 9 | A–D | text, **bilingual zh+en** | image → [`2018_answer_key.txt`](./2018_answer_key.txt) | **each case labels its method**; see the two findings below |
-| 13th–16th | 2022–2025 | 160 | 32 | A–D | via MingLi-Bench | via MingLi-Bench | 2023 key audited here — 40/40 |
+| 1st | 2010 | 9 | 3 | A–E | text | official — text, `第一條: 1a, 2e, 3e` | whole paper printed twice on the page |
+| 2nd | 2011 | 15 | 3 | a–e | text | official — text, full-width letters mixed in | **prints the master's own four pillars** |
+| 3rd | 2012 | 15 | 3 | A–D | text | official — text, `1 C 2 B …` | |
+| 4th | 2013 | 16 | 4 | A–D | text | official — text, `答案公報` | one item inverts the task (infer birth hour); HK DST noted |
+| 9th | 2018 | 40 | 9 | A–D | text, **bilingual zh+en** | official — image → [`2018_answer_key.txt`](./2018_answer_key.txt) | **each case labels its method**; see the two findings below |
+| 12th | 2021 | 40 | 9 | A–D | **images → [`2021_questions_023.txt`](./2021_questions_023.txt)** | ⚠ third-party → [`2021_answers_thirdparty.txt`](./2021_answers_thirdparty.txt) | 8 masters but **9 subjects** — the last submitted two cases |
+| 13th–15th | 2022–2024 | 120 | 24 | A–D | via MingLi-Bench | official — answer sheets audited here, 120/120 | |
+| 16th | 2025 | 40 | 8 | A–D | via MingLi-Bench | ⚠ third-party — no sheet published | two projects transcribed it independently and agree 40/40 |
 
-**Total: 255 items, 54 cases, 2010–2025. Every item carries an official answer.**
+**Total: 295 items, 63 cases, 2010–2025 across 10 editions.**
 
-Each edition's parsed answer string was compared character by character against the organizer's
-published key. All five match exactly.
+Each edition with an official key had its parsed answer string compared character by character
+against the organizer's published key. All match exactly.
+
+### The 2021 questions are transcribed here from the organizer's own images
+
+Unlike 2022–2025, this edition's text does not come from another project. It is transcribed from
+the nine images this repository archives (`images/2021_q_023_01.jpg` … `_09.jpg`), which makes the
+questions a primary source even though the answers are not. Two typographic errors in the
+original are reproduced verbatim rather than silently corrected — Q18's 「王寅大運」 should read
+壬寅, and Q5's 「法妻」 should read 髮妻. Correcting them would make the transcription
+unverifiable against the images.
+
+The transcription was then checked against BaziQA's independent copy of the same paper: every
+number in every stem and option was compared (digits survive the traditional/simplified split,
+so they are the reliable comparison surface). The only four differences are places where the
+source repeats 「這位1970年出生的游先生」 and BaziQA abbreviates it away.
 
 ## Two things about 2018 that only reading the source revealed
 
@@ -44,25 +69,32 @@ the provider line as decoration will silently let them inherit the preceding cas
 | 8th | 2017 | 35 questions published, no key. (Red text on that page marks *question stems*, not answers — an easy misread.) |
 | 10th | 2019 | key never posted. The page titled "答案,得獎名單及統計資料" holds a winners table and AllCounted survey screenshots showing per-option response counts. Response distribution is **not** ground truth — on this material the majority is frequently wrong. |
 | 11th | 2020 | question paper is legible, but both images on the "答案及得獎名單" page are winners tables. No key. |
-| 12th | 2021 | question paper archived here (9 images), **no answer key ever posted** — the whole site has only two 2021 pages, both the call for entries |
 | 17th | 2026 | held June 2026; question paper archived here (8 images, `第1-5題` … `第36-40題`), key not yet published — **revisit** |
 
-## A correction: 2021 was not unreachable
+## Two corrections about 2021
 
-An earlier pass here recorded the 2021 question paper as hosted on a Facebook CDN and therefore
-not retrievable. That was wrong, and wrong in an avoidable way — the filenames merely *look*
-like Facebook exports (`192170775_10222464528615607_..._n.jpg`); the files themselves sit on
-`hkjfma.org/wp-content/uploads/2021/06/` like every other year's. They are archived here now.
+**It is not unreachable.** An earlier pass recorded the 2021 question paper as hosted on a
+Facebook CDN and therefore not retrievable. That was wrong, and wrong in an avoidable way — the
+filenames merely *look* like Facebook exports
+(`192170775_10222464528615607_..._n.jpg`); the files themselves sit on
+`hkjfma.org/wp-content/uploads/2021/06/` like every other year's.
 
-The edition still cannot be used, but for the other reason: no answer key was ever published.
+**It is now in the dataset, on third-party answers.** This inventory previously excluded the
+edition for the other reason: no key was ever published, and the standard here was that an item
+without a recorded correct answer is not a dataset item. That standard is unchanged for the
+*organizer's* answers — what changed is that a second project, BaziQA, publishes answers for it,
+and their transcription of the three editions we *can* audit is exact (120/120). So the 40 items
+are included with `answer_provenance: "third-party"` rather than left on the floor. The cover
+page explains why no key exists: the paper was answered through an AllCounted web form under
+「自動計分制」, so the correct answers stayed with the organizer.
 
 ## Editions whose questions are archived but which stay out of the dataset
 
-2014, 2017, 2020, 2021 and 2026 all have a readable question paper and no published answer key.
-The papers are kept under `images/` so that, if the organizer ever posts a key, transcription is
-the only remaining step. They are deliberately **not** in `hkjfma_qa.json`: an item without a
-recorded correct answer is not a benchmark item, and the response distributions that exist for
-some editions are not a substitute (see 2019 above).
+2014, 2017, 2020 and 2026 all have a readable question paper and no answer, from any source. The
+papers are kept under `images/` so that, if a key surfaces, transcription is the only remaining
+step. They are deliberately **not** in `hkjfma_qa.json`: an item without a recorded correct
+answer is not a dataset item, and the response distributions that exist for some editions are not
+a substitute (see 2019 above).
 
 ## The 2018 edition is the most valuable single addition
 
@@ -76,22 +108,34 @@ It is the only edition that is simultaneously:
 
 That last field does not exist anywhere else in this corpus and allows stratifying by school.
 
-## Cross-check: MingLi-Bench's transcription holds up
+## Cross-check: both third-party transcriptions hold up
 
-MingLi-Bench covers 2022–2025. The organizer published a handwritten answer sheet for three of
-those four editions, so those transcriptions could be audited rather than inherited:
+Two other projects transcribe this competition — [MingLi-Bench][ml] (2022–2025) and
+[BaziQA][bq] (2021–2025). This repository reuses answers from both, so neither is taken on trust.
+The organizer published a handwritten answer sheet for three editions, which makes those
+transcriptions auditable outright:
 
-| Edition | Year | Answer sheet | Their raw text | Their `data.json` |
-|---:|---|---|---|---|
-| 13th | 2022 | [`images/2022_ans_022_01.jpg`](./images/2022_ans_022_01.jpg) | 40/40 | 40/40 |
-| 14th | 2023 | [`images/2023_ans_021_01.jpg`](./images/2023_ans_021_01.jpg) | 40/40 | 40/40 |
-| 15th | 2024 | [`images/2024_ans_015_01.jpeg`](./images/2024_ans_015_01.jpeg) | 40/40 | 40/40 |
-| 16th | 2025 | none published | — | — |
+| Edition | Year | Answer sheet | MingLi raw | MingLi `data.json` | BaziQA | This repo |
+|---:|---|---|---|---|---|---|
+| 13th | 2022 | [`images/2022_ans_022_01.jpg`](./images/2022_ans_022_01.jpg) | 40/40 | 40/40 | 40/40 | 40/40 |
+| 14th | 2023 | [`images/2023_ans_021_01.jpg`](./images/2023_ans_021_01.jpg) | 40/40 | 40/40 | 40/40 | 40/40 |
+| 15th | 2024 | [`images/2024_ans_015_01.jpeg`](./images/2024_ans_015_01.jpeg) | 40/40 | 40/40 | 40/40 | 40/40 |
 
 Transcribed to `2022_answer_key.txt`, `2023_answer_key.txt`, `2024_answer_key.txt`; the check is
-[`scripts/crosscheck_vendor.py`](../../../scripts/crosscheck_vendor.py). **120 of 120 agree.**
-The 2025 edition's 40 items are the only ones in this dataset with neither an independent audit
-nor a human baseline.
+[`scripts/crosscheck_vendor.py`](../../../scripts/crosscheck_vendor.py). **120 of 120 agree, all
+four ways.**
+
+For 2021 and 2025 there is no sheet to check against, so nothing can establish that the answers
+are *right* — only that two independent transcribers agree, which they do 40/40 on each. That is
+evidence of careful transcription, not of ground truth, and the distinction is kept in the data
+(`answer_provenance: "third-party"`) rather than blurred in prose.
+
+BaziQA's five contest files are vendored under
+[`../../vendor/baziqa/`](../../vendor/baziqa/) so the audit runs offline; see the
+[NOTE](../../vendor/baziqa/NOTE.md) there for what was deliberately not taken from it and why.
+
+[ml]: https://github.com/DestinyLinker/MingLi-Bench
+[bq]: https://github.com/ChenJiangxi/BaziQA
 
 ## Results tables (the human baseline)
 
@@ -105,4 +149,8 @@ transcribed into [`../../human_baseline.json`](../../human_baseline.json). Sourc
 | 2023 | `images/2023_ans_021_02/03/04.jpg` | same, plus **per-case** scores for the champions |
 | 2024 | `images/2024_ans_015_02.jpeg` | same, plus per-case scores; highest human score in the corpus (26/40) |
 
-2010–2012 publish theirs as prose on the question page. 2013 and 2025 publish none.
+2010–2012 publish theirs as prose on the question page. 2013, 2021 and 2025 publish none — for
+2021 the site holds only two pages, both the call for entries, and neither carries results.
+
+That leaves 2021 and 2025 as the two editions with neither an official answer key nor a human
+score: 80 of the 295 items. Both are usable and both are marked.

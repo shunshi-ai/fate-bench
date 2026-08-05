@@ -6,8 +6,8 @@
 
 [![Data License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](./LICENSE-DATA)
 [![Code License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](./LICENSE-CODE)
-[![Questions](https://img.shields.io/badge/Questions-255-green.svg)](./data/fate_bench.jsonl)
-[![People](https://img.shields.io/badge/People-54-blue.svg)](./data/cases.json)
+[![Questions](https://img.shields.io/badge/Questions-295-green.svg)](./data/fate_bench.jsonl)
+[![People](https://img.shields.io/badge/People-63-blue.svg)](./data/cases.json)
 [![Editions](https://img.shields.io/badge/Editions-2010--2025-orange.svg)](./data/raw/hkjfma/INVENTORY.md)
 
 [English](./README.md) | 中文
@@ -27,7 +27,11 @@
 来源是一场从 2010 年办到现在的年度比赛。执业命理师实名下场，冲着奖杯来；每届由一组师傅出题，
 提供一个真人的生辰和这个人已核实的经历，赛后主办方公布答案 —— **连参赛者考了多少分一起公布**。
 
-**255 道题 · 54 个命例 · 每题都有官方答案 · 七届有公开的人类成绩。**
+**295 道题 · 63 个命例 · 十届 2010–2025 · 其中七届有公开的人类成绩。**
+
+答案的成色不是一回事，数据里分得清清楚楚。215 题带主办方自己公布的答案
+（`answer_provenance: "official"`）；另外 80 题来自第三方转录 —— 那两届主办方判过卷但从未
+公布答案表（`"third-party"`）。只想要前一种，按这个字段过滤即可。
 
 每条记录都带完整的出生年月日、时辰、地点，所以同一个人既能排八字，也能排紫微，也能排西洋星盘。
 数据本身不绑定任何一个体系 —— 题目也不绑定：问的是这个人身上发生了什么，不是命盘上写了什么。
@@ -37,12 +41,13 @@
 | 文件 | 内容 |
 |---|---|
 | [`data/fate_bench.jsonl`](./data/fate_bench.jsonl) | **合并好的全量，一行一题** —— 题目、答案、生辰、两种命盘都内联。从这个文件开始。 |
-| [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 255 道题 —— 题干、选项、答案、生辰、源 URL |
-| [`data/cases.json`](./data/cases.json) | 54 个命例 —— 生辰 + 排好的八字与紫微盘 |
+| [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 295 道题 —— 题干、选项、答案、生辰、源 URL |
+| [`data/cases.json`](./data/cases.json) | 63 个命例 —— 生辰 + 排好的八字与紫微盘 |
 | [`data/human_baseline.json`](./data/human_baseline.json) | 真人命理师在同一批题上的成绩 |
 | [`data/hkjfma_categories.json`](./data/hkjfma_categories.json) | 每道 HKJFMA 题的分类，及其判定方式 |
-| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | 清洗后的源文本、转录的答案表、76 张存档原图 |
+| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | 清洗后的源文本、转录的答案表、77 张存档原图 |
 | [`data/vendor/minglibench/`](./data/vendor/minglibench/) | MingLi-Bench 原样 vendor，MIT 协议 |
+| [`data/vendor/baziqa/`](./data/vendor/baziqa/) | BaziQA 的五个比赛文件，vendor 进来让审计能离线复现 |
 
 ### 命盘里有什么
 
@@ -68,8 +73,9 @@
 
 | 来源 | 覆盖 | 题数 | 协议 / 状态 |
 |---|---|---:|---|
-| [香港青年術數家協會 全球算命師大賽](https://hkjfma.org) | 2010–2013、2018 | 95 | 主办方公开发布，注明出处引用 |
+| [香港青年術數家協會 全球算命師大賽](https://hkjfma.org) | 2010–2013、2018、**2021** | 135 | 主办方公开发布，注明出处引用。2021 由本仓库从主办方题目原图转录 |
 | [MingLi-Bench](https://github.com/DestinyLinker/MingLi-Bench)（Destiny Linker） | 2022–2025 | 160 | MIT —— 注明出处复用 |
+| [BaziQA](https://github.com/ChenJiangxi/BaziQA)（Chen & Liu） | 仅 2021 的答案 | — | 其 README 声明 MIT；提供主办方从未出过答案表的那届的 40 个答案 |
 
 这个比赛从 2010 年办到现在，每届由一组执业师傅出题：提供一个真人的生辰，附上这个人已核实的
 经历，比赛结束后公布答案。此前的工作只覆盖了最近四届，这个仓库往回补前面的。
@@ -81,10 +87,14 @@
 | 第三届 | 2012 | 15 | 3 | A–D | 文字 |
 | 第四届 | 2013 | 16 | 4 | A–D | 文字 |
 | 第九届 | 2018 | 40 | 9 | A–D | 从公布的照片转录 |
+| 第12届 | 2021 | 40 | **9** | A–D | ⚠ 第三方 —— 主办方从未公布 |
 | 第13届 | 2022 | 40 | 8 | A–D | 经 MingLi-Bench，已用主办方答案表核过 |
 | 第14届 | 2023 | 40 | 8 | A–D | 经 MingLi-Bench，已用主办方答案表核过 |
 | 第15届 | 2024 | 40 | 8 | A–D | 经 MingLi-Bench，已用主办方答案表核过 |
-| 第16届 | 2025 | 40 | 8 | A–D | 经 MingLi-Bench —— 无答案表，未核 |
+| 第16届 | 2025 | 40 | 8 | A–D | ⚠ 第三方 —— 无答案表 |
+
+2021 是唯一一届「八位出题老师、九个命例」：最后一位陳俊燊師傅一人交了两个命主
+（一个三题、一个两题）。按「每位老师五题」切会把其中两个命主配错盘。
 
 **题目和官方答案两样都公开**，这一届才收。有几届不满足 ——
 逐届审计（含每一届被排除的具体原因）见 [data/raw/hkjfma/INVENTORY.md](./data/raw/hkjfma/INVENTORY.md)。
@@ -109,9 +119,10 @@
 | 第13届 | 2022 | 40 | A–D | **21 / 40**（52.5%） | 25% |
 | 第14届 | 2023 | 40 | A–D | **21 / 40**（52.5%） | 25% |
 | 第15届 | 2024 | 40 | A–D | **26 / 40**（65.0%） | 25% |
+| 第12届 | 2021 | 40 | A–D | 未公布 | 25% |
 | 第16届 | 2025 | 40 | A–D | 未公布 | 25% |
 
-九届里有七届有基线。人类最好成绩落在 47%–67% 之间，地板是 20–25%
+十届里有七届有基线。人类最好成绩落在 47%–67% 之间，地板是 20–25%
 —— 凡公布成绩的届次都明显高于随机，但也都远远谈不上做穿。
 
 **这是天花板，不是平均值。** 只有前几名的分数被公布，各届所有参赛者的均分都不可知；参赛人数
@@ -133,22 +144,30 @@
 **答案逐字符核对过。** 每一届解析出来的答案串都跟主办方公布的答案比对过 ——
 2010 的 `第一條: 1a, 2e, 3e`、2013 的「答案公報」段、2018 的手写答案表。五届全部完全一致。
 
-**MingLi-Bench 的转录是审计过的，不是继承的。** MingLi-Bench 覆盖四届，我们手上有其中三届
-（2022、2023、2024）主办方自己的手写答案表。他们的原始抓取文本和他们发布的 `data.json`，
-跟这三张表 **120 题全对**（[`scripts/crosscheck_vendor.py`](./scripts/crosscheck_vendor.py)）。
-2025 那届站上没有公布答案表，所以那 40 题未经审计 —— 如实标出，不含糊过去。
+**第三方转录是审计过的，不是继承的。** 有两个项目转录同一场比赛 —— MingLi-Bench（2022–2025）
+和 BaziQA（2021–2025），本数据集从两边都取了答案。我们手上有其中三届（2022、2023、2024）
+主办方自己的手写答案表。对着这三张表，MingLi-Bench 的原始抓取文本、他们发布的 `data.json`、
+BaziQA 的文件、以及本仓库自己的解析，四方 **120 题全对**
+（[`scripts/crosscheck_vendor.py`](./scripts/crosscheck_vendor.py)）。
+
+**有两届根本无从审计，只能如实标注。** 2021 和 2025 主办方没出过答案表，所以没有任何办法证明
+那 80 个答案**是对的** —— 只能说两家独立转录互相印证，各 40/40 一致。一致说明转录得仔细，
+不等于真值。这些题带 `answer_provenance: "third-party"`，一个过滤条件就能剔掉。
 
 **命盘由第三方库排。** 八字用 `lunar-python`，紫微用 `py-iztro`（就是 MingLi-Bench 用的
 那个 iztro 实现）。发 benchmark 的人不该同时提供真值。有三个命例，出题师傅把自己手排的四柱
 印在了生辰旁边 —— 三个都和脚本算出来的一致。
 
-**源头缺的地方标出来，不补。** 54 个命例有 2 个没有盘：一个是 2018 那例，主办方压根没登生辰；
+**源头缺的地方标出来，不补。** 63 个命例有 2 个没有盘：一个是 2018 那例，主办方压根没登生辰；
 另一个是 2013 那例，缺的时辰**正是题目要你推的东西**。
+
+**源文的错字照登，不悄悄改。** 2021 的卷子把壬寅印成「王寅」（Q18）、髮妻印成「法妻」（Q5）。
+两处都按原样保留，这样转录才能对着存档原图复核；两处都记在 INVENTORY 里。
 
 ## 数据须知
 
 - **各届选项数不同。** 早期五选（A–E），后来四选。所以随机基线不一样（20% vs 25%），
-  不能不加区分地混在一起算。231 题四选，24 题五选。
+  不能不加区分地混在一起算。271 题四选，24 题五选。
 - **一个命例的题数不固定。** 2018 不是「8 例 × 5 题」：有位师傅一个人出了两个不同的人，
   他那一块是 2 + 3。
 - **时间按公布的原样。** 不做真太阳时校正。只给了时辰没给钟点的，取时辰中点 ——
@@ -161,9 +180,9 @@
   所以 2018 年的选手有、我们没有。这几题的答案照样收着，并标了 `birth_info.missing`；
   谁拿这份数据做评测都该把它们剔除 —— 用它们等于让人用比当年选手更少的资料去比选手的成绩。
 - **紫微星名是简体**（`py-iztro` 的输出），题目是繁体。两边都没做转换。
-- **分类标签出自两拨人的手。** 255 题都带 `category`，用的是 MingLi-Bench 那套十二类，但
-  `category_source` 会告诉你每条的来源：他们标了自己那 160 条，我们补的 95 条走关键词规则
-  （`scripts/categorize.py`）外加 9 条人工改判。拿这套规则去跑他们那 160 条人工标注，
+- **分类标签出自两拨人的手。** 295 题里 294 题带 `category`，用的是 MingLi-Bench 那套十二类，
+  但 `category_source` 会告诉你每条的来源：他们标了自己那 160 条，我们补的 135 条走关键词规则
+  （`scripts/categorize.py`）外加 13 条人工改判。拿这套规则去跑他们那 160 条人工标注，
   只能复现 **76%** —— 所以按题型切分的结果当近似看，别当成同一个标注者的一致判断。
   有一条有意留空：2013 那道反过来推出生时辰的题，问的是命盘本身，不是人生的哪个侧面。
 
@@ -176,7 +195,7 @@ python scripts/normalize.py       # 源文本 → data/hkjfma_qa.json
 python scripts/charts.py          # 生辰   → data/cases.json
 python scripts/categorize.py      # 题目分类 → data/hkjfma_categories.json
 python scripts/export_jsonl.py    # 全部合并 → data/fate_bench.jsonl
-python scripts/crosscheck_vendor.py  # 用一手答案表审计 MingLi-Bench
+python scripts/crosscheck_vendor.py  # 用一手答案表审计两个第三方来源
 ```
 
 每个脚本都支持 `--check`，只校验不写文件。
@@ -195,6 +214,12 @@ python scripts/crosscheck_vendor.py  # 用一手答案表审计 MingLi-Bench
   —— 2284 位公众人物，含算好的年/月/日柱
 - [`shunshi-ai/bazi-reader-mcp`](https://github.com/shunshi-ai/bazi-reader-mcp)
   —— 开源干支历引擎
+
+同一场比赛的另外两份转录，本仓库都注明出处复用了：
+
+- [`DestinyLinker/MingLi-Bench`](https://github.com/DestinyLinker/MingLi-Bench) —— 2022–2025，160 题
+- [`ChenJiangxi/BaziQA`](https://github.com/ChenJiangxi/BaziQA) —— 2021–2025，另有论文
+  （[arXiv:2602.12889](https://arxiv.org/abs/2602.12889)）
 
 ## 许可
 

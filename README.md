@@ -6,8 +6,8 @@
 
 [![Data License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](./LICENSE-DATA)
 [![Code License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](./LICENSE-CODE)
-[![Questions](https://img.shields.io/badge/Questions-255-green.svg)](./data/fate_bench.jsonl)
-[![People](https://img.shields.io/badge/People-54-blue.svg)](./data/cases.json)
+[![Questions](https://img.shields.io/badge/Questions-295-green.svg)](./data/fate_bench.jsonl)
+[![People](https://img.shields.io/badge/People-63-blue.svg)](./data/cases.json)
 [![Editions](https://img.shields.io/badge/Editions-2010--2025-orange.svg)](./data/raw/hkjfma/INVENTORY.md)
 
 English | [中文](./README_zh.md)
@@ -31,8 +31,13 @@ public, under their own names, for a trophy; each edition is set by a panel of m
 a real person's birth data and that person's verified history, and the organizer publishes the
 answer key after the contest closes — **along with what the entrants scored**.
 
-**255 questions · 54 people · every item with an official answer key · seven editions with a
-published human score.**
+**295 questions · 63 people · ten editions, 2010–2025 · seven of them with a published human
+score.**
+
+Answers are not all of one grade and the data says which is which. 215 items carry the
+organizer's own published answer (`answer_provenance: "official"`); 80 come from a third-party
+transcription of two editions the organizer answered but never published a key for
+(`"third-party"`). Filter on that field if you only want the first kind.
 
 Each record carries a full birth date, hour, and place, so the same person can be rendered as a
 BaZi chart, a Zi Wei Dou Shu chart, or a Western natal chart. The data is not tied to one system,
@@ -43,12 +48,13 @@ and neither are the questions — they ask what happened to a person, not what a
 | File | What it holds |
 |---|---|
 | [`data/fate_bench.jsonl`](./data/fate_bench.jsonl) | **everything, one question per line** — question, answer, birth data and both charts inlined. Start here. |
-| [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 255 questions — stem, options, answer, birth data, source URL |
-| [`data/cases.json`](./data/cases.json) | 54 people — birth data plus computed BaZi and Zi Wei charts |
+| [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 295 questions — stem, options, answer, birth data, source URL |
+| [`data/cases.json`](./data/cases.json) | 63 people — birth data plus computed BaZi and Zi Wei charts |
 | [`data/human_baseline.json`](./data/human_baseline.json) | what human masters scored on these same questions |
 | [`data/hkjfma_categories.json`](./data/hkjfma_categories.json) | topic label per HKJFMA item, with how each was assigned |
-| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | cleaned source text, transcribed answer keys, 76 archived source images |
+| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | cleaned source text, transcribed answer keys, 77 archived source images |
 | [`data/vendor/minglibench/`](./data/vendor/minglibench/) | MingLi-Bench, vendored unmodified under MIT |
+| [`data/vendor/baziqa/`](./data/vendor/baziqa/) | BaziQA's five contest files, vendored so the audit runs offline |
 
 ```json
 {
@@ -91,8 +97,9 @@ luck cycles. So each case carries what a practitioner would actually work from:
 
 | Source | Coverage | Items | License / status |
 |---|---|---:|---|
-| [HKJFMA Global Fortune Teller Competition](https://hkjfma.org) (全球算命師大賽) | 2010–2013, 2018 | 95 | published publicly by the organizer; cited with attribution |
+| [HKJFMA Global Fortune Teller Competition](https://hkjfma.org) (全球算命師大賽) | 2010–2013, 2018, **2021** | 135 | published publicly by the organizer; cited with attribution. 2021 transcribed here from the organizer's question images |
 | [MingLi-Bench](https://github.com/DestinyLinker/MingLi-Bench) (Destiny Linker) | 2022–2025 | 160 | MIT — reused with attribution |
+| [BaziQA](https://github.com/ChenJiangxi/BaziQA) (Chen & Liu) | 2021 answers only | — | MIT per its README; supplies the 40 answers for an edition the organizer never keyed |
 
 The competition has run annually since 2010. Each edition is authored by a panel of practising
 masters who supply a real birth chart along with that person's verified history, then publish the
@@ -106,13 +113,19 @@ repository works backwards through the earlier ones.
 | 3rd | 2012 | 15 | 3 | A–D | text |
 | 4th | 2013 | 16 | 4 | A–D | text |
 | 9th | 2018 | 40 | 9 | A–D | transcribed from the published photograph |
+| 12th | 2021 | 40 | **9** | A–D | ⚠ third-party — the organizer never published one |
 | 13th | 2022 | 40 | 8 | A–D | via MingLi-Bench, audited against the organizer's sheet |
 | 14th | 2023 | 40 | 8 | A–D | via MingLi-Bench, audited against the organizer's sheet |
 | 15th | 2024 | 40 | 8 | A–D | via MingLi-Bench, audited against the organizer's sheet |
-| 16th | 2025 | 40 | 8 | A–D | via MingLi-Bench — no sheet published, unaudited |
+| 16th | 2025 | 40 | 8 | A–D | ⚠ third-party — no sheet published |
 
-An edition is usable only if **both** its questions and its official answer key are public.
-Several are not — the full audit, including why each excluded edition was excluded, is in
+2021 is the one edition with nine cases from eight contributing masters: the last, 陳俊燊師傅,
+submitted two people rather than one (three questions on one, two on the other). Splitting five
+questions per master would attach the wrong birth chart to two of them.
+
+An edition is usable only if its questions **and** a correct answer for every item are public.
+Several fail that and are excluded; two pass it only through a third party and are marked rather
+than excluded. The full audit — every edition, why each was kept or dropped — is in
 [data/raw/hkjfma/INVENTORY.md](./data/raw/hkjfma/INVENTORY.md).
 
 The **9th edition (2018)** is the most valuable single addition. It is complete, the organizer
@@ -138,9 +151,10 @@ is a documented answer to "how well do humans actually do at this?"
 | 13th | 2022 | 40 | A–D | **21 / 40** (52.5%) | 25% |
 | 14th | 2023 | 40 | A–D | **21 / 40** (52.5%) | 25% |
 | 15th | 2024 | 40 | A–D | **26 / 40** (65.0%) | 25% |
+| 12th | 2021 | 40 | A–D | not published | 25% |
 | 16th | 2025 | 40 | A–D | not published | 25% |
 
-Seven of the nine editions in this dataset have one. Best human scores land between 47% and 67%
+Seven of the ten editions in this dataset have one. Best human scores land between 47% and 67%
 against a 20–25% floor — above chance in every edition that published results, and well short of
 solved in all of them.
 
@@ -169,27 +183,37 @@ Full detail, caveats, and provenance in
 compared against the organizer's published key — `第一條: 1a, 2e, 3e` for 2010, the `答案公報`
 block for 2013, the handwritten answer sheet for 2018. All five match exactly.
 
-**MingLi-Bench's transcription was audited, not inherited.** We hold the organizer's own
-handwritten answer sheets for three of the four editions MingLi-Bench covers — 2022, 2023 and
-2024. Both their scraped source text and their published `data.json` agree with those sheets on
-**120 of 120** items ([`scripts/crosscheck_vendor.py`](./scripts/crosscheck_vendor.py)). The
-2025 edition has no published answer sheet, so its 40 items remain unaudited; that is stated
-rather than glossed over.
+**Third-party transcriptions were audited, not inherited.** Two other projects transcribe this
+competition — MingLi-Bench (2022–2025) and BaziQA (2021–2025) — and this dataset reuses answers
+from both. We hold the organizer's own handwritten answer sheets for three of those editions:
+2022, 2023 and 2024. Against those sheets, MingLi-Bench's scraped source text, MingLi-Bench's
+published `data.json`, BaziQA's files and this repository's own parse all agree on **120 of 120**
+items ([`scripts/crosscheck_vendor.py`](./scripts/crosscheck_vendor.py)).
+
+**Two editions cannot be audited at all, and are labelled instead.** For 2021 and 2025 the
+organizer published no answer sheet, so nothing can establish that those 80 answers are *correct*
+— only that two independent transcribers agree, which they do 40/40 on each. Agreement is
+evidence of careful transcription, not of ground truth. Those items carry
+`answer_provenance: "third-party"` so they can be excluded in one filter.
 
 **Charts are computed by third parties.** `lunar-python` for BaZi and `py-iztro` for Zi Wei —
 the latter being the same iztro implementation MingLi-Bench uses. Ground truth should not come
 from the party publishing the benchmark. Three cases print the contributing master's own
 hand-calculated four pillars next to the birth data; all three agree with the computed chart.
 
-**Where the source is incomplete, it is marked, not filled in.** Two of the 54 cases have no
+**Where the source is incomplete, it is marked, not filled in.** Two of the 63 cases have no
 chart: the 2018 case whose birth data the organizer never published, and the 2013 case whose
 birth hour is *what the question asks you to infer*.
+
+**Typos in the source are reproduced, not silently fixed.** The 2021 paper misprints 壬寅 as
+「王寅」 (Q18) and 髮妻 as 「法妻」 (Q5). Both are kept as printed, so the transcription stays
+checkable against the archived images; both are recorded in the inventory.
 
 ## Notes on the data
 
 - **Option counts vary by edition.** Early editions use five options (A–E), later ones four.
   Random-guess baselines therefore differ (20% vs 25%) and must not be pooled naively.
-  231 items have four options, 24 have five.
+  271 items have four options, 24 have five.
 - **One case can span a variable number of questions.** The 2018 edition is not 8 cases of 5:
   one contributing master supplied two different people, splitting his block 2 + 3.
 - **Times are as published.** No true-solar-time correction is applied. Where only a double-hour
@@ -207,10 +231,10 @@ birth hour is *what the question asks you to infer*.
   should drop them, since using them means working from less than the humans had.
 - **Zi Wei star names come out in Simplified Chinese**, from `py-iztro`, while the questions are
   in Traditional. Nothing is transliterated in either direction.
-- **Topic labels come from two different hands.** All 255 items carry a `category` drawn from
-  MingLi-Bench's twelve-label taxonomy, but `category_source` says where each came from:
-  MingLi-Bench annotated their 160, and the 95 added here were labelled by keyword rules
-  (`scripts/categorize.py`) with nine hand-corrections. Run against MingLi-Bench's 160 human
+- **Topic labels come from two different hands.** 294 of the 295 items carry a `category` drawn
+  from MingLi-Bench's twelve-label taxonomy, but `category_source` says where each came from:
+  MingLi-Bench annotated their 160, and the 135 added here were labelled by keyword rules
+  (`scripts/categorize.py`) with thirteen hand-corrections. Run against MingLi-Bench's 160 human
   labels, those rules reproduce the human choice **76%** of the time — treat per-topic slices as
   approximate, not as one annotator's consistent judgement. One item is deliberately left
   unlabelled: the 2013 question that asks you to infer the birth hour is about the chart itself,
@@ -225,7 +249,7 @@ python scripts/normalize.py       # source text  → data/hkjfma_qa.json
 python scripts/charts.py          # birth data   → data/cases.json
 python scripts/categorize.py      # topic labels    → data/hkjfma_categories.json
 python scripts/export_jsonl.py    # join everything → data/fate_bench.jsonl
-python scripts/crosscheck_vendor.py  # audit MingLi-Bench against the primary answer sheets
+python scripts/crosscheck_vendor.py  # audit both third-party sources against the answer sheets
 ```
 
 Every script takes `--check` to validate without writing.
@@ -245,6 +269,12 @@ systems involved.
   — 2,284 public figures with computed year/month/day pillars
 - [`shunshi-ai/bazi-reader-mcp`](https://github.com/shunshi-ai/bazi-reader-mcp)
   — open-source sexagenary calendar engine
+
+Other transcriptions of the same competition, both reused here with attribution:
+
+- [`DestinyLinker/MingLi-Bench`](https://github.com/DestinyLinker/MingLi-Bench) — 2022–2025, 160 items
+- [`ChenJiangxi/BaziQA`](https://github.com/ChenJiangxi/BaziQA) — 2021–2025, plus a paper
+  ([arXiv:2602.12889](https://arxiv.org/abs/2602.12889))
 
 ## License
 

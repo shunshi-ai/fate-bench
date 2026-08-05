@@ -28,13 +28,22 @@ LABELS = ROOT / "data" / "hkjfma_categories.json"
 SHICHEN = {"子": (23, 1), "丑": (1, 3), "寅": (3, 5), "卯": (5, 7),
            "辰": (7, 9), "巳": (9, 11), "午": (11, 13), "未": (13, 15),
            "申": (15, 17), "酉": (17, 19), "戌": (19, 21), "亥": (21, 23)}
-EDITION = {2010: 1, 2011: 2, 2012: 3, 2013: 4, 2018: 9}
+EDITION = {2010: 1, 2011: 2, 2012: 3, 2013: 4, 2018: 9, 2021: 12}
 
 # 各届的分隔符各写各的：`1)` `問題1,` `問題6 ,` `11 最好的…`、选项 `A)` `A ` `A,` `A2004甲申`
 SEP = r"[).、．。:：,，]"
-# 一行是题干：可选 問題/Q 前缀 + 号码 + 分隔符（或仅空格） + 实质内容
-RE_Q = re.compile(rf"^\s*(?:問題|问题|Q|第)?\s*(\d{{1,2}})\s*(?:題|条|條)?\s*"
-                  rf"(?:\s*{SEP}\s*|\s+)(\S.*)$")
+# 一行是题干。分两种版式：
+#  · 带 `問題`/`Q`/`第` 前缀 —— 前缀已经足够标明是题干，号码后允许直接接内容
+#    （2021 有 `Q7命主已经离婚，第二婚是哪一年？`、`Q24這位1970年出生的游先生…`）
+#  · 不带前缀 —— 必须有分隔符或空格，否则选项里的 `1992壬申年,有何特別事情發生?`
+#    会被读成第 1992 题
+RE_Q_PREFIXED = re.compile(rf"^\s*(?:問題|问题|Q|第)\s*(\d{{1,2}})\s*(?:題|条|條)?"
+                           rf"\s*{SEP}?\s*(\S.*)$")
+RE_Q_BARE = re.compile(rf"^\s*(\d{{1,2}})\s*(?:題|条|條)?\s*(?:\s*{SEP}\s*|\s+)(\S.*)$")
+
+
+def match_q(line: str):
+    return RE_Q_PREFIXED.match(line) or RE_Q_BARE.match(line)
 # 一行是选项。第三个分支放行 `A2004甲申` / `A$9000` —— 字母后直接接非字母内容；
 # 用「后面不是字母」挡住 `Between …` 被读成选项 B 这类英文散文。
 RE_OPT = re.compile(rf"^\s*([A-Ea-e])(?:\s*{SEP}\s*|\s+|(?=[^A-Za-z\s]))(\S.*)$")
@@ -67,7 +76,7 @@ def parse_birth(raw: str) -> dict:
     # raw 只留生辰段：窗口尾巴常跨进第一道题，留着会把题干选项混进 provenance 字段
     head = []
     for l in raw.split("\n"):
-        if RE_Q.match(l) or RE_OPT.match(l):
+        if match_q(l) or RE_OPT.match(l):
             break
         head.append(l)
     out = {"raw": " ".join(" ".join(head).split())[:200], "calendar_type": "solar"}
@@ -89,6 +98,9 @@ def parse_birth(raw: str) -> dict:
         out["hour_start"], out["hour_end"] = SHICHEN[s.group(1)]
     if hm := re.search(r"(\d{1,2})\s*[:：]\s*(\d{2})", t):
         out["clock_hour"], out["clock_minute"] = int(hm.group(1)), int(hm.group(2))
+    # 2021 第二例写作「9時 58分 早上」—— 数字接「時」，与地支时辰（卯時/申時）不会撞
+    elif hm := re.search(r"(?<!\d)(\d{1,2})\s*時\s*(\d{1,2})\s*分", t):
+        out["clock_hour"], out["clock_minute"] = int(hm.group(1)), int(hm.group(2))
     if "shichen" not in out and "clock_hour" in out:   # 2013 第三例只登了 00:30AM
         h = out["clock_hour"]
         out["shichen"] = next(z for z, (a, b_) in SHICHEN.items()
@@ -96,17 +108,23 @@ def parse_birth(raw: str) -> dict:
         out["hour_start"], out["hour_end"] = SHICHEN[out["shichen"]]
         out["shichen_derived_from_clock"] = True
 
-    if re.search(r"女命|坤造|坤命|Female|\(女\)|性別\s*[:：]\s*女", t, re.I):
+    # 2021 第一、五例把性别写成「1，男性」「男性：台灣出生」，不带「命/造」
+    if re.search(r"女命|坤造|坤命|女性|Female|\(女\)|性別\s*[:：]\s*女", t, re.I):
         out["gender"] = "女"
-    elif re.search(r"男命|乾造|乾命|Male|\(男\)|性別\s*[:：]\s*男", t, re.I):
+    elif re.search(r"男命|乾造|乾命|男性|Male|\(男\)|性別\s*[:：]\s*男", t, re.I):
         out["gender"] = "男"
 
-    for place in ("香港", "澳門", "台灣", "馬來西亞", "新加坡", "美國", "澳洲", "加拿大",
-                  "英國", "日本", "韓國", "中國大陸", "唐山", "廣東", "上海", "北京",
-                  "國內", "中國", "Hong Kong", "Malaysia", "Taiwan", "Singapore"):
-        if place in t:
-            out["location"] = place
-            break
+    # 出生地优先取紧挨着「出生/出世」的那个地名。命例头里往往还有出题师傅的所在地
+    # （`命例提供: 香港 紫微斗數 樂只君老師`），按列表顺序硬取会把它当成命主出生地 ——
+    # 2021 第一例「命主於大陸出生」、第八例「廣東潮汕地區出世(少時隨家人移居香港)」都会读错。
+    PLACES = ("香港", "澳門", "台灣", "馬來西亞", "新加坡", "美國", "澳洲", "加拿大",
+              "英國", "日本", "韓國", "中國大陸", "大陸", "唐山", "廣東潮汕", "廣東",
+              "上海", "北京", "國內", "中國", "Hong Kong", "Malaysia", "Taiwan", "Singapore")
+    alt = "|".join(PLACES)                       # 长的排前面：廣東潮汕 要先于 廣東
+    if m := re.search(rf"({alt})\s*(?:地區)?\s*(?:出生|出世)", t):
+        out["location"] = m.group(1)
+    elif hits := [(t.index(p), p) for p in PLACES if p in t]:
+        out["location"] = min(hits)[1]
 
     # 出题师傅自己算好的四柱 —— 独立的人工排盘参照
     P = r"[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥]"
@@ -127,10 +145,13 @@ def split_bilingual(s: str):
     return s, None
 
 
-METHODS = "子平八字|紫微斗數|奇門遁甲|鐵板神數|六壬"
+# 「子平八字」排在「八字」前面 —— 交替按序匹配，反过来会把子平八字截成八字
+METHODS = "子平八字|紫微斗數|奇門遁甲|鐵板神數|六壬|八字"
 # 2018 把地区和术数写在名字前：`命例問題提供 : 香港 紫微斗數 天盤計算 樂只君師傅`
+# 2021 第七例还把往届名次写了进去：`馬來西亞 己亥亞軍,庚子冠軍 紫微斗數 張翊萱老師`
 RE_PREFIX = re.compile(rf"^(?:香港青術會代表|香港|台灣|馬來西亞|新加坡|中國|澳門|"
-                       rf"{METHODS}|天盤計算)\s*")
+                       rf"{METHODS}|天盤計算|"
+                       rf"[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥](?:冠|亞|季)軍[,，]?)\s*")
 
 
 def strip_provider_prefix(v: str) -> str:
@@ -146,7 +167,8 @@ def read_provider(lines, i, master_pat, method_pat):
     master = method = None
     for j in range(max(0, i - 4), min(len(lines), i + 9)):
         if master is None and master_pat and (m := master_pat.search(lines[j])):
-            v = m.group(1)
+            # 允许 master_pat 用分支写多种版式（2021 有一位师傅的署名不带「命例提供:」前缀）
+            v = next((g for g in m.groups() if g), "")
             # `問題提供:著名玄學術數師傅:` —— 冒号收尾说明这行只是头衔，名字在下一行
             if v.rstrip().endswith((":", "：")) or not v.strip():
                 v = next((lines[k] for k in range(j + 1, min(j + 3, len(lines)))
@@ -255,14 +277,14 @@ def scan(text, url, year, *, master_pat=None, method_pat=None, case_pat=None,
                     i += 1
                     continue
             # 选项的续行（英文对照另起一行）
-            if cur["options"] and RE_EN.match(ln) and not RE_Q.match(ln):
+            if cur["options"] and RE_EN.match(ln) and not match_q(ln):
                 last = cur["options"][-1]
                 last["text_en"] = (last.get("text_en", "") + " " + ln.strip("() ")).strip()
                 i += 1
                 continue
 
         # ── 题干 ──
-        if m := RE_Q.match(ln):
+        if m := match_q(ln):
             n, stem = int(m.group(1)), m.group(2).strip()
             # 不再要求题干非数字开头 —— 半数真题就长成 `1)1992壬申年,有何特別事情發生?`。
             # 误命中（如 2013 的「一生描述」编号列表）由「必须收到 ≥2 个选项」在 flush 里滤掉。
@@ -316,9 +338,12 @@ def answers_2013(t):
                                             t[t.index("答案公報"):])}
 
 
-def answers_2018(path):
-    return {int(q): L for q, L in
-            re.findall(r"\b(\d{1,2})\s+([A-D])\b", norm(path.read_text(encoding="utf-8")))}
+def answers_grid(path):
+    """转录的答案表：`1 B   2 C   3 B …`。注释行先剔掉 —— 那里的说明文字可能
+    偶然长得像「号码 + 字母」，混进来就是静默错答案。"""
+    t = "\n".join(l for l in norm(path.read_text(encoding="utf-8")).splitlines()
+                  if not l.lstrip().startswith("#"))
+    return {int(q): L for q, L in re.findall(r"\b(\d{1,2})\s+([A-D])\b", t)}
 
 
 # MingLi-Bench 把 2022–2025 四届的题号连编成 1–160，每届 40 题。分界经两条独立证据确认：
@@ -367,7 +392,41 @@ CFG = {
                case_pat=re.compile(r"問題提供"), ans=answers_2013),
     2018: dict(master_pat=re.compile(r"命例問題提供\s*[:：]\s*(.+)"),
                case_pat=re.compile(r"命例問題提供"),
-               method_pat=re.compile(METHODS), ans=None),
+               method_pat=re.compile(METHODS), ans=None,
+               key_file="2018_answer_key.txt"),
+    # 2021 的命例头三种版式混用：`命例提供:`、`命例問題提供:`，以及最后一位师傅直接署名
+    # `陳俊燊師傅 (子平八字)` 后面挂两个命例。第二个命例只有一行 `坤造:`，靠软边界开出来。
+    2021: dict(master_pat=re.compile(r"命例(?:問題)?提供\s*[:：]\s*(.+)"
+                                     r"|^(\S{2,8}師傅)\s*\((?:子平八字|紫微斗數)\)"),
+               case_pat=re.compile(r"命例(?:問題)?提供\s*[:：]"),
+               method_pat=re.compile(METHODS), ans=None,
+               key_file="2021_answers_thirdparty.txt"),
+}
+
+
+# 答案的成色不是一回事，不该混在一个 `answer` 字段里假装等价。
+# `official` = 主办方自己公布过正确答案（登在题目页上，或另发答案表由本仓库转录存图）。
+# `third-party` = 主办方从未公布这一届的答案，答案来自第三方转录，出处未经主办方确认。
+# 两种都留着，但打上标记 —— 想只用官方答案的人可以按这个字段过滤。
+PROVENANCE = {
+    2010: ("official", "printed on the organiser's own question page"),
+    2011: ("official", "printed on the organiser's own question page"),
+    2012: ("official", "printed on the organiser's own question page"),
+    2013: ("official", "printed on the organiser's own question page"),
+    2018: ("official", "transcribed from the organiser's answer sheet, archived here as "
+                       "images/2018_answers_058.jpg"),
+    2022: ("official", "transcribed from the organiser's answer sheet; MingLi-Bench's copy of "
+                       "this edition audited against it 40/40"),
+    2023: ("official", "transcribed from the organiser's answer sheet; MingLi-Bench's copy of "
+                       "this edition audited against it 40/40"),
+    2024: ("official", "transcribed from the organiser's answer sheet; MingLi-Bench's copy of "
+                       "this edition audited against it 40/40"),
+    2021: ("third-party", "the organiser never published a key for this edition — the paper was "
+                          "auto-scored through an online form. Answers taken from BaziQA (MIT), "
+                          "whose 2022/2023/2024 answers match the official sheets 120/120"),
+    2025: ("third-party", "the organiser never published a key for this edition. Answers come "
+                          "from MingLi-Bench and are independently corroborated by BaziQA, which "
+                          "transcribed the same paper separately — the two agree 40/40"),
 }
 
 
@@ -379,9 +438,9 @@ def collect():
             continue
         path = g[0]
         t = body(path)
-        if year == 2018:
-            ak = RAW / "2018_answer_key.txt"
-            ans = answers_2018(ak) if ak.exists() else {}
+        if kf := cfg.get("key_file"):
+            ak = RAW / kf
+            ans = answers_grid(ak) if ak.exists() else {}
         else:
             ans = cfg["ans"](t)
         got = scan(t, source_url(path), year,
@@ -390,6 +449,9 @@ def collect():
                    per_case_numbering=cfg.get("per_case_numbering", False))
         rows += dedupe(got, year)
     rows += read_minglibench()
+    for r in rows:
+        tier, note = PROVENANCE.get(r["year"], (None, None))
+        r["answer_provenance"], r["answer_provenance_note"] = tier, note
     return apply_categories(rows)
 
 

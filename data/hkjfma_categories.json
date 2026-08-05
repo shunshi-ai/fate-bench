@@ -1,5 +1,5 @@
 {
- "about": "Topic labels for the 94 HKJFMA items, produced by scripts/categorize.py. MingLi-Bench's own labels are not repeated here; normalize.py takes those straight from the vendored data. Measured agreement between these rules and MingLi-Bench's human annotator: 76%.",
+ "about": "Topic labels for the 134 HKJFMA items, produced by scripts/categorize.py. MingLi-Bench's own labels are not repeated here; normalize.py takes those straight from the vendored data. Measured agreement between these rules and MingLi-Bench's human annotator: 76%.",
  "labels": {
   "hkjfma_2010_01": {
    "category": "灾劫",
@@ -376,6 +376,166 @@
   "hkjfma_2018_40": {
    "category": "婚姻",
    "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2021_01": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_02": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_03": {
+   "category": "运势",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2021_04": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_05": {
+   "category": "子女",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_06": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_07": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_08": {
+   "category": "子女",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_09": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_10": {
+   "category": "性格",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_11": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_12": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_13": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_14": {
+   "category": "家庭",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2021_15": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_16": {
+   "category": "性格",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_17": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_18": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_19": {
+   "category": "子女",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_20": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_21": {
+   "category": "学业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_22": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_23": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_24": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_25": {
+   "category": "健康",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_26": {
+   "category": "学业",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2021_27": {
+   "category": "婚姻",
+   "source": "hand-labelled (this repo)"
+  },
+  "hkjfma_2021_28": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_29": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_30": {
+   "category": "运势",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_31": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_32": {
+   "category": "子女",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_33": {
+   "category": "官非",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_34": {
+   "category": "官非",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_35": {
+   "category": "家庭",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_36": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_37": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_38": {
+   "category": "事业",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_39": {
+   "category": "婚姻",
+   "source": "rule-based (this repo)"
+  },
+  "hkjfma_2021_40": {
+   "category": "财运",
+   "source": "rule-based (this repo)"
   }
  }
 }
