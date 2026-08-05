@@ -58,6 +58,7 @@ def card(questions, cases):
     prov = Counter(q["answer_provenance"] for q in questions)
     years = sorted({q["year"] for q in questions})
     charted = sum(1 for c in cases if c.get("charts"))
+    en = sum(1 for q in questions if q.get("question_en"))
     return f"""---
 license: cc-by-4.0
 language:
@@ -159,6 +160,12 @@ floor. Those figures, with their caveats, are in the
 
 ## Known limits
 
+- **This is a Chinese dataset; English coverage is partial and is not ours.** All {n} questions
+  are in Chinese, Traditional and Simplified both, as each edition printed them. {en} items also
+  carry `question_en` — that is **the organizer's own bilingual publication**, not a translation
+  made here. The other {n - en} have no English, and there is no Japanese or Korean. Translate it
+  yourself if you need one language throughout; that way any translation error stays yours rather
+  than being baked into the ground truth.
 - **Two cases have no chart.** One is the 2018 case whose birth data the organizer never
   published; the other is the 2013 case whose birth hour is *what the question asks you to infer*.
 - **Five questions cannot be answered from this data at all** — the organizer printed that case's

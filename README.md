@@ -229,6 +229,13 @@ checkable against the archived images; both are recorded in the inventory.
   birth data on the paper but never on the web page, so the 2018 entrants had it and we do not.
   They keep their answer key and are flagged `birth_info.missing`; anything scoring this dataset
   should drop them, since using them means working from less than the humans had.
+- **The dataset is Chinese. English coverage is partial and is not ours.** All 295 questions are
+  in Chinese — Traditional and Simplified both appear, as printed by each edition; nothing is
+  converted in either direction. 53 items also carry `question_en`, and those are **the
+  organizer's own bilingual publication** (all 16 of the 4th edition, 37 of the 9th), not a
+  translation made here. The remaining 242 have no English, and there is no Japanese or Korean.
+  If you need the whole set in one language you will have to translate it yourself — which also
+  means any translation error is yours to own, not silently baked into the ground truth.
 - **Zi Wei star names come out in Simplified Chinese**, from `py-iztro`, while the questions are
   in Traditional. Nothing is transliterated in either direction.
 - **Topic labels come from two different hands.** 294 of the 295 items carry a `category` drawn
