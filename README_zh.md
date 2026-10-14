@@ -10,7 +10,7 @@
 [![People](https://img.shields.io/badge/People-71-blue.svg)](./data/cases.json)
 [![Editions](https://img.shields.io/badge/Editions-2010--2026-orange.svg)](./data/raw/hkjfma/INVENTORY.md)
 
-[English](./README.md) | 中文 · **[線上瀏覽與作答歷屆真題 →](https://shunshi-ai.github.io/fate-bench/)**
+[English](./README.md) | 中文 · **[線上瀏覽與作答歷屆真題 →](https://shunshi.ai/zh-tw/fortune-teller-contest)**
 
 </div>
 
@@ -203,7 +203,6 @@ python scripts/charts.py          # 生辰   → data/cases.json
 python scripts/categorize.py      # 题目分类 → data/hkjfma_categories.json
 python scripts/export_jsonl.py    # 全部合并 → data/fate_bench.jsonl
 python scripts/crosscheck_vendor.py  # 用一手答案表审计两个第三方来源
-python scripts/build_site.py      # 静态网页 → docs/（GitHub Pages 直接发布）
 ```
 
 每个脚本都支持 `--check`，只校验不写文件。
