@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2013 第四屆全球算命師大賽 真題與答案（16 題）</title>
+<meta name="description" content="2013年香港全球算命師大賽 16 道真題：真實生辰、八字四柱、大運與官方答案，可線上作答對照職業命理師成績。">
+<link rel="canonical" href="https://shunshi-ai.github.io/fate-bench/2013.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="2013 第四屆全球算命師大賽 真題與答案（16 題）">
+<meta property="og:description" content="2013年香港全球算命師大賽 16 道真題：真實生辰、八字四柱、大運與官方答案，可線上作答對照職業命理師成績。">
+<meta property="og:url" content="https://shunshi-ai.github.io/fate-bench/2013.html">
+<meta name="twitter:card" content="summary">
+<style>
+:root{--bg:#faf6ed;--card:#fffdf8;--ink:#2a2420;--muted:#7a6f63;--line:#e6dccb;--accent:#8a5a2b;
+--ok:#2f7d4f;--ok-bg:#e5f3ea;--bad:#b23a3a;--bad-bg:#f8e3e1;--chip:#f1e8d8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1916;--card:#25211d;--ink:#eee6da;
+--muted:#a89c8d;--line:#3a332c;--accent:#d9a46a;--ok:#6cc08d;--ok-bg:#1f3428;--bad:#e07b74;--bad-bg:#3a2321;--chip:#302a24}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:1px solid var(--line);padding:14px 0}
+header.top .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+header.top a.brand{font-weight:700;text-decoration:none;color:var(--ink)}
+nav.years{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0}
+nav.years a{padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--ink);font-size:14px;background:var(--card)}
+nav.years a.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+h1{font-size:28px;line-height:1.3;margin:28px 0 8px}
+h2{font-size:21px;margin:36px 0 12px}
+.sub{color:var(--muted);margin:0 0 16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat b{display:block;font-size:22px}
+.stat span{color:var(--muted);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0}
+.case-h{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.case-h h3{margin:0;font-size:18px}
+.meta{color:var(--muted);font-size:14px}
+.birth{margin:10px 0;padding:10px 12px;background:var(--chip);border-radius:10px;font-size:15px}
+table.pillars{border-collapse:collapse;margin:10px 0;width:100%;max-width:420px;text-align:center}
+table.pillars th,table.pillars td{border:1px solid var(--line);padding:4px 6px}
+table.pillars th{font-weight:500;color:var(--muted);font-size:13px}
+table.pillars td.gz{font-size:20px;letter-spacing:2px}
+table.pillars td.tg{font-size:12px;color:var(--muted)}
+.luck{font-size:13px;color:var(--muted);overflow-x:auto;white-space:nowrap;padding-bottom:4px}
+.luck span{display:inline-block;margin-right:10px}
+.q{border-top:1px dashed var(--line);padding-top:14px;margin-top:14px}
+.q p.stem{margin:0 0 8px;font-weight:600}
+.opts{display:grid;gap:6px}
+.opts button{all:unset;cursor:pointer;display:block;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.opts button:hover{border-color:var(--accent)}
+.opts button.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.opts button.bad{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.opts button[disabled]{cursor:default}
+details.ans{margin-top:6px;font-size:14px;color:var(--muted)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;background:var(--chip);color:var(--muted);margin-left:6px}
+.tag.warn{color:var(--bad)}
+.score{position:sticky;bottom:12px;margin:24px auto;max-width:520px;background:var(--ink);color:var(--bg);border-radius:999px;padding:8px 16px;text-align:center;font-size:14px}
+table.ed{width:100%;border-collapse:collapse;font-size:15px}
+table.ed th,table.ed td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left}
+table.ed td.n{text-align:right;white-space:nowrap}
+.cta{display:block;text-align:center;margin:28px 0;padding:14px;border-radius:12px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0 40px;color:var(--muted);font-size:13px}
+@media (max-width:520px){h1{font-size:23px}.card{padding:14px}table.pillars td.gz{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">全球算命師大賽 歷屆真題</a>
+<span class="meta"><a href="https://github.com/shunshi-ai/fate-bench">GitHub</a> · <a href="https://shunshi.ai/zh-tw?utm_source=github&utm_medium=fate-bench&utm_campaign=site">ShunShi.ai</a></span>
+</div></header>
+<main class="wrap">
+<nav class="years" aria-label="屆次"><a href="index.html">總覽</a><a href="2010.html">2010</a><a href="2011.html">2011</a><a href="2012.html">2012</a><a href="2013.html" class=on>2013</a><a href="2018.html">2018</a><a href="2021.html">2021</a><a href="2022.html">2022</a><a href="2023.html">2023</a><a href="2024.html">2024</a><a href="2025.html">2025</a><a href="2026.html">2026</a></nav>
+<h1>2013 第四屆全球算命師大賽 真題與答案（16 題）</h1><p class="sub">4 個真實命例、16 道選擇題，每題都有出題師傅掌握的真實經歷作答案。先看生辰與八字，自己判斷，再點選項揭曉。本屆未公布參賽者成績。</p><p class="meta">原題出處：<a href="https://hkjfma.org/2014/01/2013%e5%b9%b4%e7%ac%ac%e5%9b%9b%e5%b1%86%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e5%a4%a7%e8%b3%bd%e9%a1%8c%e7%9b%ae">hkjfma.org · 2013年第四屆全球算命師大賽題目</a></p><section class="card" id="c1"><div class="case-h"><h3>命例 1</h3><span class="meta">吳佩孚師傅</span></div><div class="birth">男命 · 西曆 1968 年 4 月 10 日（戌時） · 香港出生<details class="ans"><summary>原題生辰原文</summary>問題提供:著名玄學術數師傅: 吳佩孚師傅 Question provider: Famous fortune telling master: Master Pui Fu Ng 乾命: 西元1968年生男命4月10日戌時 香港出生 Male: 10 April 1968 between 19:00 – 20:59 Birth Place: Hong Kong</details></div><table class="pillars"><tr><th>年柱</th><th>月柱</th><th>日柱</th><th>時柱</th></tr><tr><td class="gz">戊申</td><td class="gz">丙辰</td><td class="gz">庚戌</td><td class="gz">丙戌</td></tr><tr><td class="tg">偏印</td><td class="tg">七杀</td><td class="tg">日主</td><td class="tg">七杀</td></tr></table><div class="luck">大運（順行，1976-07-30 起）：<span>丁巳 1976–1985</span><span>戊午 1986–1995</span><span>己未 1996–2005</span><span>庚申 2006–2015</span><span>辛酉 2016–2025</span><span>壬戌 2026–2035</span><span>癸亥 2036–2045</span><span>甲子 2046–2055</span><span>乙丑 2056–2065</span></div><div class="q" id="q1" data-answer="D"><p class="stem">Q1. 這個命出身家境如何呢?<span class="tag">家庭</span></p><div class="opts"><button type="button" data-l="A">A. 孤兒 (Orphan)</button><button type="button" data-l="B">B. 父母齊全大富之家</button><button type="button" data-l="C">C. 父母離異大富之家</button><button type="button" data-l="D">D. 父母離異家境很差</button></div><details class="ans"><summary>看答案</summary>正確答案：D</details></div><div class="q" id="q2" data-answer="A"><p class="stem">Q2. 這命學歷高低如何?<span class="tag">学业</span></p><div class="opts"><button type="button" data-l="A">A. 初中畢業</button><button type="button" data-l="B">B. 中學畢業</button><button type="button" data-l="C">C. 大學畢業</button><button type="button" data-l="D">D. 博士學位</button></div><details class="ans"><summary>看答案</summary>正確答案：A</details></div><div class="q" id="q3" data-answer="C"><p class="stem">Q3. 這個命職業類型?<span class="tag">事业</span></p><div class="opts"><button type="button" data-l="A">A. 地質學家</button><button type="button" data-l="B">B. 財經專家</button><button type="button" data-l="C">C. 汽車經紀</button><button type="button" data-l="D">D. 地產經紀</button></div><details class="ans"><summary>看答案</summary>正確答案：C</details></div><div class="q" id="q4" data-answer="C"><p class="stem">Q4. 這命的婚姻結局形勢?<span class="tag">婚姻</span></p><div class="opts"><button type="button" data-l="A">A. 命主至今未婚,但喜歡到處尋花問柳,女友很多很濫.</button><button type="button" data-l="B">B. 命主已婚,妻子是專業人士政界中人</button><button type="button" data-l="C">C. 命主已婚,妻子是妓女出身低賤</button><button type="button" data-l="D">D. 命主已離過兩次婚</button></div><details class="ans"><summary>看答案</summary>正確答案：C</details></div><div class="q" id="q5" data-answer="D"><p class="stem">Q5. 命主身患長期病症,究竟是何種病呢?<span class="tag">健康</span></p><div class="opts"><button type="button" data-l="A">A. 嚴重灰甲</button><button type="button" data-l="B">B. 嚴重皮膚病</button><button type="button" data-l="C">C. 情緒病</button><button type="button" data-l="D">D. 胃潰瘍</button></div><details class="ans"><summary>看答案</summary>正確答案：D</details></div></section><section class="card" id="c2"><div class="case-h"><h3>命例 2</h3><span class="meta">鼎大圖書有限公司(術數書籍為主):培哥</span></div><div class="birth">女命 · 西曆 1972 年 11 月 6 日 19:15（戌時） · 香港出生<details class="ans"><summary>原題生辰原文</summary>問題提供:鼎大圖書有限公司(術數書籍為主):培哥 Question provider: Ting Tai Book Company:Master Pui 坤命: 西元1972年11月6日19:15 戌時 香港出生 Female: 6 Nov 1972, 19:15 Birth Place: Hong Kong</details></div><table class="pillars"><tr><th>年柱</th><th>月柱</th><th>日柱</th><th>時柱</th></tr><tr><td class="gz">壬子</td><td class="gz">庚戌</td><td class="gz">辛丑</td><td class="gz">戊戌</td></tr><tr><td class="tg">伤官</td><td class="tg">劫财</td><td class="tg">日主</td><td class="tg">正印</td></tr></table><div class="luck">大運（逆行，1982-08-16 起）：<span>己酉 1982–1991</span><span>戊申 1992–2001</span><span>丁未 2002–2011</span><span>丙午 2012–2021</span><span>乙巳 2022–2031</span><span>甲辰 2032–2041</span><span>癸卯 2042–2051</span><span>壬寅 2052–2061</span><span>辛丑 2062–2071</span></div><div class="q" id="q6" data-answer="B"><p class="stem">Q6. 命主2012年的事業情況如何?<span class="tag">事业</span></p><div class="opts"><button type="button" data-l="A">A. 上班一族</button><button type="button" data-l="B">B. 自己做生意</button><button type="button" data-l="C">C. 家庭主婦</button><button type="button" data-l="D">D. 電台DJ</button></div><details class="ans"><summary>看答案</summary>正確答案：B</details></div><div class="q" id="q7" data-answer="B"><p class="stem">Q7. 婚姻情況?<span class="tag">婚姻</span></p><div class="opts"><button type="button" data-l="A">A. 單身未婚,盛女 (Single)</button><button type="button" data-l="B">B. 已婚,有子女,婚姻美滿</button><button type="button" data-l="C">C. 夫亡</button><button type="button" data-l="D">D. 被有婦之夫包養之情人</button></div><details class="ans"><summary>看答案</summary>正確答案：B</details></div><div class="q" id="q8" data-answer="C"><p class="stem">Q8. 命主學歷情況?<span class="tag">学业</span></p><div class="opts"><button type="button" data-l="A">A. 中三 初中畢業</button><button type="button" data-l="B">B. 中七 預科畢業</button><button type="button" data-l="C">C. 大學以上</button><button type="button" data-l="D">D. 因病而不能上學而只得小學</button></div><details class="ans"><summary>看答案</summary>正確答案：C</details></div><div class="q" id="q9" data-answer="A"><p class="stem">Q9. 2011辛卯年發生何事?<span class="tag">财运</span></p><div class="opts"><button type="button" data-l="A">A. 炒賣樓房得財</button><button type="button" data-l="B">B. 交通意外受傷</button><button type="button" data-l="C">C. 得到房屋處分配公屋</button><button type="button" data-l="D">D. 打劫破財受傷</button></div><details class="ans"><summary>看答案</summary>正確答案：A</details></div><div class="q" id="q10" data-answer="A"><p class="stem">Q10. 1999己卯年工作情況?<span class="tag">事业</span></p><div class="opts"><button type="button" data-l="A">A. 轉工升職加薪</button><button type="button" data-l="B">B. 被公司開除</button><button type="button" data-l="C">C. 盜用公司財物而引起官非</button><button type="button" data-l="D">D. 辭職到外地進修</button></div><details class="ans"><summary>看答案</summary>正確答案：A</details></div></section><section class="card" id="c3"><div class="case-h"><h3>命例 3</h3><span class="meta">顧臻明師傅</span></div><div class="birth">男命 · 西曆 1972 年 1 月 15 日 00:30（子時） · 香港出生<details class="ans"><summary>原題生辰原文</summary>問題提供:首屆算命師冠軍及第三屆亞軍得主: 顧臻明師傅 Question provider: 1st Fortune Telling Competition’s Champion &amp; 3rd Competition’s Runner-up 男命 西曆1972年1月15日 00:30AM 香港出生 Male: 15 Jan 1972 00:30AM Birth Place: Hong Kong</details></div><table class="pillars"><tr><th>年柱</th><th>月柱</th><th>日柱</th><th>時柱</th></tr><tr><td class="gz">辛亥</td><td class="gz">辛丑</td><td class="gz">乙巳</td><td class="gz">丙子</td></tr><tr><td class="tg">七杀</td><td class="tg">七杀</td><td class="tg">日主</td><td class="tg">伤官</td></tr></table><div class="luck">大運（逆行，1974-11-04 起）：<span>庚子 1974–1983</span><span>己亥 1984–1993</span><span>戊戌 1994–2003</span><span>丁酉 2004–2013</span><span>丙申 2014–2023</span><span>乙未 2024–2033</span><span>甲午 2034–2043</span><span>癸巳 2044–2053</span><span>壬辰 2054–2063</span></div><div class="q" id="q11" data-answer="C"><p class="stem">Q11. 命主在2012年工作方面情況?<span class="tag">事业</span></p><div class="opts"><button type="button" data-l="A">A. 無業,無收入。</button><button type="button" data-l="B">B. 受薪工作,年薪在$300000以下</button><button type="button" data-l="C">C. 受薪工作,年薪在$1000000以上</button><button type="button" data-l="D">D. 自僱經營店舖,收入不穩定</button></div><details class="ans"><summary>看答案</summary>正確答案：C</details></div><div class="q" id="q12" data-answer="C"><p class="stem">Q12. 在2001年,命主發生了何事?<span class="tag">婚姻</span></p><div class="opts"><button type="button" data-l="A">A. 中六合彩二獎</button><button type="button" data-l="B">B. 和拍拖十年的女友分手</button><button type="button" data-l="C">C. 被劫受傷入院</button><button type="button" data-l="D">D. 居住大廈發生三級大火</button></div><details class="ans"><summary>看答案</summary>正確答案：C</details></div><div class="q" id="q13" data-answer="B"><p class="stem">Q13. 以下那個答案最接近命主中學時期的狀況?<span class="tag">学业</span></p><div class="opts"><button type="button" data-l="A">A. 學業成績名列前茅</button><button type="button" data-l="B">B. 無心向學,結交壞朋友</button><button type="button" data-l="C">C. 成績中等,有做義工習慣</button><button type="button" data-l="D">D. 中途輟學,賺錢幫補家計</button></div><details class="ans"><summary>看答案</summary>正確答案：B</details></div><div class="q" id="q14" data-answer="A"><p class="stem">Q14. 命主13歲前所發生的嚴重事故?<span class="tag">家庭</span></p><div class="opts"><button type="button" data-l="A">A. 父親過身</button><button type="button" data-l="B">B. 妹妹過身</button><button type="button" data-l="C">C. 意外導致右眼失明</button><button type="button" data-l="D">D. 意外導致右腳折斷</button></div><details class="ans"><summary>看答案</summary>正確答案：A</details></div><div class="q" id="q15" data-answer="B"><p class="stem">Q15. 命主的性格特質?<span class="tag">性格</span></p><div class="opts"><button type="button" data-l="A">A. 口齒伶俐,平易近人,克勤克儉</button><button type="button" data-l="B">B. 不擅言辭,容易開罪人,揮霍無節制</button><button type="button" data-l="C">C. 口齒伶俐,平易近人,揮霍無節制</button><button type="button" data-l="D">D. 不擅言辭,容易開罪人,克勤克儉</button></div><details class="ans"><summary>看答案</summary>正確答案：B</details></div></section><section class="card" id="c4"><div class="case-h"><h3>命例 4</h3><span class="meta">Goran傅梓量師傅</span></div><div class="birth">女命 · 西曆 1970 年 8 月 14 日（時辰未知） · 香港出生<details class="ans"><summary>原題生辰原文</summary>問題提供: Goran傅梓量師傅 Question provider: Master Goran Fu 出生日期: 西元1970年8月14日 性別: 女 出生地: 香港 Female: 14 Aug 1970 Birth Place: Hong Kong</details></div><div class="q" id="q16" data-answer="A"><p class="stem">Q16. 請問此命當天出生的,在那一個時辰呢?</p><div class="opts"><button type="button" data-l="A">A. 01:00—03:00丑時</button><button type="button" data-l="B">B. 03:00—05:00寅時</button><button type="button" data-l="C">C. 15:00—17:00申時</button><button type="button" data-l="D">D. 19:00—21:00戌時</button></div><details class="ans"><summary>看答案</summary>正確答案：A</details></div></section><div class="score" id="score" hidden data-best="本屆未公布參賽者成績"></div><a class="cta" href="https://shunshi.ai/zh-tw?utm_source=github&utm_medium=fate-bench&utm_campaign=site">用 ShunShi.ai 免費排八字、紫微、星盤，問 AI 怎麼看 →</a>
+</main>
+<footer><div class="wrap">
+題目與答案出自香港青年術數家協會「全球算命師大賽」（<a href="https://hkjfma.org">hkjfma.org</a>），版權屬原作者，此處僅作整理與引用。
+2022–2025 題目經 <a href="https://github.com/DestinyLinker/MingLi-Bench">MingLi-Bench</a>（MIT）、2021 答案經 <a href="https://github.com/ChenJiangxi/BaziQA">BaziQA</a>（MIT）。
+八字由第三方庫 lunar-python 排出，時間依原題，未做真太陽時校正。
+彙編資料以 <a href="https://github.com/shunshi-ai/fate-bench/blob/main/LICENSE-DATA">CC BY 4.0</a> 釋出 · 整理：<a href="https://shunshi.ai/zh-tw?utm_source=github&utm_medium=fate-bench&utm_campaign=site">ShunShi.ai</a> · <a href="https://github.com/shunshi-ai/fate-bench">原始碼與資料</a>
+</div></footer>
+<script>
+(function(){var done=0,right=0,el=document.getElementById('score');
+document.querySelectorAll('.q').forEach(function(q){var ans=q.dataset.answer;
+q.querySelectorAll('.opts button').forEach(function(b){b.addEventListener('click',function(){
+if(q.dataset.done)return;q.dataset.done=1;done++;
+q.querySelectorAll('.opts button').forEach(function(x){x.disabled=true;if(x.dataset.l===ans)x.classList.add('ok')});
+if(b.dataset.l===ans){right++}else{b.classList.add('bad')}
+var d=q.querySelector('details');if(d)d.open=true;
+if(el){el.hidden=false;el.textContent='你已作答 '+done+' 題，答對 '+right+' 題'+(el.dataset.best?' · '+el.dataset.best:'')}
+})})})})();
+</script>
+</body>
+</html>

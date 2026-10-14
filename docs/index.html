@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全球算命師大賽 歷屆真題與答案（335 題）</title>
+<meta name="description" content="香港全球算命師大賽 2010–2026 歷屆 335 道真題，真實生辰配真實經歷，附八字四柱、大運與官方答案，可線上作答。">
+<link rel="canonical" href="https://shunshi-ai.github.io/fate-bench/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="全球算命師大賽 歷屆真題與答案（335 題）">
+<meta property="og:description" content="香港全球算命師大賽 2010–2026 歷屆 335 道真題，真實生辰配真實經歷，附八字四柱、大運與官方答案，可線上作答。">
+<meta property="og:url" content="https://shunshi-ai.github.io/fate-bench/">
+<meta name="twitter:card" content="summary">
+<style>
+:root{--bg:#faf6ed;--card:#fffdf8;--ink:#2a2420;--muted:#7a6f63;--line:#e6dccb;--accent:#8a5a2b;
+--ok:#2f7d4f;--ok-bg:#e5f3ea;--bad:#b23a3a;--bad-bg:#f8e3e1;--chip:#f1e8d8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1916;--card:#25211d;--ink:#eee6da;
+--muted:#a89c8d;--line:#3a332c;--accent:#d9a46a;--ok:#6cc08d;--ok-bg:#1f3428;--bad:#e07b74;--bad-bg:#3a2321;--chip:#302a24}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:1px solid var(--line);padding:14px 0}
+header.top .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+header.top a.brand{font-weight:700;text-decoration:none;color:var(--ink)}
+nav.years{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0}
+nav.years a{padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--ink);font-size:14px;background:var(--card)}
+nav.years a.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+h1{font-size:28px;line-height:1.3;margin:28px 0 8px}
+h2{font-size:21px;margin:36px 0 12px}
+.sub{color:var(--muted);margin:0 0 16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat b{display:block;font-size:22px}
+.stat span{color:var(--muted);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0}
+.case-h{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.case-h h3{margin:0;font-size:18px}
+.meta{color:var(--muted);font-size:14px}
+.birth{margin:10px 0;padding:10px 12px;background:var(--chip);border-radius:10px;font-size:15px}
+table.pillars{border-collapse:collapse;margin:10px 0;width:100%;max-width:420px;text-align:center}
+table.pillars th,table.pillars td{border:1px solid var(--line);padding:4px 6px}
+table.pillars th{font-weight:500;color:var(--muted);font-size:13px}
+table.pillars td.gz{font-size:20px;letter-spacing:2px}
+table.pillars td.tg{font-size:12px;color:var(--muted)}
+.luck{font-size:13px;color:var(--muted);overflow-x:auto;white-space:nowrap;padding-bottom:4px}
+.luck span{display:inline-block;margin-right:10px}
+.q{border-top:1px dashed var(--line);padding-top:14px;margin-top:14px}
+.q p.stem{margin:0 0 8px;font-weight:600}
+.opts{display:grid;gap:6px}
+.opts button{all:unset;cursor:pointer;display:block;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.opts button:hover{border-color:var(--accent)}
+.opts button.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.opts button.bad{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.opts button[disabled]{cursor:default}
+details.ans{margin-top:6px;font-size:14px;color:var(--muted)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;background:var(--chip);color:var(--muted);margin-left:6px}
+.tag.warn{color:var(--bad)}
+.score{position:sticky;bottom:12px;margin:24px auto;max-width:520px;background:var(--ink);color:var(--bg);border-radius:999px;padding:8px 16px;text-align:center;font-size:14px}
+table.ed{width:100%;border-collapse:collapse;font-size:15px}
+table.ed th,table.ed td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left}
+table.ed td.n{text-align:right;white-space:nowrap}
+.cta{display:block;text-align:center;margin:28px 0;padding:14px;border-radius:12px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0 40px;color:var(--muted);font-size:13px}
+@media (max-width:520px){h1{font-size:23px}.card{padding:14px}table.pillars td.gz{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">全球算命師大賽 歷屆真題</a>
+<span class="meta"><a href="https://github.com/shunshi-ai/fate-bench">GitHub</a> · <a href="https://shunshi.ai/zh-tw?utm_source=github&utm_medium=fate-bench&utm_campaign=site">ShunShi.ai</a></span>
+</div></header>
+<main class="wrap">
+<nav class="years" aria-label="屆次"><a href="index.html" class=on>總覽</a><a href="2010.html">2010</a><a href="2011.html">2011</a><a href="2012.html">2012</a><a href="2013.html">2013</a><a href="2018.html">2018</a><a href="2021.html">2021</a><a href="2022.html">2022</a><a href="2023.html">2023</a><a href="2024.html">2024</a><a href="2025.html">2025</a><a href="2026.html">2026</a></nav>
+
+<h1>全球算命師大賽 歷屆真題（2010–2026）</h1>
+<p class="sub">香港青年術數家協會自 2010 年起舉辦的公開比賽：出題師傅提供真實人物的生辰與經歷，
+職業命理師以真名參賽作答，賽後公布答案與成績。這裡把歷屆題目整理成可以直接作答的網頁 ——
+先看生辰和八字，自己判斷，再點選項看對錯。</p>
+<div class="stats">
+<div class="stat"><b>335</b><span>道真題</span></div>
+<div class="stat"><b>71</b><span>個真實命例</span></div>
+<div class="stat"><b>11</b><span>屆比賽</span></div>
+<div class="stat"><b>47–78%</b><span>職業命理師最高正確率</span></div>
+</div>
+<h2>歷屆一覽</h2>
+<table class="ed"><tr><th>年份</th><th>屆次</th><th class="n">題數</th><th class="n">命例</th><th>最高分（原始）</th><th>答案</th></tr>
+<tr><td><a href="2010.html">2010</a></td><td>第一屆</td><td class="n">9</td><td class="n">3</td><td>未公布</td><td>官方</td></tr><tr><td><a href="2011.html">2011</a></td><td>第二屆</td><td class="n">15</td><td class="n">3</td><td>未公布</td><td>官方</td></tr><tr><td><a href="2012.html">2012</a></td><td>第三屆</td><td class="n">15</td><td class="n">3</td><td>未公布</td><td>官方</td></tr><tr><td><a href="2013.html">2013</a></td><td>第四屆</td><td class="n">16</td><td class="n">4</td><td>未公布</td><td>官方</td></tr><tr><td><a href="2018.html">2018</a></td><td>第九屆</td><td class="n">40</td><td class="n">9</td><td>19/40（48%）</td><td>官方</td></tr><tr><td><a href="2021.html">2021</a></td><td>第十二屆</td><td class="n">40</td><td class="n">9</td><td>未公布</td><td>第三方</td></tr><tr><td><a href="2022.html">2022</a></td><td>第十三屆</td><td class="n">40</td><td class="n">8</td><td>21/40（52%）</td><td>官方</td></tr><tr><td><a href="2023.html">2023</a></td><td>第十四屆</td><td class="n">40</td><td class="n">8</td><td>21/40（52%）</td><td>官方</td></tr><tr><td><a href="2024.html">2024</a></td><td>第十五屆</td><td class="n">40</td><td class="n">8</td><td>26/40（65%）</td><td>官方</td></tr><tr><td><a href="2025.html">2025</a></td><td>第十六屆</td><td class="n">40</td><td class="n">8</td><td>未公布</td><td>第三方</td></tr><tr><td><a href="2026.html">2026</a></td><td>第十七屆</td><td class="n">40</td><td class="n">8</td><td>31/40（78%）</td><td>官方</td></tr></table>
+<h2>怎麼看這些分數</h2>
+<p>隨機亂猜的正確率是 20–25%（依選項數）。有公布成績的屆次裡，冠軍級命理師的原始正確率落在 47% 到 78% 之間 ——
+都明顯高於亂猜，也都遠遠稱不上「算準」。只公布了前幾名的分數，所以這是天花板，不是平均。
+自第九屆起官方排名去掉每人最好與最差的一個命例，表中列的是 40 題的原始分，才能跟你自己的作答直接比。</p>
+<h2>資料下載</h2>
+<p>完整資料（題目、答案、生辰、八字與紫微盤、人類成績）在 <a href="https://github.com/shunshi-ai/fate-bench">GitHub</a>，
+CC BY 4.0 授權，研究與教學可自由使用，請註明出處。</p>
+<a class="cta" href="https://shunshi.ai/zh-tw?utm_source=github&utm_medium=fate-bench&utm_campaign=site">用 ShunShi.ai 免費排八字、紫微、星盤，問 AI 怎麼看 →</a>
+
+</main>
+<footer><div class="wrap">
+題目與答案出自香港青年術數家協會「全球算命師大賽」（<a href="https://hkjfma.org">hkjfma.org</a>），版權屬原作者，此處僅作整理與引用。
+2022–2025 題目經 <a href="https://github.com/DestinyLinker/MingLi-Bench">MingLi-Bench</a>（MIT）、2021 答案經 <a href="https://github.com/ChenJiangxi/BaziQA">BaziQA</a>（MIT）。
+八字由第三方庫 lunar-python 排出，時間依原題，未做真太陽時校正。
+彙編資料以 <a href="https://github.com/shunshi-ai/fate-bench/blob/main/LICENSE-DATA">CC BY 4.0</a> 釋出 · 整理：<a href="https://shunshi.ai/zh-tw?utm_source=github&utm_medium=fate-bench&utm_campaign=site">ShunShi.ai</a> · <a href="https://github.com/shunshi-ai/fate-bench">原始碼與資料</a>
+</div></footer>
+<script>
+(function(){var done=0,right=0,el=document.getElementById('score');
+document.querySelectorAll('.q').forEach(function(q){var ans=q.dataset.answer;
+q.querySelectorAll('.opts button').forEach(function(b){b.addEventListener('click',function(){
+if(q.dataset.done)return;q.dataset.done=1;done++;
+q.querySelectorAll('.opts button').forEach(function(x){x.disabled=true;if(x.dataset.l===ans)x.classList.add('ok')});
+if(b.dataset.l===ans){right++}else{b.classList.add('bad')}
+var d=q.querySelector('details');if(d)d.open=true;
+if(el){el.hidden=false;el.textContent='你已作答 '+done+' 題，答對 '+right+' 題'+(el.dataset.best?' · '+el.dataset.best:'')}
+})})})})();
+</script>
+</body>
+</html>

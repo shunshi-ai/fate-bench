@@ -10,7 +10,7 @@
 [![People](https://img.shields.io/badge/People-71-blue.svg)](./data/cases.json)
 [![Editions](https://img.shields.io/badge/Editions-2010--2026-orange.svg)](./data/raw/hkjfma/INVENTORY.md)
 
-English | [中文](./README_zh.md)
+English | [中文](./README_zh.md) · **[Browse and try every question online →](https://shunshi-ai.github.io/fate-bench/)**
 
 </div>
 
@@ -259,6 +259,7 @@ python scripts/charts.py          # birth data   → data/cases.json
 python scripts/categorize.py      # topic labels    → data/hkjfma_categories.json
 python scripts/export_jsonl.py    # join everything → data/fate_bench.jsonl
 python scripts/crosscheck_vendor.py  # audit both third-party sources against the answer sheets
+python scripts/build_site.py      # static pages → docs/ (served by GitHub Pages)
 ```
 
 Every script takes `--check` to validate without writing.
