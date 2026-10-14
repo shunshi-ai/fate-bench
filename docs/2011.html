@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2011 第二屆全球算命師大賽 真題與答案（15 題）</title>
+<meta name="description" content="2011年香港全球算命師大賽 15 道真題：真實生辰、八字四柱、大運與官方答案，可線上作答對照職業命理師成績。">
+<link rel="canonical" href="https://shunshi-ai.github.io/fate-bench/2011.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="2011 第二屆全球算命師大賽 真題與答案（15 題）">
+<meta property="og:description" content="2011年香港全球算命師大賽 15 道真題：真實生辰、八字四柱、大運與官方答案，可線上作答對照職業命理師成績。">
+<meta property="og:url" content="https://shunshi-ai.github.io/fate-bench/2011.html">
+<meta name="twitter:card" content="summary">
+<style>
+:root{--bg:#faf6ed;--card:#fffdf8;--ink:#2a2420;--muted:#7a6f63;--line:#e6dccb;--accent:#8a5a2b;
+--ok:#2f7d4f;--ok-bg:#e5f3ea;--bad:#b23a3a;--bad-bg:#f8e3e1;--chip:#f1e8d8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1916;--card:#25211d;--ink:#eee6da;
+--muted:#a89c8d;--line:#3a332c;--accent:#d9a46a;--ok:#6cc08d;--ok-bg:#1f3428;--bad:#e07b74;--bad-bg:#3a2321;--chip:#302a24}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:1px solid var(--line);padding:14px 0}
+header.top .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+header.top a.brand{font-weight:700;text-decoration:none;color:var(--ink)}
+nav.years{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0}
+nav.years a{padding:4px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--ink);font-size:14px;background:var(--card)}
+nav.years a.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+h1{font-size:28px;line-height:1.3;margin:28px 0 8px}
+h2{font-size:21px;margin:36px 0 12px}
+.sub{color:var(--muted);margin:0 0 16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat b{display:block;font-size:22px}
+.stat span{color:var(--muted);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0}
+.case-h{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.case-h h3{margin:0;font-size:18px}
+.meta{color:var(--muted);font-size:14px}
+.birth{margin:10px 0;padding:10px 12px;background:var(--chip);border-radius:10px;font-size:15px}
+table.pillars{border-collapse:collapse;margin:10px 0;width:100%;max-width:420px;text-align:center}
+table.pillars th,table.pillars td{border:1px solid var(--line);padding:4px 6px}
+table.pillars th{font-weight:500;color:var(--muted);font-size:13px}
+table.pillars td.gz{font-size:20px;letter-spacing:2px}
+table.pillars td.tg{font-size:12px;color:var(--muted)}
+.luck{font-size:13px;color:var(--muted);overflow-x:auto;white-space:nowrap;padding-bottom:4px}
+.luck span{display:inline-block;margin-right:10px}
+.q{border-top:1px dashed var(--line);padding-top:14px;margin-top:14px}
+.q p.stem{margin:0 0 8px;font-weight:600}
+.opts{display:grid;gap:6px}
+.opts button{all:unset;cursor:pointer;display:block;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.opts button:hover{border-color:var(--accent)}
+.opts button.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.opts button.bad{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.opts button[disabled]{cursor:default}
+details.ans{margin-top:6px;font-size:14px;color:var(--muted)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;background:var(--chip);color:var(--muted);margin-left:6px}
+.tag.warn{color:var(--bad)}
+.score{position:sticky;bottom:12px;margin:24px auto;max-width:520px;background:var(--ink);color:var(--bg);border-radius:999px;padding:8px 16px;text-align:center;font-size:14px}
+table.ed{width:100%;border-collapse:collapse;font-size:15px}
+table.ed th,table.ed td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left}
+table.ed td.n{text-align:right;white-space:nowrap}
+.cta{display:block;text-align:center;margin:28px 0;padding:14px;border-radius:12px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0 40px;color:var(--muted);font-size:13px}
+@media (max-width:520px){h1{font-size:23px}.card{padding:14px}table.pillars td.gz{font-size:17px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">全球算命師大賽 歷屆真題</a>
+<span class="meta"><a href="https://github.com/shunshi-ai/fate-bench">GitHub</a> · <a href="https://shunshi.ai/zh-tw?utm_source=github&utm_medium=fate-bench&utm_campaign=site">ShunShi.ai</a></span>
+</div></header>
+<main class="wrap">
+<nav class="years" aria-label="屆次"><a href="index.html">總覽</a><a href="2010.html">2010</a><a href="2011.html" class=on>2011</a><a href="2012.html">2012</a><a href="2013.html">2013</a><a href="2018.html">2018</a><a href="2021.html">2021</a><a href="2022.html">2022</a><a href="2023.html">2023</a><a href="2024.html">2024</a><a href="2025.html">2025</a><a href="2026.html">2026</a></nav>
+<h1>2011 第二屆全球算命師大賽 真題與答案（15 題）</h1><p class="sub">3 個真實命例、15 道選擇題，每題都有出題師傅掌握的真實經歷作答案。先看生辰與八字，自己判斷，再點選項揭曉。本屆未公布參賽者成績。</p><p class="meta">原題出處：<a href="https://hkjfma.org/2012/09/2011%e5%b9%b4%e5%ba%a6%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd%ef%bc%88%e7%ac%ac%e4%ba%8c%e5%b1%86%ef%bc%89%e9%a1%8c%e7%9b%ae%e3%80%81%e7%ad%94%e6%a1%88%e5%8f%8a%e5%be%97">hkjfma.org · 2011年度全球算命師比賽（第二屆）題目、答案及得</a></p><section class="card" id="c1"><div class="case-h"><h3>命例 1</h3><span class="meta"></span></div><div class="birth">男命 · 西曆 1972 年 11 月 2 日（巳時） · 唐山出生<details class="ans"><summary>原題生辰原文</summary>題目(一) 男命 唐山大地震幸存者八字 出生時間:西元02-11-1972 巳時 農曆一九七二年九月廿七日 巳時 壬子年 庚戌月 丁酉日 乙巳時 出生地點:中國大陸 唐山市</details></div><table class="pillars"><tr><th>年柱</th><th>月柱</th><th>日柱</th><th>時柱</th></tr><tr><td class="gz">壬子</td><td class="gz">庚戌</td><td class="gz">丁酉</td><td class="gz">乙巳</td></tr><tr><td class="tg">正官</td><td class="tg">正财</td><td class="tg">日主</td><td class="tg">偏印</td></tr></table><div class="luck">大運（順行，1974-08-02 起）：<span>辛亥 1974–1983</span><span>壬子 1984–1993</span><span>癸丑 1994–2003</span><span>甲寅 2004–2013</span><span>乙卯 2014–2023</span><span>丙辰 2024–2033</span><span>丁巳 2034–2043</span><span>戊午 2044–2053</span><span>己未 2054–2063</span></div><div class="q" id="q1" data-answer="E"><p class="stem">Q1. 1976丙辰年,唐山大地震中六親情況?(命主最細,沒有哥哥,只有三位姐姐)<span class="tag">家庭</span></p><div class="opts"><button type="button" data-l="A">A. 父親在地震中死亡 (母親與三位姐姐健在)</button><button type="button" data-l="B">B. 母親在地震中死亡 (父親與三位姐姐健在)</button><button type="button" data-l="C">C. 三位姐姐其中有一,二,或三位姐姐在地震中死亡 (母親與父親健在)</button><button type="button" data-l="D">D. 父母與姐姐全家死亡,只得命主幸存</button><button type="button" data-l="E">E. 全家幸存,父母與姐姐都沒有死亡</button></div><details class="ans"><summary>看答案</summary>正確答案：E</details></div><div class="q" id="q2" data-answer="E"><p class="stem">Q2. 命主何年移民到香港定居?<span class="tag">运势</span></p><div class="opts"><button type="button" data-l="A">A. 西曆1988年1月2x日</button><button type="button" data-l="B">B. 西曆1992年1月2x日</button><button type="button" data-l="C">C. 西曆1997年1月2x日</button><button type="button" data-l="D">D. 西曆2000年1月2x日</button><button type="button" data-l="E">E. 西曆2002年1月2x日</button></div><details class="ans"><summary>看答案</summary>正確答案：E</details></div><div class="q" id="q3" data-answer="C"><p class="stem">Q3. 命主在何年結婚?<span class="tag">婚姻</span></p><div class="opts"><button type="button" data-l="A">A. 1992 壬申年</button><button type="button" data-l="B">B. 1995 乙亥年</button><button type="button" data-l="C">C. 1996 丙子年</button><button type="button" data-l="D">D. 1997 丁丑年</button><button type="button" data-l="E">E. 1999 己卯年</button></div><details class="ans"><summary>看答案</summary>正確答案：C</details></div><div class="q" id="q4" data-answer="C"><p class="stem">Q4. 命主第一胎出生之 BB 仔在何年?<span class="tag">子女</span></p><div class="opts"><button type="button" data-l="A">A. 2000 庚辰年</button><button type="button" data-l="B">B. 2001 辛巳年</button><button type="button" data-l="C">C. 2004 甲申年</button><button type="button" data-l="D">D. 2007 丁亥年</button><button type="button" data-l="E">E. 2009 己丑年</button></div><details class="ans"><summary>看答案</summary>正確答案：C</details></div><div class="q" id="q5" data-answer="D"><p class="stem">Q5. 2003癸未年發生何事?<span class="tag">财运</span></p><div class="opts"><button type="button" data-l="A">A. 得到沙士之病</button><button type="button" data-l="B">B. 打架破相而引起官非</button><button type="button" data-l="C">C. 買樓</button><button type="button" data-l="D">D. 創業</button><button type="button" data-l="E">E. 破產</button></div><details class="ans"><summary>看答案</summary>正確答案：D</details></div></section><section class="card" id="c2"><div class="case-h"><h3>命例 2</h3><span class="meta"></span></div><div class="birth">男命 · 西曆 1981 年 9 月 8 日（戌時） · 台灣出生<details class="ans"><summary>原題生辰原文</summary>題目(二) 男命 出生時間:西元1981年9月8日戌時 農曆一九八一年八月十一日戌時 辛酉年 丁酉月 己丑日 甲戌時 出生地區:台灣</details></div><table class="pillars"><tr><th>年柱</th><th>月柱</th><th>日柱</th><th>時柱</th></tr><tr><td class="gz">辛酉</td><td class="gz">丁酉</td><td class="gz">己丑</td><td class="gz">甲戌</td></tr><tr><td class="tg">食神</td><td class="tg">偏印</td><td class="tg">日主</td><td class="tg">正官</td></tr></table><div class="luck">大運（逆行，1981-12-08 起）：<span>丙申 1981–1990</span><span>乙未 1991–2000</span><span>甲午 2001–2010</span><span>癸巳 2011–2020</span><span>壬辰 2021–2030</span><span>辛卯 2031–2040</span><span>庚寅 2041–2050</span><span>己丑 2051–2060</span><span>戊子 2061–2070</span></div><div class="q" id="q6" data-answer="E"><p class="stem">Q6. 請問此造的學歷程度?<span class="tag">学业</span></p><div class="opts"><button type="button" data-l="A">A. 小學</button><button type="button" data-l="B">B. 中學</button><button type="button" data-l="C">C. 大學</button><button type="button" data-l="D">D. 小學以下</button><button type="button" data-l="E">E. 碩士以上</button></div><details class="ans"><summary>看答案</summary>正確答案：E</details></div><div class="q" id="q7" data-answer="B"><p class="stem">Q7. 請問此造於現在的婚姻關係?<span class="tag">婚姻</span></p><div class="opts"><button type="button" data-l="A">A. 曾經結過婚但已離婚</button><button type="button" data-l="B">B. 未有結婚</button><button type="button" data-l="C">C. 剛結婚</button><button type="button" data-l="D">D. 同性戀者</button><button type="button" data-l="E">E. 已結婚兩次</button></div><details class="ans"><summary>看答案</summary>正確答案：B</details></div><div class="q" id="q8" data-answer="A"><p class="stem">Q8. 以下五點那樣最切合命主?<span class="tag">性格</span></p><div class="opts"><button type="button" data-l="A">A. 喜歡講話但有點口吃</button><button type="button" data-l="B">B. 口才甚佳,口若懸河</button><button type="button" data-l="C">C. 自閉之人</button><button type="button" data-l="D">D. 喜歡出風頭之人</button><button type="button" data-l="E">E. 經常出口傷人</button></div><details class="ans"><summary>看答案</summary>正確答案：A</details></div><div class="q" id="q9" data-answer="C"><p class="stem">Q9. 1984年命主有甚麼特別病患?<span class="tag">健康</span></p><div class="opts"><button type="button" data-l="A">A. 意外車禍</button><button type="button" data-l="B">B. 肝炎</button><button type="button" data-l="C">C. 肺炎</button><button type="button" data-l="D">D. 血液有事</button><button type="button" data-l="E">E. 腎病</button></div><details class="ans"><summary>看答案</summary>正確答案：C</details></div><div class="q" id="q10" data-answer="A"><p class="stem">Q10. 2003年1月1日有甚麼特別之事?<span class="tag">婚姻</span></p><div class="opts"><button type="button" data-l="A">A. 車禍受傷</button><button type="button" data-l="B">B. 女友說分手</button><button type="button" data-l="C">C. 母親有災</button><button type="button" data-l="D">D. 父母離婚</button><button type="button" data-l="E">E. 突有橫財</button></div><details class="ans"><summary>看答案</summary>正確答案：A</details></div></section><section class="card" id="c3"><div class="case-h"><h3>命例 3</h3><span class="meta"></span></div><div class="birth">男命 · 西曆 1994 年 8 月 28 日（丑時） · 香港出生<details class="ans"><summary>原題生辰原文</summary>題目(三) 男命 出生時間:西元28-08-1994 丑時 農曆一九九四年七月廿二日丑時 出生地區:香港 甲戌年 壬申月 丙戌日 己丑時</details></div><table class="pillars"><tr><th>年柱</th><th>月柱</th><th>日柱</th><th>時柱</th></tr><tr><td class="gz">甲戌</td><td class="gz">壬申</td><td class="gz">丙戌</td><td class="gz">己丑</td></tr><tr><td class="tg">偏印</td><td class="tg">七杀</td><td class="tg">日主</td><td class="tg">伤官</td></tr></table><div class="luck">大運（順行，1998-05-08 起）：<span>癸酉 1998–2007</span><span>甲戌 2008–2017</span><span>乙亥 2018–2027</span><span>丙子 2028–2037</span><span>丁丑 2038–2047</span><span>戊寅 2048–2057</span><span>己卯 2058–2067</span><span>庚辰 2068–2077</span><span>辛巳 2078–2087</span></div><div class="q" id="q11" data-answer="B"><p class="stem">Q11. 命主2011年時的家庭狀況:<span class="tag">家庭</span></p><div class="opts"><button type="button" data-l="A">A. 父親坐牢</button><button type="button" data-l="B">B. 母親坐牢</button><button type="button" data-l="C">C. 全家移民</button><button type="button" data-l="D">D. 父母雙亡</button><button type="button" data-l="E">E. 父母破產</button></div><details class="ans"><summary>看答案</summary>正確答案：B</details></div><div class="q" id="q12" data-answer="B"><p class="stem">Q12. 命主的母親於2010年時:<span class="tag">家庭</span></p><div class="opts"><button type="button" data-l="A">A. 移民外地</button><button type="button" data-l="B">B. 自殺</button><button type="button" data-l="C">C. 開刀手術</button><button type="button" data-l="D">D. 車禍</button><button type="button" data-l="E">E. 隨人改嫁</button></div><details class="ans"><summary>看答案</summary>正確答案：B</details></div><div class="q" id="q13" data-answer="D"><p class="stem">Q13. 命主的弟弟妹妹同於那一年身亡:<span class="tag">家庭</span></p><div class="opts"><button type="button" data-l="A">A. 2007</button><button type="button" data-l="B">B. 2008</button><button type="button" data-l="C">C. 2009</button><button type="button" data-l="D">D. 2010</button><button type="button" data-l="E">E. 2011</button></div><details class="ans"><summary>看答案</summary>正確答案：D</details></div><div class="q" id="q14" data-answer="A"><p class="stem">Q14. 弟妹同年身亡原因:<span class="tag">家庭</span></p><div class="opts"><button type="button" data-l="A">A. 被殺</button><button type="button" data-l="B">B. 車禍</button><button type="button" data-l="C">C. 傳染病絕症</button><button type="button" data-l="D">D. 溺死</button><button type="button" data-l="E">E. 母腹夭折</button></div><details class="ans"><summary>看答案</summary>正確答案：A</details></div><div class="q" id="q15" data-answer="B"><p class="stem">Q15. 命主2011年曾經有那些經歷:<span class="tag">健康</span></p><div class="opts"><button type="button" data-l="A">A. 開刀手術</button><button type="button" data-l="B">B. 自殺不逐</button><button type="button" data-l="C">C. 車禍不死</button><button type="button" data-l="D">D. 官司訢訟</button><button type="button" data-l="E">E. 移民外地</button></div><details class="ans"><summary>看答案</summary>正確答案：B</details></div></section><div class="score" id="score" hidden data-best="本屆未公布參賽者成績"></div><a class="cta" href="https://shunshi.ai/zh-tw?utm_source=github&utm_medium=fate-bench&utm_campaign=site">用 ShunShi.ai 免費排八字、紫微、星盤，問 AI 怎麼看 →</a>
+</main>
+<footer><div class="wrap">
+題目與答案出自香港青年術數家協會「全球算命師大賽」（<a href="https://hkjfma.org">hkjfma.org</a>），版權屬原作者，此處僅作整理與引用。
+2022–2025 題目經 <a href="https://github.com/DestinyLinker/MingLi-Bench">MingLi-Bench</a>（MIT）、2021 答案經 <a href="https://github.com/ChenJiangxi/BaziQA">BaziQA</a>（MIT）。
+八字由第三方庫 lunar-python 排出，時間依原題，未做真太陽時校正。
+彙編資料以 <a href="https://github.com/shunshi-ai/fate-bench/blob/main/LICENSE-DATA">CC BY 4.0</a> 釋出 · 整理：<a href="https://shunshi.ai/zh-tw?utm_source=github&utm_medium=fate-bench&utm_campaign=site">ShunShi.ai</a> · <a href="https://github.com/shunshi-ai/fate-bench">原始碼與資料</a>
+</div></footer>
+<script>
+(function(){var done=0,right=0,el=document.getElementById('score');
+document.querySelectorAll('.q').forEach(function(q){var ans=q.dataset.answer;
+q.querySelectorAll('.opts button').forEach(function(b){b.addEventListener('click',function(){
+if(q.dataset.done)return;q.dataset.done=1;done++;
+q.querySelectorAll('.opts button').forEach(function(x){x.disabled=true;if(x.dataset.l===ans)x.classList.add('ok')});
+if(b.dataset.l===ans){right++}else{b.classList.add('bad')}
+var d=q.querySelector('details');if(d)d.open=true;
+if(el){el.hidden=false;el.textContent='你已作答 '+done+' 題，答對 '+right+' 題'+(el.dataset.best?' · '+el.dataset.best:'')}
+})})})})();
+</script>
+</body>
+</html>
