@@ -580,6 +580,144 @@
    "scoring": null,
    "results": null,
    "note": "As of August 2026 hkjfma.org publishes this edition's question paper and award-ceremony photographs but no results table and no answer sheet. The 40 items are in this dataset via MingLi-Bench, corroborated 40/40 by BaziQA's independent transcription of the same paper, and carry answer_provenance='third-party'. Together with 2021 these are the only editions here with neither a human baseline nor an official answer key."
+  },
+  {
+   "edition": 17,
+   "year": 2026,
+   "items": 40,
+   "options_per_item": 4,
+   "random_baseline": 0.25,
+   "scoring": "diving-style: each entrant's best and worst case are dropped, leaving 30 of 40 questions",
+   "best_raw_overall": {
+    "score": 31,
+    "of": 40,
+    "accuracy": 0.775,
+    "placed": "冠軍"
+   },
+   "results": [
+    {
+     "rank": "冠軍",
+     "winners": 2,
+     "score": 23,
+     "of": 30,
+     "accuracy": 0.767,
+     "raw": {
+      "score_range": [
+       31,
+       31
+      ],
+      "of": 40,
+      "accuracy": 0.775
+     }
+    },
+    {
+     "rank": "亞軍",
+     "winners": 1,
+     "score": 21,
+     "of": 30,
+     "accuracy": 0.7,
+     "raw": {
+      "score_range": [
+       28,
+       28
+      ],
+      "of": 40,
+      "accuracy": 0.7
+     }
+    },
+    {
+     "rank": "季軍",
+     "winners": 4,
+     "score": 19,
+     "of": 30,
+     "accuracy": 0.633,
+     "raw": {
+      "score_range": [
+       23,
+       26
+      ],
+      "of": 40,
+      "accuracy_range": [
+       0.575,
+       0.65
+      ]
+     }
+    },
+    {
+     "rank": "第四名",
+     "winners": 8,
+     "score": 18,
+     "of": 30,
+     "accuracy": 0.6,
+     "raw": {
+      "score_range": [
+       23,
+       24
+      ],
+      "of": 40,
+      "accuracy_range": [
+       0.575,
+       0.6
+      ]
+     }
+    }
+   ],
+   "per_case_scores": {
+    "note": "Per-case totals out of 5 each. Keys are the sheet's own case numbering, 2–9. The published screenshot crops the case-9 column, so case 9 is derived as total minus cases 2–8; for all 15 published finishers that derived value lies in 0–5 and reproduces the published final score under the drop-best-and-worst rule, which checks the transcription.",
+    "champions": [
+     {
+      "name": "藏先生",
+      "region": "江西",
+      "total": 31,
+      "rank": "冠軍",
+      "by_case": {
+       "2": 5,
+       "3": 3,
+       "4": 4,
+       "5": 4,
+       "6": 3,
+       "7": 3,
+       "8": 4,
+       "9": 5
+      }
+     },
+     {
+      "name": "诸珺文",
+      "region": "上海",
+      "total": 31,
+      "rank": "冠軍",
+      "by_case": {
+       "2": 5,
+       "3": 3,
+       "4": 4,
+       "5": 4,
+       "6": 3,
+       "7": 3,
+       "8": 4,
+       "9": 5
+      }
+     },
+     {
+      "name": "炳南",
+      "region": "浙江",
+      "total": 28,
+      "rank": "亞軍",
+      "by_case": {
+       "2": 3,
+       "3": 2,
+       "4": 4,
+       "5": 5,
+       "6": 3,
+       "7": 3,
+       "8": 3,
+       "9": 5
+      }
+     }
+    ]
+   },
+   "source_image": "data/raw/hkjfma/images/2026_ans_001_02.jpeg",
+   "source_url": "https://hkjfma.org/2026/06/2026年第十七屆-全球算命師比賽",
+   "note": "Results table published 2026-08-10, answer sheet 2026-08-08, both added to the original question page rather than posted separately. The table lists 15 finishers through 第四名; the organiser does not publish the entrant count."
   }
  ],
  "editions_scored_but_not_in_this_dataset": [

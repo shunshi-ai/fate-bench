@@ -31,7 +31,7 @@ configs:
 **Real birth charts paired with documented life events**, from a fortune-telling competition that
 has run annually since 2010.
 
-295 multiple-choice questions about 63 real people — the year someone divorced, started
+335 multiple-choice questions about 71 real people — the year someone divorced, started
 a business, lost a parent, was diagnosed with cancer. Each was set by a practising master who
 supplied a real person's birth data and that person's verified history; the organizer published
 the correct answers after the contest closed, **along with what the human entrants scored**.
@@ -42,7 +42,7 @@ They are not all of one grade, and the dataset says which is which:
 
 | `answer_provenance` | Items | What it means |
 |---|---:|---|
-| `official` | 215 | the organizer published the correct answer, on the question page or on an answer sheet transcribed from the photograph |
+| `official` | 255 | the organizer published the correct answer, on the question page or on an answer sheet transcribed from the photograph |
 | `third-party` | 80 | the organizer never published a key for that edition (2021, 2025); the answer comes from another project's transcription, of unstated origin |
 
 The third-party answers are kept because they are otherwise complete and well corroborated — two
@@ -54,15 +54,15 @@ the organizer stood behind:
 from datasets import load_dataset
 
 ds = load_dataset("shunshi-ai/fate-bench")["train"]
-official = ds.filter(lambda r: r["answer_provenance"] == "official")   # 215 items
+official = ds.filter(lambda r: r["answer_provenance"] == "official")   # 255 items
 ```
 
 ## Configs
 
 | Config | Rows | Contents |
 |---|---:|---|
-| `questions` *(default)* | 295 | question, options, answer, topic, and the subject's birth data — flat |
-| `cases` | 63 | one row per person: birth data plus computed BaZi and Zi Wei charts |
+| `questions` *(default)* | 335 | question, options, answer, topic, and the subject's birth data — flat |
+| `cases` | 71 | one row per person: birth data plus computed BaZi and Zi Wei charts |
 
 Join on `case_id`. The split exists because the Zi Wei chart nests palaces → stars →
 transformations; inlining that into every question makes the dataset viewer unusable.
@@ -74,7 +74,7 @@ cases      = load_dataset("shunshi-ai/fate-bench", "cases")["train"]
 
 ## What a chart contains
 
-61 of the 63 people carry both charts. Four pillars alone are a snapshot with no
+69 of the 71 people carry both charts. Four pillars alone are a snapshot with no
 time axis, and most questions here ask *"in which year did X happen"* — read off the decade luck
 cycles. So each case carries what a practitioner would actually work from:
 
@@ -92,17 +92,17 @@ pillars next to the birth data; all three agree with the computed chart.
 
 ## Coverage
 
-10 editions: 2010, 2011, 2012, 2013, 2018, 2021, 2022, 2023, 2024, 2025. Seven of them also published what the
-human entrants scored — best human results land between 47% and 67% against a 20–25% random
+11 editions: 2010, 2011, 2012, 2013, 2018, 2021, 2022, 2023, 2024, 2025, 2026. Eight of them also published what the
+human entrants scored — best human results land between 47% and 78% against a 20–25% random
 floor. Those figures, with their caveats, are in the
 [GitHub repository](https://github.com/shunshi-ai/fate-bench).
 
 ## Known limits
 
-- **This is a Chinese dataset; English coverage is partial and is not ours.** All 295 questions
+- **This is a Chinese dataset; English coverage is partial and is not ours.** All 335 questions
   are in Chinese, Traditional and Simplified both, as each edition printed them. 53 items also
   carry `question_en` — that is **the organizer's own bilingual publication**, not a translation
-  made here. The other 242 have no English, and there is no Japanese or Korean. Translate it
+  made here. The other 282 have no English, and there is no Japanese or Korean. Translate it
   yourself if you need one language throughout; that way any translation error stays yours rather
   than being baked into the ground truth.
 - **Two cases have no chart.** One is the 2018 case whose birth data the organizer never
