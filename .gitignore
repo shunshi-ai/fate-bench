@@ -7,6 +7,3 @@ __pycache__/
 pages/
 hk/
 *.html
-
-# docs/ 是 GitHub Pages 发布目录，网页由 scripts/build_site.py 生成，要提交
-!docs/*.html
