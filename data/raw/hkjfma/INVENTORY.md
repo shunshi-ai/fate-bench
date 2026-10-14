@@ -9,7 +9,7 @@ Answers are not all of one grade, and the dataset does not pretend otherwise. Ev
 `answer_provenance`:
 
 - **`official`** — the organizer published the correct answer, either on the question page itself
-  or on a separate answer sheet transcribed here from the photograph. 215 items.
+  or on a separate answer sheet transcribed here from the photograph. 255 items.
 - **`third-party`** — the organizer never published a key for that edition; the answer comes from
   another project's transcription, of unstated origin. 80 items (2021, 2025). Kept because they
   are otherwise complete and well-corroborated, flagged so they can be filtered out.
@@ -26,8 +26,9 @@ Answers are not all of one grade, and the dataset does not pretend otherwise. Ev
 | 12th | 2021 | 40 | 9 | A–D | **images → [`2021_questions_023.txt`](./2021_questions_023.txt)** | ⚠ third-party → [`2021_answers_thirdparty.txt`](./2021_answers_thirdparty.txt) | 8 masters but **9 subjects** — the last submitted two cases |
 | 13th–15th | 2022–2024 | 120 | 24 | A–D | via MingLi-Bench | official — answer sheets audited here, 120/120 | |
 | 16th | 2025 | 40 | 8 | A–D | via MingLi-Bench | ⚠ third-party — no sheet published | two projects transcribed it independently and agree 40/40 |
+| 17th | 2026 | 40 | 8 | A–D | **images → [`2026_questions_transcribed.txt`](./2026_questions_transcribed.txt)** | official — image → [`2026_answer_key.txt`](./2026_answer_key.txt) | key and results were **added to the June question page in August**, not posted separately — see below |
 
-**Total: 295 items, 63 cases, 2010–2025 across 10 editions.**
+**Total: 335 items, 71 cases, 2010–2026 across 11 editions.**
 
 Each edition with an official key had its parsed answer string compared character by character
 against the organizer's published key. All match exactly.
@@ -69,7 +70,27 @@ the provider line as decoration will silently let them inherit the preceding cas
 | 8th | 2017 | 35 questions published, no key. (Red text on that page marks *question stems*, not answers — an easy misread.) |
 | 10th | 2019 | key never posted. The page titled "答案,得獎名單及統計資料" holds a winners table and AllCounted survey screenshots showing per-option response counts. Response distribution is **not** ground truth — on this material the majority is frequently wrong. |
 | 11th | 2020 | question paper is legible, but both images on the "答案及得獎名單" page are winners tables. No key. |
-| 17th | 2026 | held June 2026; question paper archived here (8 images, `第1-5題` … `第36-40題`), key not yet published — **revisit** |
+
+## 2026: the key was added to the question page, not posted
+
+The 17th edition's question paper went up on 2026-06-21. When this repository first archived it
+(2026-08-03) the page held only the paper, so 2026 was parked as "no key yet". The organizer then
+**edited that same page**: a handwritten 正確答案 sheet on 2026-08-08 and the results table on
+2026-08-10 (WordPress `modified` 2026-08-10). No new post was created, so a check of the post list
+by title shows nothing. **To look for a newly published key, re-open the original question page
+or compare its `modified` date (`/wp-json/wp/v2/posts?search=…&_fields=date,modified,title`) —
+do not rely on the list of post titles.** The 2025 page follows the same pattern.
+
+Transcription notes: Q31–Q34 print their stems on two lines (a red heading over a red question);
+they are joined with 「：」 so the line parser keeps both halves. Wording is otherwise as printed,
+including the simplified characters in Q26/Q29/Q30, 「紫微鬥數」 in case 6, and the Cantonese 「嘅」
+in Q36. Case 4 gives only a range (`上午 5-6 點`), which falls inside 卯時, so the hour is recorded
+as 卯 with no clock time. Case 8 states no birthplace; the 台灣 on the next line is the
+contributing master's location and is not used as one.
+
+As a check on the computed chart, Q36's options were written by the contributing master from the
+chart itself — 「日主庚金」「戌為火庫」「亥水」 — and the computed pillars (庚午 day, 戊戌 month,
+丁亥 hour) agree.
 
 ## Two corrections about 2021
 
@@ -90,7 +111,7 @@ page explains why no key exists: the paper was answered through an AllCounted we
 
 ## Editions whose questions are archived but which stay out of the dataset
 
-2014, 2017, 2020 and 2026 all have a readable question paper and no answer, from any source. The
+2014, 2017 and 2020 all have a readable question paper and no answer, from any source. The
 papers are kept under `images/` so that, if a key surfaces, transcription is the only remaining
 step. They are deliberately **not** in `hkjfma_qa.json`: an item without a recorded correct
 answer is not a dataset item, and the response distributions that exist for some editions are not
@@ -147,10 +168,11 @@ transcribed into [`../../human_baseline.json`](../../human_baseline.json). Sourc
 | 2018 | `images/2018_ans_058_02.jpg` | totals, dropped-high/low, final scores, regions |
 | 2022 | `images/2022_ans_022_02.jpg` | same, plus a note that the top raw total was *not* the champion |
 | 2023 | `images/2023_ans_021_02/03/04.jpg` | same, plus **per-case** scores for the champions |
-| 2024 | `images/2024_ans_015_02.jpeg` | same, plus per-case scores; highest human score in the corpus (26/40) |
+| 2024 | `images/2024_ans_015_02.jpeg` | same, plus per-case scores |
+| 2026 | `images/2026_ans_001_02.jpeg` | same, plus per-case scores; highest human score in the corpus (31/40). The screenshot crops the case-9 column — derived as total minus cases 2–8, and for all 15 finishers that reproduces the published final score |
 
 2010–2012 publish theirs as prose on the question page. 2013, 2021 and 2025 publish none — for
 2021 the site holds only two pages, both the call for entries, and neither carries results.
 
 That leaves 2021 and 2025 as the two editions with neither an official answer key nor a human
-score: 80 of the 295 items. Both are usable and both are marked.
+score: 80 of the 335 items. Both are usable and both are marked.

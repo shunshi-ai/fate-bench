@@ -28,7 +28,7 @@ LABELS = ROOT / "data" / "hkjfma_categories.json"
 SHICHEN = {"子": (23, 1), "丑": (1, 3), "寅": (3, 5), "卯": (5, 7),
            "辰": (7, 9), "巳": (9, 11), "午": (11, 13), "未": (13, 15),
            "申": (15, 17), "酉": (17, 19), "戌": (19, 21), "亥": (21, 23)}
-EDITION = {2010: 1, 2011: 2, 2012: 3, 2013: 4, 2018: 9, 2021: 12}
+EDITION = {2010: 1, 2011: 2, 2012: 3, 2013: 4, 2018: 9, 2021: 12, 2026: 17}
 
 # 各届的分隔符各写各的：`1)` `問題1,` `問題6 ,` `11 最好的…`、选项 `A)` `A ` `A,` `A2004甲申`
 SEP = r"[).、．。:：,，]"
@@ -101,6 +101,20 @@ def parse_birth(raw: str) -> dict:
     # 2021 第二例写作「9時 58分 早上」—— 数字接「時」，与地支时辰（卯時/申時）不会撞
     elif hm := re.search(r"(?<!\d)(\d{1,2})\s*時\s*(\d{1,2})\s*分", t):
         out["clock_hour"], out["clock_minute"] = int(hm.group(1)), int(hm.group(2))
+    # 2026 用「點」：`早上 6 點 50 分`、`15 點 30 分（申時）`。前面带「下午/晚上」且是 12 小时制才 +12
+    elif hm := re.search(r"(早上|上午|下午|晚上)?\s*(?<!\d)(\d{1,2})\s*點\s*(\d{1,2})\s*分", t):
+        h = int(hm.group(2))
+        if hm.group(1) in ("下午", "晚上") and h < 12:
+            h += 12
+        out["clock_hour"], out["clock_minute"] = h, int(hm.group(3))
+    # 2026 第四例只给区间 `上午 5-6 點`：区间落在同一个时辰里，时辰是确定的，钟点不是 ——
+    # 只记时辰，不编一个分钟出来
+    elif "shichen" not in out and (hm := re.search(
+            r"(早上|上午)?\s*(?<!\d)(\d{1,2})\s*-\s*(\d{1,2})\s*點", t)):
+        a, b = int(hm.group(2)), int(hm.group(3))
+        if derive_shichen(a) == derive_shichen(b):
+            out["shichen"] = derive_shichen(a)
+            out["hour_start"], out["hour_end"] = SHICHEN[out["shichen"]]
     # 时辰的补算与字段规范化统一交给 unify_birth，两个来源走同一条路（2013 第三例只登了 00:30AM）
 
     # 2021 第一、五例把性别写成「1，男性」「男性：台灣出生」，不带「命/造」
@@ -114,11 +128,18 @@ def parse_birth(raw: str) -> dict:
     # 2021 第一例「命主於大陸出生」、第八例「廣東潮汕地區出世(少時隨家人移居香港)」都会读错。
     PLACES = ("香港", "澳門", "台灣", "馬來西亞", "新加坡", "美國", "澳洲", "加拿大",
               "英國", "日本", "韓國", "中國大陸", "大陸", "唐山", "廣東潮汕", "廣東",
-              "上海", "北京", "國內", "中國", "Hong Kong", "Malaysia", "Taiwan", "Singapore")
+              "上海", "北京", "四川", "河北", "國內", "中國",
+              "Hong Kong", "Malaysia", "Taiwan", "Singapore")
     alt = "|".join(PLACES)                       # 长的排前面：廣東潮汕 要先于 廣東
     if m := re.search(rf"({alt})\s*(?:地區)?\s*(?:出生|出世)", t):
         out["location"] = m.group(1)
-    elif hits := [(t.index(p), p) for p in PLACES if p in t]:
+    elif m := re.search(rf"出生於\s*({alt})", t):      # 2026: `出生於四川成都郊縣`
+        out["location"] = m.group(1)
+    # 兜底按位置取最早出现的地名时，跳过出题人那一行 —— 2026 第八例生辰行没写出生地，
+    # 下一行 `命例提供者： 台灣 阮懷勝師傅` 的台灣是师傅所在地，不是命主出生地
+    elif hits := [(t2.index(p), p) for t2 in ["\n".join(l for l in t.split("\n")
+                                                         if "提供" not in l)]
+                  for p in PLACES if p in t2]:
         out["location"] = min(hits)[1]
 
     # 出题师傅自己算好的四柱 —— 独立的人工排盘参照
@@ -171,12 +192,15 @@ def split_bilingual(s: str):
 
 
 # 「子平八字」排在「八字」前面 —— 交替按序匹配，反过来会把子平八字截成八字
-METHODS = "子平八字|紫微斗數|奇門遁甲|鐵板神數|六壬|八字"
+# 2026 第六例写「紫微鬥數」（鬥），NFKC 不会把它归到「斗」
+METHODS = "子平八字|紫微[斗鬥]數|奇門遁甲|鐵板神數|六壬|八字"
 # 2018 把地区和术数写在名字前：`命例問題提供 : 香港 紫微斗數 天盤計算 樂只君師傅`
 # 2021 第七例还把往届名次写了进去：`馬來西亞 己亥亞軍,庚子冠軍 紫微斗數 張翊萱老師`
-RE_PREFIX = re.compile(rf"^(?:香港青術會代表|香港|台灣|馬來西亞|新加坡|中國|澳門|"
+# 2026 写成 `中國大陸 2019 年冠軍 真一` —— 名次用西历年份
+RE_PREFIX = re.compile(rf"^(?:香港青術會代表|香港|台灣|馬來西亞|新加坡|中國大陸|中國|澳門|"
                        rf"{METHODS}|天盤計算|"
-                       rf"[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥](?:冠|亞|季)軍[,，]?)\s*")
+                       rf"[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥](?:冠|亞|季)軍[,，]?|"
+                       rf"\d{{4}}\s*年?\s*(?:冠|亞|季)軍[,，]?)\s*")
 
 
 def strip_provider_prefix(v: str) -> str:
@@ -200,7 +224,7 @@ def read_provider(lines, i, master_pat, method_pat):
                           if lines[k].strip()), v)
             master = strip_provider_prefix(v.strip(" ：:，,。.")) or None
         if method is None and method_pat and (m := method_pat.search(lines[j])):
-            method = m.group(0)
+            method = m.group(0).replace("鬥", "斗")
     return (master, method) if (master or method) else None
 
 
@@ -425,6 +449,13 @@ CFG = {
                case_pat=re.compile(r"命例(?:問題)?提供\s*[:：]"),
                method_pat=re.compile(METHODS), ans=None,
                key_file="2021_answers_thirdparty.txt"),
+    # 2026 每例两行：生辰行在前、`命例提供者：` 在后。生辰行的写法八例各不相同（`男命，`
+    # `坤造 西曆：` `女命 台灣高雄`，第一、八例不含「出生」），软边界接不全，所以拿每例
+    # 开头的性别字当硬边界；师傅在下一行，read_provider 的窗口够得着。
+    2026: dict(master_pat=re.compile(r"命例提供者\s*[:：]\s*(.+)"),
+               case_pat=re.compile(r"^(?:男命|女命|坤造|乾造)"),
+               method_pat=re.compile(METHODS), ans=None,
+               key_file="2026_answer_key.txt"),
 }
 
 
@@ -445,6 +476,9 @@ PROVENANCE = {
                        "this edition audited against it 40/40"),
     2024: ("official", "transcribed from the organiser's answer sheet; MingLi-Bench's copy of "
                        "this edition audited against it 40/40"),
+    2026: ("official", "transcribed from the organiser's handwritten answer sheet, added to the "
+                       "question page on 2026-08-08 and archived here as "
+                       "images/2026_ans_001_01.jpg"),
     2021: ("third-party", "the organiser never published a key for this edition — the paper was "
                           "auto-scored through an online form. Answers taken from BaziQA (MIT), "
                           "whose 2022/2023/2024 answers match the official sheets 120/120"),

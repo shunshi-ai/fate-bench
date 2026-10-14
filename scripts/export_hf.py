@@ -8,8 +8,8 @@ shows nothing at all — which on HF means the dataset looks empty to everyone b
 
 So the upload is split in two, one row per thing rather than one row per join:
 
-    questions.jsonl   295 rows — what an evaluation actually reads. Flat.
-    cases.jsonl        63 rows — one person, both charts. Nested, but only here.
+    questions.jsonl   335 rows — what an evaluation actually reads. Flat.
+    cases.jsonl        71 rows — one person, both charts. Nested, but only here.
 
 `case_id` joins them. Nothing is dropped; it is the same data, shaped for the viewer.
 
@@ -153,8 +153,8 @@ pillars next to the birth data; all three agree with the computed chart.
 
 ## Coverage
 
-{len(years)} editions: {', '.join(str(y) for y in years)}. Seven of them also published what the
-human entrants scored — best human results land between 47% and 67% against a 20–25% random
+{len(years)} editions: {', '.join(str(y) for y in years)}. Eight of them also published what the
+human entrants scored — best human results land between 47% and 78% against a 20–25% random
 floor. Those figures, with their caveats, are in the
 [GitHub repository](https://github.com/shunshi-ai/fate-bench).
 

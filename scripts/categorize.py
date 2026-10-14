@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Assign a topic label to the 95 HKJFMA items, using MingLi-Bench's existing taxonomy.
+"""Assign a topic label to the HKJFMA items, using MingLi-Bench's existing taxonomy.
 
-MingLi-Bench labels all 160 of its items with one of twelve topics; the 95 items added by this
+MingLi-Bench labels all 160 of its items with one of twelve topics; the items added by this
 repository had none, so "accuracy by topic" could only be computed over part of the dataset.
 
 The labels here are produced by **keyword rules, not a model**. A wrong label is worse than no
@@ -49,7 +49,7 @@ RULES = {
 }
 COMPILED = {k: re.compile(v) for k, v in RULES.items()}
 
-# 逐条看过 95 题后，规则判错的写死在这里。多数是关键词命中了选项里的次要元素，
+# 逐条看过全部 HKJFMA 题（2026 届 40 题于 2026-10 补看）后，规则判错的写死在这里。多数是关键词命中了选项里的次要元素，
 # 而题目问的是另一件事。
 OVERRIDES = {
     "hkjfma_2010_01": "灾劫",   # 男朋友被謀殺；命中「男朋友」判婚姻，实际问的是横死
@@ -65,6 +65,8 @@ OVERRIDES = {
     "hkjfma_2021_14": "家庭",   # 那一年有家宅搬遷
     "hkjfma_2021_26": "学业",   # 2018 年開始學習哪一種技能
     "hkjfma_2021_27": "婚姻",   # 第一次和男生交往在哪一年；感情起点归婚姻
+    "hkjfma_2026_20": "运势",   # 人生兩次重大事件；选项里的判監/電擊/詐騙让规则判灾劫，问的是一生走向
+    "hkjfma_2026_29": "子女",   # 因經濟原因墮胎是哪年；命中「經濟」判财运，问的是怀孕/堕胎
 }
 
 # 唯一一条十二类都套不上的：2013 第 16 题反过来考「从人生经历推出生时辰」，

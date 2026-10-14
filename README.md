@@ -6,9 +6,9 @@
 
 [![Data License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](./LICENSE-DATA)
 [![Code License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](./LICENSE-CODE)
-[![Questions](https://img.shields.io/badge/Questions-295-green.svg)](./data/fate_bench.jsonl)
-[![People](https://img.shields.io/badge/People-63-blue.svg)](./data/cases.json)
-[![Editions](https://img.shields.io/badge/Editions-2010--2025-orange.svg)](./data/raw/hkjfma/INVENTORY.md)
+[![Questions](https://img.shields.io/badge/Questions-335-green.svg)](./data/fate_bench.jsonl)
+[![People](https://img.shields.io/badge/People-71-blue.svg)](./data/cases.json)
+[![Editions](https://img.shields.io/badge/Editions-2010--2026-orange.svg)](./data/raw/hkjfma/INVENTORY.md)
 
 English | [中文](./README_zh.md)
 
@@ -31,10 +31,10 @@ public, under their own names, for a trophy; each edition is set by a panel of m
 a real person's birth data and that person's verified history, and the organizer publishes the
 answer key after the contest closes — **along with what the entrants scored**.
 
-**295 questions · 63 people · ten editions, 2010–2025 · seven of them with a published human
+**335 questions · 71 people · eleven editions, 2010–2026 · eight of them with a published human
 score.**
 
-Answers are not all of one grade and the data says which is which. 215 items carry the
+Answers are not all of one grade and the data says which is which. 255 items carry the
 organizer's own published answer (`answer_provenance: "official"`); 80 come from a third-party
 transcription of two editions the organizer answered but never published a key for
 (`"third-party"`). Filter on that field if you only want the first kind.
@@ -48,11 +48,11 @@ and neither are the questions — they ask what happened to a person, not what a
 | File | What it holds |
 |---|---|
 | [`data/fate_bench.jsonl`](./data/fate_bench.jsonl) | **everything, one question per line** — question, answer, birth data and both charts inlined. Start here. |
-| [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 295 questions — stem, options, answer, birth data, source URL |
-| [`data/cases.json`](./data/cases.json) | 63 people — birth data plus computed BaZi and Zi Wei charts |
+| [`data/hkjfma_qa.json`](./data/hkjfma_qa.json) | 335 questions — stem, options, answer, birth data, source URL |
+| [`data/cases.json`](./data/cases.json) | 71 people — birth data plus computed BaZi and Zi Wei charts |
 | [`data/human_baseline.json`](./data/human_baseline.json) | what human masters scored on these same questions |
 | [`data/hkjfma_categories.json`](./data/hkjfma_categories.json) | topic label per HKJFMA item, with how each was assigned |
-| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | cleaned source text, transcribed answer keys, 77 archived source images |
+| [`data/raw/hkjfma/`](./data/raw/hkjfma/) | cleaned source text, transcribed answer keys, 79 archived source images |
 | [`data/vendor/minglibench/`](./data/vendor/minglibench/) | MingLi-Bench, vendored unmodified under MIT |
 | [`data/vendor/baziqa/`](./data/vendor/baziqa/) | BaziQA's five contest files, vendored so the audit runs offline |
 
@@ -97,7 +97,7 @@ luck cycles. So each case carries what a practitioner would actually work from:
 
 | Source | Coverage | Items | License / status |
 |---|---|---:|---|
-| [HKJFMA Global Fortune Teller Competition](https://hkjfma.org) (全球算命師大賽) | 2010–2013, 2018, **2021** | 135 | published publicly by the organizer; cited with attribution. 2021 transcribed here from the organizer's question images |
+| [HKJFMA Global Fortune Teller Competition](https://hkjfma.org) (全球算命師大賽) | 2010–2013, 2018, **2021**, **2026** | 175 | published publicly by the organizer; cited with attribution. 2021 and 2026 transcribed here from the organizer's question images |
 | [MingLi-Bench](https://github.com/DestinyLinker/MingLi-Bench) (Destiny Linker) | 2022–2025 | 160 | MIT — reused with attribution |
 | [BaziQA](https://github.com/ChenJiangxi/BaziQA) (Chen & Liu) | 2021 answers only | — | MIT per its README; supplies the 40 answers for an edition the organizer never keyed |
 
@@ -118,6 +118,7 @@ repository works backwards through the earlier ones.
 | 14th | 2023 | 40 | 8 | A–D | via MingLi-Bench, audited against the organizer's sheet |
 | 15th | 2024 | 40 | 8 | A–D | via MingLi-Bench, audited against the organizer's sheet |
 | 16th | 2025 | 40 | 8 | A–D | ⚠ third-party — no sheet published |
+| 17th | 2026 | 40 | 8 | A–D | transcribed from the published photograph |
 
 2021 is the one edition with nine cases from eight contributing masters: the last, 陳俊燊師傅,
 submitted two people rather than one (three questions on one, two on the other). Splitting five
@@ -151,10 +152,11 @@ is a documented answer to "how well do humans actually do at this?"
 | 13th | 2022 | 40 | A–D | **21 / 40** (52.5%) | 25% |
 | 14th | 2023 | 40 | A–D | **21 / 40** (52.5%) | 25% |
 | 15th | 2024 | 40 | A–D | **26 / 40** (65.0%) | 25% |
+| 17th | 2026 | 40 | A–D | **31 / 40** (77.5%) | 25% |
 | 12th | 2021 | 40 | A–D | not published | 25% |
 | 16th | 2025 | 40 | A–D | not published | 25% |
 
-Seven of the ten editions in this dataset have one. Best human scores land between 47% and 67%
+Eight of the eleven editions in this dataset have one. Best human scores land between 47% and 78%
 against a 20–25% floor — above chance in every edition that published results, and well short of
 solved in all of them.
 
@@ -171,7 +173,7 @@ necessarily the champion** — in 2022 the best raw score belonged to a runner-u
 differ by edition, so the random-guess floor moves.
 
 For 2022–2025 the questions come via MingLi-Bench while these scores are transcribed from the
-organizer's own tables — two independent sources. The 2023 and 2024 sheets also publish each
+organizer's own tables — two independent sources. The 2023, 2024 and 2026 sheets also publish each
 finisher's **per-case** score, which is in `human_baseline.json` too.
 
 Full detail, caveats, and provenance in
@@ -181,7 +183,7 @@ Full detail, caveats, and provenance in
 
 **Answer keys were verified character by character.** Every edition's parsed answer string was
 compared against the organizer's published key — `第一條: 1a, 2e, 3e` for 2010, the `答案公報`
-block for 2013, the handwritten answer sheet for 2018. All five match exactly.
+block for 2013, the handwritten answer sheets for 2018 and 2026. All six match exactly.
 
 **Third-party transcriptions were audited, not inherited.** Two other projects transcribe this
 competition — MingLi-Bench (2022–2025) and BaziQA (2021–2025) — and this dataset reuses answers
@@ -201,7 +203,7 @@ the latter being the same iztro implementation MingLi-Bench uses. Ground truth s
 from the party publishing the benchmark. Three cases print the contributing master's own
 hand-calculated four pillars next to the birth data; all three agree with the computed chart.
 
-**Where the source is incomplete, it is marked, not filled in.** Two of the 63 cases have no
+**Where the source is incomplete, it is marked, not filled in.** Two of the 71 cases have no
 chart: the 2018 case whose birth data the organizer never published, and the 2013 case whose
 birth hour is *what the question asks you to infer*.
 
@@ -213,7 +215,7 @@ checkable against the archived images; both are recorded in the inventory.
 
 - **Option counts vary by edition.** Early editions use five options (A–E), later ones four.
   Random-guess baselines therefore differ (20% vs 25%) and must not be pooled naively.
-  271 items have four options, 24 have five.
+  311 items have four options, 24 have five.
 - **One case can span a variable number of questions.** The 2018 edition is not 8 cases of 5:
   one contributing master supplied two different people, splitting his block 2 + 3.
 - **Times are as published.** No true-solar-time correction is applied. Where only a double-hour
@@ -229,19 +231,19 @@ checkable against the archived images; both are recorded in the inventory.
   birth data on the paper but never on the web page, so the 2018 entrants had it and we do not.
   They keep their answer key and are flagged `birth_info.missing`; anything scoring this dataset
   should drop them, since using them means working from less than the humans had.
-- **The dataset is Chinese. English coverage is partial and is not ours.** All 295 questions are
+- **The dataset is Chinese. English coverage is partial and is not ours.** All 335 questions are
   in Chinese — Traditional and Simplified both appear, as printed by each edition; nothing is
   converted in either direction. 53 items also carry `question_en`, and those are **the
   organizer's own bilingual publication** (all 16 of the 4th edition, 37 of the 9th), not a
-  translation made here. The remaining 242 have no English, and there is no Japanese or Korean.
+  translation made here. The remaining 282 have no English, and there is no Japanese or Korean.
   If you need the whole set in one language you will have to translate it yourself — which also
   means any translation error is yours to own, not silently baked into the ground truth.
 - **Zi Wei star names come out in Simplified Chinese**, from `py-iztro`, while the questions are
   in Traditional. Nothing is transliterated in either direction.
-- **Topic labels come from two different hands.** 294 of the 295 items carry a `category` drawn
+- **Topic labels come from two different hands.** 334 of the 335 items carry a `category` drawn
   from MingLi-Bench's twelve-label taxonomy, but `category_source` says where each came from:
-  MingLi-Bench annotated their 160, and the 135 added here were labelled by keyword rules
-  (`scripts/categorize.py`) with thirteen hand-corrections. Run against MingLi-Bench's 160 human
+  MingLi-Bench annotated their 160, and the 175 added here were labelled by keyword rules
+  (`scripts/categorize.py`) with fifteen hand-corrections. Run against MingLi-Bench's 160 human
   labels, those rules reproduce the human choice **76%** of the time — treat per-topic slices as
   approximate, not as one annotator's consistent judgement. One item is deliberately left
   unlabelled: the 2013 question that asks you to infer the birth hour is about the chart itself,

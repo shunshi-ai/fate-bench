@@ -7123,6 +7123,2041 @@
   "category_source": "rule-based (this repo)"
  },
  {
+  "id": "hkjfma_2026_01",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c1",
+  "case_index": 1,
+  "question_number": 1,
+  "birth_info": {
+   "raw": "男命,西曆 1982 年 6 月 12 日早上 6 點 50 分 香港出世 命例提供者: 香港 子平八字 林千博師傅",
+   "calendar_type": "solar",
+   "year": 1982,
+   "month": 6,
+   "day": 12,
+   "clock_hour": 6,
+   "clock_minute": 50,
+   "gender": "男",
+   "location": "香港",
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "shichen_derived_from_clock": true
+  },
+  "question": "此命學歷如何?性格如何?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "小學,脾氣暴躁,好勇鬥狠"
+   },
+   {
+    "letter": "B",
+    "text": "中五,沉默寡言,不喜歡交際"
+   },
+   {
+    "letter": "C",
+    "text": "大學,能言善辯,善於交際"
+   },
+   {
+    "letter": "D",
+    "text": "博士學歷,溫文爾雅,喜愛書法、茶藝"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "林千博師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "学业",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_02",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c1",
+  "case_index": 1,
+  "question_number": 2,
+  "birth_info": {
+   "raw": "男命,西曆 1982 年 6 月 12 日早上 6 點 50 分 香港出世 命例提供者: 香港 子平八字 林千博師傅",
+   "calendar_type": "solar",
+   "year": 1982,
+   "month": 6,
+   "day": 12,
+   "clock_hour": 6,
+   "clock_minute": 50,
+   "gender": "男",
+   "location": "香港",
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "shichen_derived_from_clock": true
+  },
+  "question": "此命的婚姻如何?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "一直單身,為同性戀者"
+   },
+   {
+    "letter": "B",
+    "text": "婚姻美滿,育有一子一女"
+   },
+   {
+    "letter": "C",
+    "text": "已經離婚,現在單身,沒有子女"
+   },
+   {
+    "letter": "D",
+    "text": "離婚後再婚,和前妻子與現妻女一起住宿生活"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "林千博師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_03",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c1",
+  "case_index": 1,
+  "question_number": 3,
+  "birth_info": {
+   "raw": "男命,西曆 1982 年 6 月 12 日早上 6 點 50 分 香港出世 命例提供者: 香港 子平八字 林千博師傅",
+   "calendar_type": "solar",
+   "year": 1982,
+   "month": 6,
+   "day": 12,
+   "clock_hour": 6,
+   "clock_minute": 50,
+   "gender": "男",
+   "location": "香港",
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "shichen_derived_from_clock": true
+  },
+  "question": "2025 年 5 月份命主發生何事?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "中六合彩二獎"
+   },
+   {
+    "letter": "B",
+    "text": "接受手術治療"
+   },
+   {
+    "letter": "C",
+    "text": "移民歐洲"
+   },
+   {
+    "letter": "D",
+    "text": "遭騙徒詐騙財物三百萬"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "林千博師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "财运",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_04",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c1",
+  "case_index": 1,
+  "question_number": 4,
+  "birth_info": {
+   "raw": "男命,西曆 1982 年 6 月 12 日早上 6 點 50 分 香港出世 命例提供者: 香港 子平八字 林千博師傅",
+   "calendar_type": "solar",
+   "year": 1982,
+   "month": 6,
+   "day": 12,
+   "clock_hour": 6,
+   "clock_minute": 50,
+   "gender": "男",
+   "location": "香港",
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "shichen_derived_from_clock": true
+  },
+  "question": "命主擁有多少物業與事業情況如何?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "沒有物業,普通打工人士"
+   },
+   {
+    "letter": "B",
+    "text": "持有一間自住物業,任職醫生"
+   },
+   {
+    "letter": "C",
+    "text": "持有多間物業,創業多年,為經商人士"
+   },
+   {
+    "letter": "D",
+    "text": "與親人共同持有父母遺留物業,任職消防員"
+   }
+  ],
+  "num_options": 4,
+  "answer": "A",
+  "master": "林千博師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "财运",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_05",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c1",
+  "case_index": 1,
+  "question_number": 5,
+  "birth_info": {
+   "raw": "男命,西曆 1982 年 6 月 12 日早上 6 點 50 分 香港出世 命例提供者: 香港 子平八字 林千博師傅",
+   "calendar_type": "solar",
+   "year": 1982,
+   "month": 6,
+   "day": 12,
+   "clock_hour": 6,
+   "clock_minute": 50,
+   "gender": "男",
+   "location": "香港",
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "shichen_derived_from_clock": true
+  },
+  "question": "此命有一位弟弟,其弟弟出生於何年?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "1984 甲子年"
+   },
+   {
+    "letter": "B",
+    "text": "1986 丙寅年"
+   },
+   {
+    "letter": "C",
+    "text": "1988 戊辰年"
+   },
+   {
+    "letter": "D",
+    "text": "1990 庚午年"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "林千博師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "家庭",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_06",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c2",
+  "case_index": 2,
+  "question_number": 6,
+  "birth_info": {
+   "raw": "女命:西曆 1981 年 1 月 20 日 20 時 05 分 香港出生 命例提供者:香港 子平八字 易龍師傅",
+   "calendar_type": "solar",
+   "year": 1981,
+   "month": 1,
+   "day": 20,
+   "clock_hour": 20,
+   "clock_minute": 5,
+   "gender": "女",
+   "location": "香港",
+   "shichen": "戌",
+   "hour_start": 19,
+   "hour_end": 21,
+   "shichen_derived_from_clock": true
+  },
+  "question": "曾在那一年與男朋友分手?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "2000"
+   },
+   {
+    "letter": "B",
+    "text": "2002"
+   },
+   {
+    "letter": "C",
+    "text": "2005"
+   },
+   {
+    "letter": "D",
+    "text": "2008"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "易龍師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_07",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c2",
+  "case_index": 2,
+  "question_number": 7,
+  "birth_info": {
+   "raw": "女命:西曆 1981 年 1 月 20 日 20 時 05 分 香港出生 命例提供者:香港 子平八字 易龍師傅",
+   "calendar_type": "solar",
+   "year": 1981,
+   "month": 1,
+   "day": 20,
+   "clock_hour": 20,
+   "clock_minute": 5,
+   "gender": "女",
+   "location": "香港",
+   "shichen": "戌",
+   "hour_start": 19,
+   "hour_end": 21,
+   "shichen_derived_from_clock": true
+  },
+  "question": "以上分手的原因?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "命主出國留學"
+   },
+   {
+    "letter": "B",
+    "text": "男方家長反對"
+   },
+   {
+    "letter": "C",
+    "text": "男方有第三者"
+   },
+   {
+    "letter": "D",
+    "text": "自己有第三者"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "易龍師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_08",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c2",
+  "case_index": 2,
+  "question_number": 8,
+  "birth_info": {
+   "raw": "女命:西曆 1981 年 1 月 20 日 20 時 05 分 香港出生 命例提供者:香港 子平八字 易龍師傅",
+   "calendar_type": "solar",
+   "year": 1981,
+   "month": 1,
+   "day": 20,
+   "clock_hour": 20,
+   "clock_minute": 5,
+   "gender": "女",
+   "location": "香港",
+   "shichen": "戌",
+   "hour_start": 19,
+   "hour_end": 21,
+   "shichen_derived_from_clock": true
+  },
+  "question": "命主畢業後至今從事什麼工作?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "空中服務員"
+   },
+   {
+    "letter": "B",
+    "text": "時裝設計師"
+   },
+   {
+    "letter": "C",
+    "text": "地產經紀"
+   },
+   {
+    "letter": "D",
+    "text": "教師"
+   }
+  ],
+  "num_options": 4,
+  "answer": "A",
+  "master": "易龍師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "事业",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_09",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c2",
+  "case_index": 2,
+  "question_number": 9,
+  "birth_info": {
+   "raw": "女命:西曆 1981 年 1 月 20 日 20 時 05 分 香港出生 命例提供者:香港 子平八字 易龍師傅",
+   "calendar_type": "solar",
+   "year": 1981,
+   "month": 1,
+   "day": 20,
+   "clock_hour": 20,
+   "clock_minute": 5,
+   "gender": "女",
+   "location": "香港",
+   "shichen": "戌",
+   "hour_start": 19,
+   "hour_end": 21,
+   "shichen_derived_from_clock": true
+  },
+  "question": "命主 2018 年發生什麼事?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "中六合彩"
+   },
+   {
+    "letter": "B",
+    "text": "結婚"
+   },
+   {
+    "letter": "C",
+    "text": "開刀手術"
+   },
+   {
+    "letter": "D",
+    "text": "買樓破財"
+   }
+  ],
+  "num_options": 4,
+  "answer": "D",
+  "master": "易龍師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "财运",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_10",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c2",
+  "case_index": 2,
+  "question_number": 10,
+  "birth_info": {
+   "raw": "女命:西曆 1981 年 1 月 20 日 20 時 05 分 香港出生 命例提供者:香港 子平八字 易龍師傅",
+   "calendar_type": "solar",
+   "year": 1981,
+   "month": 1,
+   "day": 20,
+   "clock_hour": 20,
+   "clock_minute": 5,
+   "gender": "女",
+   "location": "香港",
+   "shichen": "戌",
+   "hour_start": 19,
+   "hour_end": 21,
+   "shichen_derived_from_clock": true
+  },
+  "question": "命主目前 2026 年婚姻狀況?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "已婚"
+   },
+   {
+    "letter": "B",
+    "text": "未婚"
+   },
+   {
+    "letter": "C",
+    "text": "離婚"
+   },
+   {
+    "letter": "D",
+    "text": "同性戀"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "易龍師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_11",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c3",
+  "case_index": 3,
+  "question_number": 11,
+  "birth_info": {
+   "raw": "男命:西曆 1956 年 9 月 3 日 酉時 香港出生 命例提供者: 香港 子平八字 梁真聖師傅",
+   "calendar_type": "solar",
+   "year": 1956,
+   "month": 9,
+   "day": 3,
+   "shichen": "酉",
+   "hour_start": 17,
+   "hour_end": 19,
+   "gender": "男",
+   "location": "香港"
+  },
+  "question": "此命常年受哪種毛病影響?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "肝臟"
+   },
+   {
+    "letter": "B",
+    "text": "心臟"
+   },
+   {
+    "letter": "C",
+    "text": "肺臟"
+   },
+   {
+    "letter": "D",
+    "text": "腎臟"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "梁真聖師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "健康",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_12",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c3",
+  "case_index": 3,
+  "question_number": 12,
+  "birth_info": {
+   "raw": "男命:西曆 1956 年 9 月 3 日 酉時 香港出生 命例提供者: 香港 子平八字 梁真聖師傅",
+   "calendar_type": "solar",
+   "year": 1956,
+   "month": 9,
+   "day": 3,
+   "shichen": "酉",
+   "hour_start": 17,
+   "hour_end": 19,
+   "gender": "男",
+   "location": "香港"
+  },
+  "question": "此命父母情況如何?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "父緣差早死,母親長壽"
+   },
+   {
+    "letter": "B",
+    "text": "父緣差早死,母親早死"
+   },
+   {
+    "letter": "C",
+    "text": "父緣佳長壽,母親長壽"
+   },
+   {
+    "letter": "D",
+    "text": "父緣佳長壽,母親早死"
+   }
+  ],
+  "num_options": 4,
+  "answer": "A",
+  "master": "梁真聖師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "家庭",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_13",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c3",
+  "case_index": 3,
+  "question_number": 13,
+  "birth_info": {
+   "raw": "男命:西曆 1956 年 9 月 3 日 酉時 香港出生 命例提供者: 香港 子平八字 梁真聖師傅",
+   "calendar_type": "solar",
+   "year": 1956,
+   "month": 9,
+   "day": 3,
+   "shichen": "酉",
+   "hour_start": 17,
+   "hour_end": 19,
+   "gender": "男",
+   "location": "香港"
+  },
+  "question": "哪個時候被朋友騙財?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "1996~1997"
+   },
+   {
+    "letter": "B",
+    "text": "1999~2000"
+   },
+   {
+    "letter": "C",
+    "text": "2002~2003"
+   },
+   {
+    "letter": "D",
+    "text": "2005~2006"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "梁真聖師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "财运",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_14",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c3",
+  "case_index": 3,
+  "question_number": 14,
+  "birth_info": {
+   "raw": "男命:西曆 1956 年 9 月 3 日 酉時 香港出生 命例提供者: 香港 子平八字 梁真聖師傅",
+   "calendar_type": "solar",
+   "year": 1956,
+   "month": 9,
+   "day": 3,
+   "shichen": "酉",
+   "hour_start": 17,
+   "hour_end": 19,
+   "gender": "男",
+   "location": "香港"
+  },
+  "question": "此命的愛情生活如何?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "同性戀,男朋友多,常常換男伴"
+   },
+   {
+    "letter": "B",
+    "text": "女性緣佳不缺女性但沒有結婚"
+   },
+   {
+    "letter": "C",
+    "text": "女性緣佳常常被女性騙,己巳年結婚丁亥年離婚"
+   },
+   {
+    "letter": "D",
+    "text": "女性緣差但有一紅顏知己終生有緣無分"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "梁真聖師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_15",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c3",
+  "case_index": 3,
+  "question_number": 15,
+  "birth_info": {
+   "raw": "男命:西曆 1956 年 9 月 3 日 酉時 香港出生 命例提供者: 香港 子平八字 梁真聖師傅",
+   "calendar_type": "solar",
+   "year": 1956,
+   "month": 9,
+   "day": 3,
+   "shichen": "酉",
+   "hour_start": 17,
+   "hour_end": 19,
+   "gender": "男",
+   "location": "香港"
+  },
+  "question": "此命性格如何?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "沉靜喜哲學愛寫作"
+   },
+   {
+    "letter": "B",
+    "text": "活躍好動喜交際愛遠足"
+   },
+   {
+    "letter": "C",
+    "text": "性格暴躁好勝心強,喜飲酒"
+   },
+   {
+    "letter": "D",
+    "text": "性格隨和,喜交際,愛武術"
+   }
+  ],
+  "num_options": 4,
+  "answer": "A",
+  "master": "梁真聖師傅",
+  "method": "子平八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "性格",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_16",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c4",
+  "case_index": 4,
+  "question_number": 16,
+  "birth_info": {
+   "raw": "男命 西曆 1951 年 11 月 5 日 上午 5-6 點 出生於四川成都郊縣 命例提供者: 八字 中國大陸 安公子老師",
+   "calendar_type": "solar",
+   "year": 1951,
+   "month": 11,
+   "day": 5,
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "gender": "男",
+   "location": "四川"
+  },
+  "question": "命主出身及家庭情況?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "父母為農民兼牲畜養殖。命主有兩兄一妹。"
+   },
+   {
+    "letter": "B",
+    "text": "父親曾為炮兵,轉業到化肥廠,父母均為普通工人。命主有一姐一妹。"
+   },
+   {
+    "letter": "C",
+    "text": "父親從事屠牲業,母親為工人。命主有兩妹一弟。"
+   },
+   {
+    "letter": "D",
+    "text": "父親為礦廠工人,1970 年在地震中喪生,母親為茶廠技師,仍在世。命主有一兄一弟。"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "安公子老師",
+  "method": "八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "家庭",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_17",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c4",
+  "case_index": 4,
+  "question_number": 17,
+  "birth_info": {
+   "raw": "男命 西曆 1951 年 11 月 5 日 上午 5-6 點 出生於四川成都郊縣 命例提供者: 八字 中國大陸 安公子老師",
+   "calendar_type": "solar",
+   "year": 1951,
+   "month": 11,
+   "day": 5,
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "gender": "男",
+   "location": "四川"
+  },
+  "question": "命主個性如何?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "膽小內斂,溫和聰明。"
+   },
+   {
+    "letter": "B",
+    "text": "性格剛強,自尊心強。"
+   },
+   {
+    "letter": "C",
+    "text": "恃才傲物,風流多情。"
+   },
+   {
+    "letter": "D",
+    "text": "平易近人,樂善好施。"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "安公子老師",
+  "method": "八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "性格",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_18",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c4",
+  "case_index": 4,
+  "question_number": 18,
+  "birth_info": {
+   "raw": "男命 西曆 1951 年 11 月 5 日 上午 5-6 點 出生於四川成都郊縣 命例提供者: 八字 中國大陸 安公子老師",
+   "calendar_type": "solar",
+   "year": 1951,
+   "month": 11,
+   "day": 5,
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "gender": "男",
+   "location": "四川"
+  },
+  "question": "命主的職業和經歷?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "學廚師,以餐飲為業,現有四家餐館,資產雖不豐厚,但溫飽有餘。"
+   },
+   {
+    "letter": "B",
+    "text": "1978 年考取大專,先為教師,後從政,為市級幹部。2004 年因事罷職,2012 年退休,2022 年移居海外。"
+   },
+   {
+    "letter": "C",
+    "text": "先後從事白酒、飼料等行業,2000 年做基建、裝修,起起落落,現有資產千萬。"
+   },
+   {
+    "letter": "D",
+    "text": "修過錶,做過藥材、食品加工,現以地產類業務為業,資產過億。"
+   }
+  ],
+  "num_options": 4,
+  "answer": "D",
+  "master": "安公子老師",
+  "method": "八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "事业",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_19",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c4",
+  "case_index": 4,
+  "question_number": 19,
+  "birth_info": {
+   "raw": "男命 西曆 1951 年 11 月 5 日 上午 5-6 點 出生於四川成都郊縣 命例提供者: 八字 中國大陸 安公子老師",
+   "calendar_type": "solar",
+   "year": 1951,
+   "month": 11,
+   "day": 5,
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "gender": "男",
+   "location": "四川"
+  },
+  "question": "命主婚姻和子女情況?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "命主婚姻美滿。長子留學海外,現為國外大學教授,次子現無業。"
+   },
+   {
+    "letter": "B",
+    "text": "命主妻子 2017 年去世。兩個女兒,長女目前患重病。"
+   },
+   {
+    "letter": "C",
+    "text": "命主有一子一女,2015 年有婚外情並生有私生子。"
+   },
+   {
+    "letter": "D",
+    "text": "妻子嗜賭,2003 年與賭友外遇而離婚。兒子為電力工程師,女兒為教師,患憂鬱症,2023 年自殺去世。"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "安公子老師",
+  "method": "八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_20",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c4",
+  "case_index": 4,
+  "question_number": 20,
+  "birth_info": {
+   "raw": "男命 西曆 1951 年 11 月 5 日 上午 5-6 點 出生於四川成都郊縣 命例提供者: 八字 中國大陸 安公子老師",
+   "calendar_type": "solar",
+   "year": 1951,
+   "month": 11,
+   "day": 5,
+   "shichen": "卯",
+   "hour_start": 5,
+   "hour_end": 7,
+   "gender": "男",
+   "location": "四川"
+  },
+  "question": "命主人生中的兩次重大事件?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "1968 年參軍失敗,1992 年轉行並大獲其利。"
+   },
+   {
+    "letter": "B",
+    "text": "1985 年因事判監,2001-2003 年因城區拆遷而發財數百萬。"
+   },
+   {
+    "letter": "C",
+    "text": "1977 年結婚,受岳父幫助事業起步。2024 年患胃癌。"
+   },
+   {
+    "letter": "D",
+    "text": "1983 年命主受電擊斷臂,2023 年被電信詐騙數十萬。"
+   }
+  ],
+  "num_options": 4,
+  "answer": "A",
+  "master": "安公子老師",
+  "method": "八字",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "运势",
+  "category_source": "hand-labelled (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_21",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c5",
+  "case_index": 5,
+  "question_number": 21,
+  "birth_info": {
+   "raw": "男命 西曆 1987 年 6 月 26 日 巳時出生,河北農村出生。 命例提供者: 中國大陸 2019 年冠軍 真一",
+   "calendar_type": "solar",
+   "year": 1987,
+   "month": 6,
+   "day": 26,
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "gender": "男",
+   "location": "河北"
+  },
+  "question": "此命母親逝世是何年?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "1998"
+   },
+   {
+    "letter": "B",
+    "text": "2004"
+   },
+   {
+    "letter": "C",
+    "text": "2007"
+   },
+   {
+    "letter": "D",
+    "text": "2013"
+   }
+  ],
+  "num_options": 4,
+  "answer": "A",
+  "master": "真一",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "家庭",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_22",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c5",
+  "case_index": 5,
+  "question_number": 22,
+  "birth_info": {
+   "raw": "男命 西曆 1987 年 6 月 26 日 巳時出生,河北農村出生。 命例提供者: 中國大陸 2019 年冠軍 真一",
+   "calendar_type": "solar",
+   "year": 1987,
+   "month": 6,
+   "day": 26,
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "gender": "男",
+   "location": "河北"
+  },
+  "question": "此命父親逝世是何年?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "1997"
+   },
+   {
+    "letter": "B",
+    "text": "2003"
+   },
+   {
+    "letter": "C",
+    "text": "2012"
+   },
+   {
+    "letter": "D",
+    "text": "2018"
+   }
+  ],
+  "num_options": 4,
+  "answer": "D",
+  "master": "真一",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "家庭",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_23",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c5",
+  "case_index": 5,
+  "question_number": 23,
+  "birth_info": {
+   "raw": "男命 西曆 1987 年 6 月 26 日 巳時出生,河北農村出生。 命例提供者: 中國大陸 2019 年冠軍 真一",
+   "calendar_type": "solar",
+   "year": 1987,
+   "month": 6,
+   "day": 26,
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "gender": "男",
+   "location": "河北"
+  },
+  "question": "此命哪年結婚?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "2008 年"
+   },
+   {
+    "letter": "B",
+    "text": "2012 年"
+   },
+   {
+    "letter": "C",
+    "text": "2015 年"
+   },
+   {
+    "letter": "D",
+    "text": "2019 年"
+   }
+  ],
+  "num_options": 4,
+  "answer": "A",
+  "master": "真一",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_24",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c5",
+  "case_index": 5,
+  "question_number": 24,
+  "birth_info": {
+   "raw": "男命 西曆 1987 年 6 月 26 日 巳時出生,河北農村出生。 命例提供者: 中國大陸 2019 年冠軍 真一",
+   "calendar_type": "solar",
+   "year": 1987,
+   "month": 6,
+   "day": 26,
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "gender": "男",
+   "location": "河北"
+  },
+  "question": "此命的女兒於哪年出生?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "2007"
+   },
+   {
+    "letter": "B",
+    "text": "2009"
+   },
+   {
+    "letter": "C",
+    "text": "2011"
+   },
+   {
+    "letter": "D",
+    "text": "2013"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "真一",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "子女",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_25",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c5",
+  "case_index": 5,
+  "question_number": 25,
+  "birth_info": {
+   "raw": "男命 西曆 1987 年 6 月 26 日 巳時出生,河北農村出生。 命例提供者: 中國大陸 2019 年冠軍 真一",
+   "calendar_type": "solar",
+   "year": 1987,
+   "month": 6,
+   "day": 26,
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "gender": "男",
+   "location": "河北"
+  },
+  "question": "此命身高學歷與性格?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "180CM 上,大學畢業,非常自我自信,要別人聽命自己"
+   },
+   {
+    "letter": "B",
+    "text": "180CM 上,大學未畢業,善於交際,豪氣大方"
+   },
+   {
+    "letter": "C",
+    "text": "180CM 下,大學畢業,固執好勇心狠"
+   },
+   {
+    "letter": "D",
+    "text": "180CM 下,大學未畢業,勤勞隨和,見別人易,自己難"
+   }
+  ],
+  "num_options": 4,
+  "answer": "D",
+  "master": "真一",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "学业",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_26",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c6",
+  "case_index": 6,
+  "question_number": 26,
+  "birth_info": {
+   "raw": "坤造 西曆:1961 年 11 月 4 日巳時, 馬來西亞出生 命例提供者: 紫微鬥數 馬來西亞 張翊萱老師",
+   "calendar_type": "solar",
+   "year": 1961,
+   "month": 11,
+   "day": 4,
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "gender": "女",
+   "location": "馬來西亞"
+  },
+  "question": "命主的结婚年份?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "1978 年"
+   },
+   {
+    "letter": "B",
+    "text": "1979 年"
+   },
+   {
+    "letter": "C",
+    "text": "1980 年"
+   },
+   {
+    "letter": "D",
+    "text": "1981 年"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "張翊萱老師",
+  "method": "紫微斗數",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_27",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c6",
+  "case_index": 6,
+  "question_number": 27,
+  "birth_info": {
+   "raw": "坤造 西曆:1961 年 11 月 4 日巳時, 馬來西亞出生 命例提供者: 紫微鬥數 馬來西亞 張翊萱老師",
+   "calendar_type": "solar",
+   "year": 1961,
+   "month": 11,
+   "day": 4,
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "gender": "女",
+   "location": "馬來西亞"
+  },
+  "question": "命主在 2022 年是發生了什麼事?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "丈夫往生"
+   },
+   {
+    "letter": "B",
+    "text": "丈夫外遇"
+   },
+   {
+    "letter": "C",
+    "text": "生病入院"
+   },
+   {
+    "letter": "D",
+    "text": "孩子入院"
+   }
+  ],
+  "num_options": 4,
+  "answer": "A",
+  "master": "張翊萱老師",
+  "method": "紫微斗數",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_28",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c6",
+  "case_index": 6,
+  "question_number": 28,
+  "birth_info": {
+   "raw": "坤造 西曆:1961 年 11 月 4 日巳時, 馬來西亞出生 命例提供者: 紫微鬥數 馬來西亞 張翊萱老師",
+   "calendar_type": "solar",
+   "year": 1961,
+   "month": 11,
+   "day": 4,
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "gender": "女",
+   "location": "馬來西亞"
+  },
+  "question": "命主目前的主要收入來源是什麼?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "投資家"
+   },
+   {
+    "letter": "B",
+    "text": "包租婆"
+   },
+   {
+    "letter": "C",
+    "text": "做些小生意"
+   },
+   {
+    "letter": "D",
+    "text": "家庭主婦,靠子女養"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "張翊萱老師",
+  "method": "紫微斗數",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "财运",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_29",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c6",
+  "case_index": 6,
+  "question_number": 29,
+  "birth_info": {
+   "raw": "坤造 西曆:1961 年 11 月 4 日巳時, 馬來西亞出生 命例提供者: 紫微鬥數 馬來西亞 張翊萱老師",
+   "calendar_type": "solar",
+   "year": 1961,
+   "month": 11,
+   "day": 4,
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "gender": "女",
+   "location": "馬來西亞"
+  },
+  "question": "命主曾經于何年因為經濟條件的原因而墮胎?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "1980 年"
+   },
+   {
+    "letter": "B",
+    "text": "1983 年"
+   },
+   {
+    "letter": "C",
+    "text": "1988 年"
+   },
+   {
+    "letter": "D",
+    "text": "1989 年"
+   }
+  ],
+  "num_options": 4,
+  "answer": "D",
+  "master": "張翊萱老師",
+  "method": "紫微斗數",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "子女",
+  "category_source": "hand-labelled (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_30",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c6",
+  "case_index": 6,
+  "question_number": 30,
+  "birth_info": {
+   "raw": "坤造 西曆:1961 年 11 月 4 日巳時, 馬來西亞出生 命例提供者: 紫微鬥數 馬來西亞 張翊萱老師",
+   "calendar_type": "solar",
+   "year": 1961,
+   "month": 11,
+   "day": 4,
+   "shichen": "巳",
+   "hour_start": 9,
+   "hour_end": 11,
+   "gender": "女",
+   "location": "馬來西亞"
+  },
+  "question": "命主在何年突发血崩而进行切除子宫手术?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "2010 年"
+   },
+   {
+    "letter": "B",
+    "text": "2011 年"
+   },
+   {
+    "letter": "C",
+    "text": "2012 年"
+   },
+   {
+    "letter": "D",
+    "text": "2013 年"
+   }
+  ],
+  "num_options": 4,
+  "answer": "D",
+  "master": "張翊萱老師",
+  "method": "紫微斗數",
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "健康",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_31",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c7",
+  "case_index": 7,
+  "question_number": 31,
+  "birth_info": {
+   "raw": "女命 台灣高雄 西曆:1999 年 8 月 14 日 15 點 30 分(申時) 命例提供者: 馬來西亞 子離師傅",
+   "calendar_type": "solar",
+   "year": 1999,
+   "month": 8,
+   "day": 14,
+   "shichen": "申",
+   "hour_start": 15,
+   "hour_end": 17,
+   "clock_hour": 15,
+   "clock_minute": 30,
+   "gender": "女",
+   "location": "台灣"
+  },
+  "question": "體型特徵辨識:依據命盤干支組合與宮位星曜特質,推斷命主長相與體型特徵",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "身材高挑,皮膚白皙,骨架纖細"
+   },
+   {
+    "letter": "B",
+    "text": "身形矮小,體態豐滿,面色潤澤"
+   },
+   {
+    "letter": "C",
+    "text": "中等身形,肌肉結實,膚色偏深"
+   },
+   {
+    "letter": "D",
+    "text": "瘦長體型,五官深邃,舉動靈敏敏捷"
+   }
+  ],
+  "num_options": 4,
+  "answer": "B",
+  "master": "子離師傅",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "外貌",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_32",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c7",
+  "case_index": 7,
+  "question_number": 32,
+  "birth_info": {
+   "raw": "女命 台灣高雄 西曆:1999 年 8 月 14 日 15 點 30 分(申時) 命例提供者: 馬來西亞 子離師傅",
+   "calendar_type": "solar",
+   "year": 1999,
+   "month": 8,
+   "day": 14,
+   "shichen": "申",
+   "hour_start": 15,
+   "hour_end": 17,
+   "clock_hour": 15,
+   "clock_minute": 30,
+   "gender": "女",
+   "location": "台灣"
+  },
+  "question": "六親重大變故:透過流年與原局沖合關係判斷六親狀況,請問命主母親於哪一年離世?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "2012 年"
+   },
+   {
+    "letter": "B",
+    "text": "2017 年"
+   },
+   {
+    "letter": "C",
+    "text": "2024 年"
+   },
+   {
+    "letter": "D",
+    "text": "2025 年"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "子離師傅",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "家庭",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_33",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c7",
+  "case_index": 7,
+  "question_number": 33,
+  "birth_info": {
+   "raw": "女命 台灣高雄 西曆:1999 年 8 月 14 日 15 點 30 分(申時) 命例提供者: 馬來西亞 子離師傅",
+   "calendar_type": "solar",
+   "year": 1999,
+   "month": 8,
+   "day": 14,
+   "shichen": "申",
+   "hour_start": 15,
+   "hour_end": 17,
+   "clock_hour": 15,
+   "clock_minute": 30,
+   "gender": "女",
+   "location": "台灣"
+  },
+  "question": "欠缺偏財感應能力,命主獲得一筆意外龐大財富會發生於哪一年?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "2021 年"
+   },
+   {
+    "letter": "B",
+    "text": "2022 年"
+   },
+   {
+    "letter": "C",
+    "text": "2023 年"
+   },
+   {
+    "letter": "D",
+    "text": "2025 年"
+   }
+  ],
+  "num_options": 4,
+  "answer": "D",
+  "master": "子離師傅",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "财运",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_34",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c7",
+  "case_index": 7,
+  "question_number": 34,
+  "birth_info": {
+   "raw": "女命 台灣高雄 西曆:1999 年 8 月 14 日 15 點 30 分(申時) 命例提供者: 馬來西亞 子離師傅",
+   "calendar_type": "solar",
+   "year": 1999,
+   "month": 8,
+   "day": 14,
+   "shichen": "申",
+   "hour_start": 15,
+   "hour_end": 17,
+   "clock_hour": 15,
+   "clock_minute": 30,
+   "gender": "女",
+   "location": "台灣"
+  },
+  "question": "社會層次與現況判斷?:判斷命主現時學歷水平以及職業現狀",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "碩士學歷,現於知名企業擔任管理職務"
+   },
+   {
+    "letter": "B",
+    "text": "本科學歷,現從事藝術類自由職業"
+   },
+   {
+    "letter": "C",
+    "text": "高中學歷,暫無固定職業,專職二級市場投資(炒股)"
+   },
+   {
+    "letter": "D",
+    "text": "國中學歷,現經營自媒體工作室"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "子離師傅",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "学业",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_35",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c7",
+  "case_index": 7,
+  "question_number": 35,
+  "birth_info": {
+   "raw": "女命 台灣高雄 西曆:1999 年 8 月 14 日 15 點 30 分(申時) 命例提供者: 馬來西亞 子離師傅",
+   "calendar_type": "solar",
+   "year": 1999,
+   "month": 8,
+   "day": 14,
+   "shichen": "申",
+   "hour_start": 15,
+   "hour_end": 17,
+   "clock_hour": 15,
+   "clock_minute": 30,
+   "gender": "女",
+   "location": "台灣"
+  },
+  "question": "此女目前感情狀況是如何呢?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "結交異性對象,婚姻穩定。"
+   },
+   {
+    "letter": "B",
+    "text": "感情複雜,與多人糾纏不清。"
+   },
+   {
+    "letter": "C",
+    "text": "跟異性分手,現與同性交往。"
+   },
+   {
+    "letter": "D",
+    "text": "長期單身,沒有感情經歷。"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "子離師傅",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_36",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c8",
+  "case_index": 8,
+  "question_number": 36,
+  "birth_info": {
+   "raw": "男命 西曆:1981 年 10 月 19 日 晚上十點(亥時) 命例提供者: 台灣 阮懷勝師傅",
+   "calendar_type": "solar",
+   "year": 1981,
+   "month": 10,
+   "day": 19,
+   "shichen": "亥",
+   "hour_start": 21,
+   "hour_end": 23,
+   "gender": "男"
+  },
+  "question": "請問適合嘅工作性質?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "亥水有用洩丁火,亥屬數字意象,戌為火庫,適合從事電腦網路類工作"
+   },
+   {
+    "letter": "B",
+    "text": "日主庚金生比劫,取用庚辛,屬於勞動類人員"
+   },
+   {
+    "letter": "C",
+    "text": "木失月令而生庚金,適合自行經營五金環保行業"
+   },
+   {
+    "letter": "D",
+    "text": "以上皆是"
+   }
+  ],
+  "num_options": 4,
+  "answer": "A",
+  "master": "阮懷勝師傅",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "事业",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_37",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c8",
+  "case_index": 8,
+  "question_number": 37,
+  "birth_info": {
+   "raw": "男命 西曆:1981 年 10 月 19 日 晚上十點(亥時) 命例提供者: 台灣 阮懷勝師傅",
+   "calendar_type": "solar",
+   "year": 1981,
+   "month": 10,
+   "day": 19,
+   "shichen": "亥",
+   "hour_start": 21,
+   "hour_end": 23,
+   "gender": "男"
+  },
+  "question": "此命何時離婚?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "甲辰年"
+   },
+   {
+    "letter": "B",
+    "text": "乙巳年"
+   },
+   {
+    "letter": "C",
+    "text": "丙午年"
+   },
+   {
+    "letter": "D",
+    "text": "癸卯年"
+   }
+  ],
+  "num_options": 4,
+  "answer": "A",
+  "master": "阮懷勝師傅",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "婚姻",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_38",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c8",
+  "case_index": 8,
+  "question_number": 38,
+  "birth_info": {
+   "raw": "男命 西曆:1981 年 10 月 19 日 晚上十點(亥時) 命例提供者: 台灣 阮懷勝師傅",
+   "calendar_type": "solar",
+   "year": 1981,
+   "month": 10,
+   "day": 19,
+   "shichen": "亥",
+   "hour_start": 21,
+   "hour_end": 23,
+   "gender": "男"
+  },
+  "question": "自身性格特質?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "生性愚鈍,為人不懂變通"
+   },
+   {
+    "letter": "B",
+    "text": "不拘小節,處事大而化之"
+   },
+   {
+    "letter": "C",
+    "text": "容易鑽牛角尖,心思多疑"
+   },
+   {
+    "letter": "D",
+    "text": "情緒不穩,有躁鬱傾向"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "阮懷勝師傅",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "性格",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_39",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c8",
+  "case_index": 8,
+  "question_number": 39,
+  "birth_info": {
+   "raw": "男命 西曆:1981 年 10 月 19 日 晚上十點(亥時) 命例提供者: 台灣 阮懷勝師傅",
+   "calendar_type": "solar",
+   "year": 1981,
+   "month": 10,
+   "day": 19,
+   "shichen": "亥",
+   "hour_start": 21,
+   "hour_end": 23,
+   "gender": "男"
+  },
+  "question": "今年丙午年,在工作上發生啥事?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "貴人相助,升官發財"
+   },
+   {
+    "letter": "B",
+    "text": "小人當道,工作不順利"
+   },
+   {
+    "letter": "C",
+    "text": "工作壓力大,连续半年換了兩份工作,但都是高薪高管工作"
+   },
+   {
+    "letter": "D",
+    "text": "失業在家,靠玩股票度日"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "阮懷勝師傅",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "事业",
+  "category_source": "rule-based (this repo)"
+ },
+ {
+  "id": "hkjfma_2026_40",
+  "source": "hkjfma",
+  "edition": 17,
+  "year": 2026,
+  "case_id": "hkjfma_2026_c8",
+  "case_index": 8,
+  "question_number": 40,
+  "birth_info": {
+   "raw": "男命 西曆:1981 年 10 月 19 日 晚上十點(亥時) 命例提供者: 台灣 阮懷勝師傅",
+   "calendar_type": "solar",
+   "year": 1981,
+   "month": 10,
+   "day": 19,
+   "shichen": "亥",
+   "hour_start": 21,
+   "hour_end": 23,
+   "gender": "男"
+  },
+  "question": "現今所處工作狀態?",
+  "question_en": null,
+  "options": [
+   {
+    "letter": "A",
+    "text": "任職公職,協助政府相關工作"
+   },
+   {
+    "letter": "B",
+    "text": "自主創業,自行開設公司"
+   },
+   {
+    "letter": "C",
+    "text": "於跨國企業擔任高層管理"
+   },
+   {
+    "letter": "D",
+    "text": "任職小型公司基層職員,薪資僅足維生"
+   }
+  ],
+  "num_options": 4,
+  "answer": "C",
+  "master": "阮懷勝師傅",
+  "method": null,
+  "source_url": "https://hkjfma.org/2026/06/2026%e5%b9%b4%e7%ac%ac%e5%8d%81%e4%b8%83%e5%b1%86-%e5%85%a8%e7%90%83%e7%ae%97%e5%91%bd%e5%b8%ab%e6%af%94%e8%b3%bd",
+  "answer_provenance": "official",
+  "answer_provenance_note": "transcribed from the organiser's handwritten answer sheet, added to the question page on 2026-08-08 and archived here as images/2026_ans_001_01.jpg",
+  "category": "事业",
+  "category_source": "rule-based (this repo)"
+ },
+ {
   "id": "mlb_ftb_0001",
   "source": "minglibench",
   "edition": 13,
