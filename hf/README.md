@@ -31,6 +31,8 @@ configs:
 **Real birth charts paired with documented life events**, from a fortune-telling competition that
 has run annually since 2010.
 
+**[Browse and try every question online (Chinese) →](https://shunshi.ai/zh-tw/fortune-teller-contest)** · Curated by [ShunShi](https://shunshi.ai/en)
+
 335 multiple-choice questions about 71 real people — the year someone divorced, started
 a business, lost a parent, was diagnosed with cancer. Each was set by a practising master who
 supplied a real person's birth data and that person's verified history; the organizer published
