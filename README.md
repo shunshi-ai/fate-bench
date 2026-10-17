@@ -9,6 +9,7 @@
 [![Questions](https://img.shields.io/badge/Questions-335-green.svg)](./data/fate_bench.jsonl)
 [![People](https://img.shields.io/badge/People-71-blue.svg)](./data/cases.json)
 [![Editions](https://img.shields.io/badge/Editions-2010--2026-orange.svg)](./data/raw/hkjfma/INVENTORY.md)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-fate--bench-yellow.svg)](https://huggingface.co/datasets/shunshi-ai/fate-bench)
 
 English | [中文](./README_zh.md) · **[Browse and try every question online (Chinese) →](https://shunshi.ai/zh-tw/fortune-teller-contest)**
 
